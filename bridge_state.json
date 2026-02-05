@@ -1,0 +1,3333 @@
+{
+  "match_batches": [
+
+  ],
+  "participants": {
+    "Js306@rice.edu": {
+      "key": "Js306@rice.edu",
+      "name": "Joe Slipper",
+      "email": "Js306@rice.edu",
+      "phone": "3464008926",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 1,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Je58@rice.edu": {
+      "key": "Je58@rice.edu",
+      "name": "Jeswill Ewungkem",
+      "email": "Je58@rice.edu",
+      "phone": "4849048752",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 2,
+      "matched_with_emails": [
+
+      ]
+    },
+    "da120@rice.edu": {
+      "key": "da120@rice.edu",
+      "name": "David Afflu",
+      "email": "da120@rice.edu",
+      "phone": "2819052611",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 3,
+      "matched_with_emails": [
+
+      ]
+    },
+    "low@rice.edu": {
+      "key": "low@rice.edu",
+      "name": "Edwin",
+      "email": "low@rice.edu",
+      "phone": "3465418757",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 4,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ok18@rice.edu": {
+      "key": "ok18@rice.edu",
+      "name": "Oliwia",
+      "email": "ok18@rice.edu",
+      "phone": "2817456536",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 5,
+      "matched_with_emails": [
+
+      ]
+    },
+    "aj110@rice.edu": {
+      "key": "aj110@rice.edu",
+      "name": "amaya j",
+      "email": "aj110@rice.edu",
+      "phone": "8037673603",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 6,
+      "matched_with_emails": [
+
+      ]
+    },
+    "div2@rice.edu": {
+      "key": "div2@rice.edu",
+      "name": "David",
+      "email": "div2@rice.edu",
+      "phone": "9083465132",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 7,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cy66@rice.edu": {
+      "key": "cy66@rice.edu",
+      "name": "Chetan Yenigalla",
+      "email": "cy66@rice.edu",
+      "phone": "6292446357",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 8,
+      "matched_with_emails": [
+
+      ]
+    },
+    "bv23@rice.edu": {
+      "key": "bv23@rice.edu",
+      "name": "Banesa",
+      "email": "bv23@rice.edu",
+      "phone": "5202526847",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 9,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Kc215@rice.edu": {
+      "key": "Kc215@rice.edu",
+      "name": "Katie Czelusta",
+      "email": "Kc215@rice.edu",
+      "phone": "2812023012",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 10,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lw125@rice.edu": {
+      "key": "lw125@rice.edu",
+      "name": "Lilly Wu",
+      "email": "lw125@rice.edu",
+      "phone": "4084836458",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 11,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ak285@rice.edu": {
+      "key": "ak285@rice.edu",
+      "name": "Arben",
+      "email": "ak285@rice.edu",
+      "phone": "7132068798",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 12,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Cc321@rice.edu": {
+      "key": "Cc321@rice.edu",
+      "name": "Coffey Collier",
+      "email": "Cc321@rice.edu",
+      "phone": "4059208520",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 13,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sk283@rice.edu": {
+      "key": "sk283@rice.edu",
+      "name": "Sohee Kim",
+      "email": "sk283@rice.edu",
+      "phone": "831-717-7869",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Not very important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 14,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Im61@rice.edu": {
+      "key": "Im61@rice.edu",
+      "name": "Ishanel Martinez",
+      "email": "Im61@rice.edu",
+      "phone": "5303704668",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 15,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sz122@rice.edu": {
+      "key": "sz122@rice.edu",
+      "name": "Steve Zhang",
+      "email": "sz122@rice.edu",
+      "phone": "8588666257",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 16,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Jf162@rice.edu": {
+      "key": "Jf162@rice.edu",
+      "name": "Jack",
+      "email": "Jf162@rice.edu",
+      "phone": "4705223018",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 17,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sv85@rice.edu": {
+      "key": "sv85@rice.edu",
+      "name": "Sarah Vohra",
+      "email": "sv85@rice.edu",
+      "phone": "4088051406",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 18,
+      "matched_with_emails": [
+
+      ]
+    },
+    "mf106@rice.edu": {
+      "key": "mf106@rice.edu",
+      "name": "Maria Fernandez",
+      "email": "mf106@rice.edu",
+      "phone": "7867317132",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Music",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 19,
+      "matched_with_emails": [
+
+      ]
+    },
+    "kr88@rice.edu": {
+      "key": "kr88@rice.edu",
+      "name": "Kate Ryan",
+      "email": "kr88@rice.edu",
+      "phone": "8456822007",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Music",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 20,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Jg272@rice.edu": {
+      "key": "Jg272@rice.edu",
+      "name": "Jayden Greicius",
+      "email": "Jg272@rice.edu",
+      "phone": "7204831175",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Music",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 21,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Bd63@rice.edu": {
+      "key": "Bd63@rice.edu",
+      "name": "Bianca Dotson",
+      "email": "Bd63@rice.edu",
+      "phone": "4804943593",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 22,
+      "matched_with_emails": [
+
+      ]
+    },
+    "haidernadaf67@gmail.com": {
+      "key": "haidernadaf67@gmail.com",
+      "name": "haider",
+      "email": "haidernadaf67@gmail.com",
+      "phone": "'+91 9900768505",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 23,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rb200@rice.edu": {
+      "key": "rb200@rice.edu",
+      "name": "Rafael Botran",
+      "email": "rb200@rice.edu",
+      "phone": "7868906076",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 24,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lt65@rice.edu": {
+      "key": "lt65@rice.edu",
+      "name": "Laylee Taghizadeh",
+      "email": "lt65@rice.edu",
+      "phone": "8328581926",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 25,
+      "matched_with_emails": [
+
+      ]
+    },
+    "au23@rice.edu": {
+      "key": "au23@rice.edu",
+      "name": "Ali Usman",
+      "email": "au23@rice.edu",
+      "phone": "2248069445",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 26,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ajg18@rice.edu": {
+      "key": "ajg18@rice.edu",
+      "name": "Ashlee Glover",
+      "email": "ajg18@rice.edu",
+      "phone": "7135851604",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 27,
+      "matched_with_emails": [
+
+      ]
+    },
+    "jma21@rice.edu": {
+      "key": "jma21@rice.edu",
+      "name": "Jacob Andreini",
+      "email": "jma21@rice.edu",
+      "phone": "2162808750",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 28,
+      "matched_with_emails": [
+
+      ]
+    },
+    "as373@rice.edu": {
+      "key": "as373@rice.edu",
+      "name": "Arhan Sankhla",
+      "email": "as373@rice.edu",
+      "phone": "4808683156",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 29,
+      "matched_with_emails": [
+
+      ]
+    },
+    "pb52@rice.edu": {
+      "key": "pb52@rice.edu",
+      "name": "Patrick",
+      "email": "pb52@rice.edu",
+      "phone": "7133808904",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 30,
+      "matched_with_emails": [
+
+      ]
+    },
+    "wv5@rice.edu": {
+      "key": "wv5@rice.edu",
+      "name": "William Volen",
+      "email": "wv5@rice.edu",
+      "phone": "9048085466",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 31,
+      "matched_with_emails": [
+
+      ]
+    },
+    "eq6@rice.edu": {
+      "key": "eq6@rice.edu",
+      "name": "Emma Qian",
+      "email": "eq6@rice.edu",
+      "phone": "8328471001",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 32,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cz103@rice.edu": {
+      "key": "cz103@rice.edu",
+      "name": "claire",
+      "email": "cz103@rice.edu",
+      "phone": "9714726246",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 33,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lw123@rice.edu": {
+      "key": "lw123@rice.edu",
+      "name": "Lauren Wright",
+      "email": "lw123@rice.edu",
+      "phone": "4705802776",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 34,
+      "matched_with_emails": [
+
+      ]
+    },
+    "dr101@rice.edu": {
+      "key": "dr101@rice.edu",
+      "name": "Daniel",
+      "email": "dr101@rice.edu",
+      "phone": "8304802158",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 35,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lh70@rice.edu": {
+      "key": "lh70@rice.edu",
+      "name": "Lily Hestjean",
+      "email": "lh70@rice.edu",
+      "phone": "3127233954",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 36,
+      "matched_with_emails": [
+
+      ]
+    },
+    "nk101@rice.edu": {
+      "key": "nk101@rice.edu",
+      "name": "Noah Kaufman",
+      "email": "nk101@rice.edu",
+      "phone": "3104290373",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 37,
+      "matched_with_emails": [
+
+      ]
+    },
+    "bursar@rice.edu": {
+      "key": "bursar@rice.edu",
+      "name": "Johannes Von Chudling",
+      "email": "bursar@rice.edu",
+      "phone": "7133484946",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 38,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lj33@rice.edu": {
+      "key": "lj33@rice.edu",
+      "name": "Lukas",
+      "email": "lj33@rice.edu",
+      "phone": "8303605649",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Humanities",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 39,
+      "matched_with_emails": [
+
+      ]
+    },
+    "nc75@rice.edu": {
+      "key": "nc75@rice.edu",
+      "name": "Nikita Chowdree",
+      "email": "nc75@rice.edu",
+      "phone": "8329853904",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Not very important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 40,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ko18@rice.edu": {
+      "key": "ko18@rice.edu",
+      "name": "Kosi Onwuamaegbu",
+      "email": "ko18@rice.edu",
+      "phone": "3014124233",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 41,
+      "matched_with_emails": [
+
+      ]
+    },
+    "jw300@rice.edu": {
+      "key": "jw300@rice.edu",
+      "name": "James",
+      "email": "jw300@rice.edu",
+      "phone": "7132890315",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 42,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cet3@rice.edu": {
+      "key": "cet3@rice.edu",
+      "name": "Carson Talbott",
+      "email": "cet3@rice.edu",
+      "phone": "2026571223",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 43,
+      "matched_with_emails": [
+
+      ]
+    },
+    "mb275@rice.edu": {
+      "key": "mb275@rice.edu",
+      "name": "Marcus Bewtra",
+      "email": "mb275@rice.edu",
+      "phone": "9175244418",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Architecture",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 44,
+      "matched_with_emails": [
+
+      ]
+    },
+    "kks8@rice.edu": {
+      "key": "kks8@rice.edu",
+      "name": "Keshav",
+      "email": "kks8@rice.edu",
+      "phone": "2816449320",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 45,
+      "matched_with_emails": [
+
+      ]
+    },
+    "jy181@rice.edu": {
+      "key": "jy181@rice.edu",
+      "name": "Janie Ye",
+      "email": "jy181@rice.edu",
+      "phone": "7635014671",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 46,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Bld3@rice.edu": {
+      "key": "Bld3@rice.edu",
+      "name": "Brady Detwiler",
+      "email": "Bld3@rice.edu",
+      "phone": "4842198733",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 47,
+      "matched_with_emails": [
+
+      ]
+    },
+    "nt57@rice.edu": {
+      "key": "nt57@rice.edu",
+      "name": "Nailya",
+      "email": "nt57@rice.edu",
+      "phone": "3464079040",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 48,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ar306@rice.edu": {
+      "key": "ar306@rice.edu",
+      "name": "Andrew",
+      "email": "ar306@rice.edu",
+      "phone": "6162519862",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Humanities",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 49,
+      "matched_with_emails": [
+
+      ]
+    },
+    "nmo1@rice.edu": {
+      "key": "nmo1@rice.edu",
+      "name": "Noah Oh",
+      "email": "nmo1@rice.edu",
+      "phone": "2015662805",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 50,
+      "matched_with_emails": [
+
+      ]
+    },
+    "zl202@rice.edu": {
+      "key": "zl202@rice.edu",
+      "name": "Allen Li",
+      "email": "zl202@rice.edu",
+      "phone": "2408105533",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 51,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cr116@rice.edu": {
+      "key": "cr116@rice.edu",
+      "name": "Cindy Ren",
+      "email": "cr116@rice.edu",
+      "phone": "8326729591",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Neutral",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 52,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Nc100@rice.edu": {
+      "key": "Nc100@rice.edu",
+      "name": "Niamh",
+      "email": "Nc100@rice.edu",
+      "phone": "7135033237",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 53,
+      "matched_with_emails": [
+
+      ]
+    },
+    "as628@rice.edu": {
+      "key": "as628@rice.edu",
+      "name": "Amelia Shoemaker",
+      "email": "as628@rice.edu",
+      "phone": "7038874196",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 54,
+      "matched_with_emails": [
+
+      ]
+    },
+    "bh80@rice.edu": {
+      "key": "bh80@rice.edu",
+      "name": "Boyan Holt",
+      "email": "bh80@rice.edu",
+      "phone": "2065999945",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 55,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rw66@rice.edu": {
+      "key": "rw66@rice.edu",
+      "name": "Ruohan Wang",
+      "email": "rw66@rice.edu",
+      "phone": "4243848551",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 56,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ck52@rice.edu": {
+      "key": "ck52@rice.edu",
+      "name": "Christophe Kwizera",
+      "email": "ck52@rice.edu",
+      "phone": "8328676715",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 57,
+      "matched_with_emails": [
+
+      ]
+    },
+    "nr80@rice.edu": {
+      "key": "nr80@rice.edu",
+      "name": "Nithya Ravi",
+      "email": "nr80@rice.edu",
+      "phone": "3467638766",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Neutral",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 58,
+      "matched_with_emails": [
+
+      ]
+    },
+    "jg186@rice.edu": {
+      "key": "jg186@rice.edu",
+      "name": "Jose Noriega",
+      "email": "jg186@rice.edu",
+      "phone": "8582149229",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 59,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ik52@rice.edu": {
+      "key": "ik52@rice.edu",
+      "name": "Isaac Koffi-Moyet",
+      "email": "ik52@rice.edu",
+      "phone": "4439298719",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 60,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rw73@rice.edu": {
+      "key": "rw73@rice.edu",
+      "name": "Ruiyang Wu",
+      "email": "rw73@rice.edu",
+      "phone": "9193960207",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 61,
+      "matched_with_emails": [
+
+      ]
+    },
+    "km108@rice.edu": {
+      "key": "km108@rice.edu",
+      "name": "Kenny Manning",
+      "email": "km108@rice.edu",
+      "phone": "5084986268",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 62,
+      "matched_with_emails": [
+
+      ]
+    },
+    "akk7@rice.edu": {
+      "key": "akk7@rice.edu",
+      "name": "Aly Khanmohamed",
+      "email": "akk7@rice.edu",
+      "phone": "2102406807",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 63,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cw157@rice.edu": {
+      "key": "cw157@rice.edu",
+      "name": "Caelyn",
+      "email": "cw157@rice.edu",
+      "phone": "7133409953",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Business",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 64,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Lil3@rice.edu": {
+      "key": "Lil3@rice.edu",
+      "name": "Lena",
+      "email": "Lil3@rice.edu",
+      "phone": "832-702-9332",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 65,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ma201@rice.edu": {
+      "key": "ma201@rice.edu",
+      "name": "Marcelino Alaniz",
+      "email": "ma201@rice.edu",
+      "phone": "2815092678",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 66,
+      "matched_with_emails": [
+
+      ]
+    },
+    "dc118@rice.edu": {
+      "key": "dc118@rice.edu",
+      "name": "Demetris Chrysostomou",
+      "email": "dc118@rice.edu",
+      "phone": "8328814225",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 67,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sc258@rice.edu": {
+      "key": "sc258@rice.edu",
+      "name": "Sarah Choi",
+      "email": "sc258@rice.edu",
+      "phone": "6825514222",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 68,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ir33@rice.edu": {
+      "key": "ir33@rice.edu",
+      "name": "Ian Rodriguez",
+      "email": "ir33@rice.edu",
+      "phone": "8302009312",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 69,
+      "matched_with_emails": [
+
+      ]
+    },
+    "mh120@rice.edu": {
+      "key": "mh120@rice.edu",
+      "name": "Mysha",
+      "email": "mh120@rice.edu",
+      "phone": "7133205718",
+      "grade": "Senior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 70,
+      "matched_with_emails": [
+
+      ]
+    },
+    "er85@rice.edu": {
+      "key": "er85@rice.edu",
+      "name": "Emilio Reza",
+      "email": "er85@rice.edu",
+      "phone": "6822703347",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 71,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Kitty.walters@rice.edu": {
+      "key": "Kitty.walters@rice.edu",
+      "name": "Kitty",
+      "email": "Kitty.walters@rice.edu",
+      "phone": "9016120030",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 72,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Kd56@rice.edu": {
+      "key": "Kd56@rice.edu",
+      "name": "Kate Doherty",
+      "email": "Kd56@rice.edu",
+      "phone": "5404243874",
+      "grade": "Senior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 73,
+      "matched_with_emails": [
+
+      ]
+    },
+    "gm63@rice.edu": {
+      "key": "gm63@rice.edu",
+      "name": "Geovanny Melgar",
+      "email": "gm63@rice.edu",
+      "phone": "8328550471",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 74,
+      "matched_with_emails": [
+
+      ]
+    },
+    "aa537@rice.edu": {
+      "key": "aa537@rice.edu",
+      "name": "Atish Amistapur",
+      "email": "aa537@rice.edu",
+      "phone": "3468687575",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 75,
+      "matched_with_emails": [
+
+      ]
+    },
+    "aa516@rice.edu": {
+      "key": "aa516@rice.edu",
+      "name": "Akanbelie Abagi",
+      "email": "aa516@rice.edu",
+      "phone": "832-707-2431",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 76,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ab283@rice.edu": {
+      "key": "ab283@rice.edu",
+      "name": "Akim Bonhomme",
+      "email": "ab283@rice.edu",
+      "phone": "7864845683",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 77,
+      "matched_with_emails": [
+
+      ]
+    },
+    "hc103@rice.edu": {
+      "key": "hc103@rice.edu",
+      "name": "Hemesh Chadalavada",
+      "email": "hc103@rice.edu",
+      "phone": "4014367744",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 78,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cm233@rice.edu": {
+      "key": "cm233@rice.edu",
+      "name": "Chae",
+      "email": "cm233@rice.edu",
+      "phone": "7135189356",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 79,
+      "matched_with_emails": [
+
+      ]
+    },
+    "aa552@rice.edu": {
+      "key": "aa552@rice.edu",
+      "name": "Alex Aguila",
+      "email": "aa552@rice.edu",
+      "phone": "7863986966",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 80,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Egy1@rice.edu": {
+      "key": "Egy1@rice.edu",
+      "name": "Eliana Yared",
+      "email": "Egy1@rice.edu",
+      "phone": "4692225748",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 81,
+      "matched_with_emails": [
+
+      ]
+    },
+    "vt20": {
+      "key": "vt20",
+      "name": "Aneesh",
+      "email": "vt20",
+      "phone": "3465655209",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 82,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sz122@gmail.com": {
+      "key": "sz122@gmail.com",
+      "name": "Steve Zhang",
+      "email": "sz122@gmail.com",
+      "phone": "8588666257",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 83,
+      "matched_with_emails": [
+
+      ]
+    },
+    "mk233@rice.edu": {
+      "key": "mk233@rice.edu",
+      "name": "Mason Kresloff",
+      "email": "mk233@rice.edu",
+      "phone": "856-266-2411",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 84,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sw157@rice.edu": {
+      "key": "sw157@rice.edu",
+      "name": "Samuel Wen",
+      "email": "sw157@rice.edu",
+      "phone": "8178971209",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 85,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lg106@rice.edu": {
+      "key": "lg106@rice.edu",
+      "name": "Lucie",
+      "email": "lg106@rice.edu",
+      "phone": "2816029933",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Neutral",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 86,
+      "matched_with_emails": [
+
+      ]
+    },
+    "er106@rice.edu": {
+      "key": "er106@rice.edu",
+      "name": "Evelyn Rodriguez",
+      "email": "er106@rice.edu",
+      "phone": "4693759614",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 87,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rd103@rice.edu": {
+      "key": "rd103@rice.edu",
+      "name": "Renee Duan",
+      "email": "rd103@rice.edu",
+      "phone": "9259894172",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 88,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ea87@rice.edu": {
+      "key": "ea87@rice.edu",
+      "name": "Enrique",
+      "email": "ea87@rice.edu",
+      "phone": "7874150922",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 89,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Pr33@rice.edu": {
+      "key": "Pr33@rice.edu",
+      "name": "Peter Ren",
+      "email": "Pr33@rice.edu",
+      "phone": "7328610862",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 90,
+      "matched_with_emails": [
+
+      ]
+    },
+    "zk31@rice.edu": {
+      "key": "zk31@rice.edu",
+      "name": "Zain",
+      "email": "zk31@rice.edu",
+      "phone": "2028551012",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 91,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Jh321@rice.edu": {
+      "key": "Jh321@rice.edu",
+      "name": "Joshua Hernandez",
+      "email": "Jh321@rice.edu",
+      "phone": "7705390185",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 93,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Bfb1@rice.edu": {
+      "key": "Bfb1@rice.edu",
+      "name": "Brandon Braccia",
+      "email": "Bfb1@rice.edu",
+      "phone": "5512255446",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 94,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Sc367@rice.edu": {
+      "key": "Sc367@rice.edu",
+      "name": "Satina Chen",
+      "email": "Sc367@rice.edu",
+      "phone": "3475309306",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 95,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rs225@rice.edu": {
+      "key": "rs225@rice.edu",
+      "name": "Rutledge Sander",
+      "email": "rs225@rice.edu",
+      "phone": "8439260728",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 96,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ar320@rice.edu": {
+      "key": "ar320@rice.edu",
+      "name": "Ana Catarina Santos",
+      "email": "ar320@rice.edu",
+      "phone": "17132617996",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 97,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rg64@rice.edu": {
+      "key": "rg64@rice.edu",
+      "name": "Rodolfo Garcia",
+      "email": "rg64@rice.edu",
+      "phone": "806-240-3914",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 98,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rc183@rice.edu": {
+      "key": "rc183@rice.edu",
+      "name": "Ria Chauhan",
+      "email": "rc183@rice.edu",
+      "phone": "2016009446",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 99,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Lr62@rice.edu": {
+      "key": "Lr62@rice.edu",
+      "name": "Leo",
+      "email": "Lr62@rice.edu",
+      "phone": "2147724908",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 100,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cg165@rice.edu": {
+      "key": "cg165@rice.edu",
+      "name": "Carlos Gonzalez",
+      "email": "cg165@rice.edu",
+      "phone": "(832) 358-4624",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 101,
+      "matched_with_emails": [
+
+      ]
+    },
+    "vz10@rice.edu": {
+      "key": "vz10@rice.edu",
+      "name": "Veronica",
+      "email": "vz10@rice.edu",
+      "phone": "650-240-6256",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 102,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Il36@rice.edu": {
+      "key": "Il36@rice.edu",
+      "name": "Izzy Leyton",
+      "email": "Il36@rice.edu",
+      "phone": "9178166450",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 103,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rs168@rice.edu": {
+      "key": "rs168@rice.edu",
+      "name": "Rahul Santhanam",
+      "email": "rs168@rice.edu",
+      "phone": "6504009202",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 104,
+      "matched_with_emails": [
+
+      ]
+    },
+    "eh52@rice.edu": {
+      "key": "eh52@rice.edu",
+      "name": "Eisha Hemchand",
+      "email": "eh52@rice.edu",
+      "phone": "4693870092",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 105,
+      "matched_with_emails": [
+
+      ]
+    },
+    "am531@rice.edu": {
+      "key": "am531@rice.edu",
+      "name": "amanda",
+      "email": "am531@rice.edu",
+      "phone": "4435000318",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 106,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ob25@rice.edu": {
+      "key": "ob25@rice.edu",
+      "name": "Oliver Boyden",
+      "email": "ob25@rice.edu",
+      "phone": "4148757945",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 107,
+      "matched_with_emails": [
+
+      ]
+    },
+    "bojangles123@gmail.com": {
+      "key": "bojangles123@gmail.com",
+      "name": "Bojangles",
+      "email": "bojangles123@gmail.com",
+      "phone": "8624558022",
+      "grade": null,
+      "gender": "Non-binary",
+      "gender_preferences": [
+        "Male",
+        "Female"
+      ],
+      "school": "Music",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 108,
+      "matched_with_emails": [
+
+      ]
+    },
+    "al278@rice.edu": {
+      "key": "al278@rice.edu",
+      "name": "Andria",
+      "email": "al278@rice.edu",
+      "phone": "2817458939",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Architecture",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 109,
+      "matched_with_emails": [
+
+      ]
+    },
+    "hl203@rice.edu": {
+      "key": "hl203@rice.edu",
+      "name": "Hayden Lucas",
+      "email": "hl203@rice.edu",
+      "phone": "2128776217",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 110,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Lk70@rice.edu": {
+      "key": "Lk70@rice.edu",
+      "name": "Logan Koplovitz",
+      "email": "Lk70@rice.edu",
+      "phone": "9709228201",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Humanities",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 111,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ew82@rice.edu": {
+      "key": "ew82@rice.edu",
+      "name": "Elaine Wang",
+      "email": "ew82@rice.edu",
+      "phone": "8328106666",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 112,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sg283@rice.edu": {
+      "key": "sg283@rice.edu",
+      "name": "Saahith Garg",
+      "email": "sg283@rice.edu",
+      "phone": "8326232480",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 113,
+      "matched_with_emails": [
+
+      ]
+    },
+    "kc211@rice.edu": {
+      "key": "kc211@rice.edu",
+      "name": "Kaylee Cooper",
+      "email": "kc211@rice.edu",
+      "phone": "3617038664",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 114,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ky63@rice.edu": {
+      "key": "ky63@rice.edu",
+      "name": "Katharine Yao",
+      "email": "ky63@rice.edu",
+      "phone": "8325340905",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Humanities",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 115,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ey27@rice.edu": {
+      "key": "ey27@rice.edu",
+      "name": "Emma Young",
+      "email": "ey27@rice.edu",
+      "phone": "2079397711",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 116,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ah276@rice.edu": {
+      "key": "ah276@rice.edu",
+      "name": "Andrew",
+      "email": "ah276@rice.edu",
+      "phone": "7378950546",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 117,
+      "matched_with_emails": [
+
+      ]
+    },
+    "mt182@rice.edu": {
+      "key": "mt182@rice.edu",
+      "name": "Mark",
+      "email": "mt182@rice.edu",
+      "phone": "9739315357",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 118,
+      "matched_with_emails": [
+
+      ]
+    },
+    "aa510@rice.edu": {
+      "key": "aa510@rice.edu",
+      "name": "Amiya",
+      "email": "aa510@rice.edu",
+      "phone": "4804079900",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 119,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ap280@rice.edu": {
+      "key": "ap280@rice.edu",
+      "name": "Alyssa Jane",
+      "email": "ap280@rice.edu",
+      "phone": "8584149316",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Humanities",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 120,
+      "matched_with_emails": [
+
+      ]
+    },
+    "is53@rice.edu": {
+      "key": "is53@rice.edu",
+      "name": "Ian",
+      "email": "is53@rice.edu",
+      "phone": "9;02184475",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Neutral",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 121,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Aa511@rice.edu": {
+      "key": "Aa511@rice.edu",
+      "name": "Asher Anantham",
+      "email": "Aa511@rice.edu",
+      "phone": "12407818900",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 122,
+      "matched_with_emails": [
+
+      ]
+    },
+    "bk62@rice.edu": {
+      "key": "bk62@rice.edu",
+      "name": "Benjamin Casey Kwait-Gonchar the Third",
+      "email": "bk62@rice.edu",
+      "phone": "9172141943",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Neutral",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 123,
+      "matched_with_emails": [
+
+      ]
+    },
+    "thankyou@rice.edu": {
+      "key": "thankyou@rice.edu",
+      "name": "John Kennedy but they call me Jack",
+      "email": "thankyou@rice.edu",
+      "phone": "'+12819469429",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 124,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ig52@rice.edu": {
+      "key": "ig52@rice.edu",
+      "name": "Isaiah Green",
+      "email": "ig52@rice.edu",
+      "phone": "702-764-7648",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 125,
+      "matched_with_emails": [
+
+      ]
+    },
+    "jk216@rice.edu": {
+      "key": "jk216@rice.edu",
+      "name": "Jacob Lee King",
+      "email": "jk216@rice.edu",
+      "phone": "8302209995",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 126,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Vv35@rice.edu": {
+      "key": "Vv35@rice.edu",
+      "name": "Aspen Viamontes",
+      "email": "Vv35@rice.edu",
+      "phone": "3469782260",
+      "grade": null,
+      "gender": "Non-binary",
+      "gender_preferences": [
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 127,
+      "matched_with_emails": [
+
+      ]
+    },
+    "lpf2@rice.edu": {
+      "key": "lpf2@rice.edu",
+      "name": "Lindsey Frost",
+      "email": "lpf2@rice.edu",
+      "phone": "7605665151",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 128,
+      "matched_with_emails": [
+
+      ]
+    },
+    "hw106@rice.edu": {
+      "key": "hw106@rice.edu",
+      "name": "Harrison White",
+      "email": "hw106@rice.edu",
+      "phone": "2395723842",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 129,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sj163@rice.edu": {
+      "key": "sj163@rice.edu",
+      "name": "Shyla",
+      "email": "sj163@rice.edu",
+      "phone": "8328836560",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 130,
+      "matched_with_emails": [
+
+      ]
+    },
+    "ma233@rice.edu": {
+      "key": "ma233@rice.edu",
+      "name": "Mehmet Acikel",
+      "email": "ma233@rice.edu",
+      "phone": "7324745133",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 131,
+      "matched_with_emails": [
+
+      ]
+    },
+    "al277@rice.edu": {
+      "key": "al277@rice.edu",
+      "name": "Anne Lu",
+      "email": "al277@rice.edu",
+      "phone": "6019279628",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 132,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Mjr16@rice.edu": {
+      "key": "Mjr16@rice.edu",
+      "name": "Matthew Ramos",
+      "email": "Mjr16@rice.edu",
+      "phone": "2019720080",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 133,
+      "matched_with_emails": [
+
+      ]
+    },
+    "do32@rice.edu": {
+      "key": "do32@rice.edu",
+      "name": "Diego Ojeda Villavicencio",
+      "email": "do32@rice.edu",
+      "phone": "7135628858",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 134,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Jp231@rice.edu": {
+      "key": "Jp231@rice.edu",
+      "name": "Jake Pessin",
+      "email": "Jp231@rice.edu",
+      "phone": "8184291619",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 135,
+      "matched_with_emails": [
+
+      ]
+    },
+    "Ip31@rice.edu": {
+      "key": "Ip31@rice.edu",
+      "name": "Isaias Palacios",
+      "email": "Ip31@rice.edu",
+      "phone": "7733010781",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 136,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sl206@rice.edu": {
+      "key": "sl206@rice.edu",
+      "name": "Steven Luo",
+      "email": "sl206@rice.edu",
+      "phone": "9787605708",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 137,
+      "matched_with_emails": [
+
+      ]
+    },
+    "suhasnarra@gmail.com": {
+      "key": "suhasnarra@gmail.com",
+      "name": "Suhas Narra",
+      "email": "suhasnarra@gmail.com",
+      "phone": "8142186068",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 138,
+      "matched_with_emails": [
+
+      ]
+    },
+    "mw205@rice.edu": {
+      "key": "mw205@rice.edu",
+      "name": "Marjorie Wang",
+      "email": "mw205@rice.edu",
+      "phone": "3466382665",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 139,
+      "matched_with_emails": [
+
+      ]
+    },
+    "cs282@rice.edu": {
+      "key": "cs282@rice.edu",
+      "name": "Carter Sakai",
+      "email": "cs282@rice.edu",
+      "phone": "6267106174",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 140,
+      "matched_with_emails": [
+
+      ]
+    },
+    "al181@rice.edu": {
+      "key": "al181@rice.edu",
+      "name": "Abigail",
+      "email": "al181@rice.edu",
+      "phone": "6145997034",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 141,
+      "matched_with_emails": [
+
+      ]
+    },
+    "am307@rice.edu": {
+      "key": "am307@rice.edu",
+      "name": "Anjali Mathew",
+      "email": "am307@rice.edu",
+      "phone": "6508851185",
+      "grade": null,
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 142,
+      "matched_with_emails": [
+
+      ]
+    },
+    "rohanamin0807@gmail.com": {
+      "key": "rohanamin0807@gmail.com",
+      "name": "Rohan Amin",
+      "email": "rohanamin0807@gmail.com",
+      "phone": "3109122346",
+      "grade": null,
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 146,
+      "matched_with_emails": [
+
+      ]
+    },
+    "aishwarya.ramasubramanian@rice.edu": {
+      "key": "aishwarya.ramasubramanian@rice.edu",
+      "name": "Aishwarya Ramasubramanian",
+      "email": "aishwarya.ramasubramanian@rice.edu",
+      "phone": "9495655491",
+      "grade": "Female",
+      "gender": "Male",
+      "gender_preferences": [
+
+      ],
+      "school": "Exploring new places",
+      "ideal_friday": "Logic",
+      "decision_guide": "Plan",
+      "plan_spontaneous": "Extremely important",
+      "fitness_importance": "Humor",
+      "important_value": "Yes",
+      "reading": "completed",
+      "checked_in": true,
+      "wristband_number": 144,
+      "matched_with_emails": [
+
+      ]
+    },
+    "sb278@rice.edu": {
+      "key": "sb278@rice.edu",
+      "name": "Saul Brauns",
+      "email": "sb278@rice.edu",
+      "phone": "16466236536",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Unknown",
+      "ideal_friday": "Unknown",
+      "decision_guide": "Unknown",
+      "plan_spontaneous": "Unknown",
+      "fitness_importance": "Unknown",
+      "important_value": "Unknown",
+      "reading": "Unknown",
+      "checked_in": true,
+      "wristband_number": 200,
+      "matched_with_emails": [
+
+      ]
+    }
+  },
+  "next_wristband_number": 147,
+  "last_operation": "check_in",
+  "last_updated": "2026-02-05T19:54:36Z",
+  "next_walkin_wristband_number": 201
+}
