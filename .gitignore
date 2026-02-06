@@ -4,3 +4,4 @@ node_modules/
 .DS_Store
 matches_display.html
 bridge_state.json
+.last_push_timestamp
