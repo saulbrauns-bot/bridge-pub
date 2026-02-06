@@ -1544,10 +1544,10 @@ def test_send_to_my_number
   puts "🧪 TEST MODE - SEND TO #{test_phone} ONLY"
   puts "=" * 60
 
-  puts "\n⚠️  SAFETY CHECKS:"
-  puts "  ✓ Messages will ONLY be sent to: #{test_phone}"
-  puts "  ✓ NO other numbers will receive messages"
-  puts "  ✓ This is for testing Twilio integration"
+  puts "\n⚠️  EXTREME SAFETY CHECKS:"
+  puts "  ✓ ALL messages will ONLY be sent to: #{test_phone}"
+  puts "  ✓ NO other numbers will EVER receive messages"
+  puts "  ✓ This simulates real batch sending for testing"
 
   # Check for Twilio credentials
   unless ENV['TWILIO_ACCOUNT_SID'] && ENV['TWILIO_AUTH_TOKEN'] && ENV['TWILIO_PHONE_NUMBER']
@@ -1571,33 +1571,54 @@ def test_send_to_my_number
   batch = unsent_batches.last
   matches = batch['matches']
 
-  puts "\nBatch ##{batch['batch_number']} - #{matches.size} matches"
-  puts "Will send test messages showing different match types to #{test_phone}"
+  puts "\nBatch ##{batch['batch_number']} - #{matches.size} total matches available"
 
-  # Show examples of what will be sent
-  romantic_match = matches.find { |m| m['type'] == 'romantic' }
-  friend_match = matches.find { |m| m['type'] == 'friend' }
+  # Ask how many matches to test
+  puts "\n" + "=" * 60
+  print "How many MATCHES to send as test? (1-#{matches.size}): "
+  count = gets.chomp.to_i
 
-  puts "\nTest messages that will be sent:"
-  if romantic_match
-    puts "\n1. Romantic match example:"
-    puts "   To: #{test_phone}"
-    puts "   Message: \"Your Bridge match is ##{romantic_match['person_b_wristband']}!\""
+  if count < 1 || count > matches.size
+    puts "\n✗ Invalid number. Must be between 1 and #{matches.size}"
+    return
   end
 
-  if friend_match
-    puts "\n2. Friend match example:"
-    puts "   To: #{test_phone}"
-    puts "   Message: \"We didn't find a romantic interest for you this round, but you'd make great friends with ##{friend_match['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
+  # Calculate total messages (each match = 2 messages)
+  total_messages = count * 2
+  test_matches = matches.take(count)
+
+  puts "\n📊 TEST SUMMARY:"
+  puts "  Matches to send: #{count}"
+  puts "  Total messages: #{total_messages} (each match sends to 2 people)"
+  puts "  All messages go to: #{test_phone}"
+  puts "  NO real participants will be contacted"
+
+  # Show breakdown
+  romantic_count = test_matches.count { |m| m['type'] == 'romantic' }
+  friend_count = test_matches.count { |m| m['type'] == 'friend' }
+  puts "\n  Match types:"
+  puts "    Romantic: #{romantic_count}"
+  puts "    Friend: #{friend_count}"
+
+  # Show message preview
+  if test_matches.first
+    m = test_matches.first
+    puts "\n📱 FIRST MESSAGE PREVIEW:"
+    if m['type'] == 'romantic'
+      puts "  \"[TEST] Your Bridge match is ##{m['person_b_wristband']}!\""
+    else
+      puts "  \"[TEST] We didn't find a romantic interest for you this round, but you'd make great friends with ##{m['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
+    end
   end
 
   puts "\n" + "=" * 60
   puts "🔒 FINAL SAFETY CONFIRMATION"
   puts "=" * 60
-  print "\nType 'TEST #{test_phone}' to confirm (case sensitive): "
+  puts "You are about to send #{total_messages} messages to #{test_phone}"
+  print "\nType 'SEND #{count} TEST' to confirm (case sensitive): "
   confirm = gets.chomp
 
-  unless confirm == "TEST #{test_phone}"
+  unless confirm == "SEND #{count} TEST"
     puts "\n✗ Confirmation failed. No messages sent."
     return
   end
@@ -1617,50 +1638,77 @@ def test_send_to_my_number
     ENV['TWILIO_AUTH_TOKEN']
   )
 
-  puts "\nSending test messages to #{test_phone}..."
+  puts "\n🚀 Sending #{total_messages} test messages to #{test_phone}..."
+  puts "Press Ctrl+C to stop\n\n"
+
   sent = 0
+  failed = 0
 
-  # Send romantic example if available
-  if romantic_match
-    message = "Your Bridge match is ##{romantic_match['person_b_wristband']}!"
+  test_matches.each_with_index do |match, idx|
+    # Send to person A (goes to test_phone)
+    message_a = if match['type'] == 'romantic'
+      "Your Bridge match is ##{match['person_b_wristband']}!"
+    else
+      "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
+    end
+
     begin
       # TRIPLE CHECK: Only send to test_phone
       if test_phone == '+16466236536'
         client.messages.create(
           from: ENV['TWILIO_PHONE_NUMBER'],
           to: test_phone,
-          body: "[TEST] #{message}"
+          body: "[TEST #{idx+1}A] #{message_a}"
         )
         sent += 1
-        puts "✓ Sent romantic match test"
+        print "."
       end
     rescue => e
-      puts "✗ Failed: #{e.message}"
+      puts "\n✗ Failed message #{idx+1}A: #{e.message}"
+      failed += 1
     end
-    sleep 1
-  end
 
-  # Send friend example if available
-  if friend_match
-    message = "We didn't find a romantic interest for you this round, but you'd make great friends with ##{friend_match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
+    sleep 0.5  # Small delay between messages
+
+    # Send to person B (goes to test_phone)
+    message_b = if match['type'] == 'romantic'
+      "Your Bridge match is ##{match['person_a_wristband']}!"
+    else
+      "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_a_wristband']}! You'll be prioritized for a romantic match next round."
+    end
+
     begin
       # TRIPLE CHECK: Only send to test_phone
       if test_phone == '+16466236536'
         client.messages.create(
           from: ENV['TWILIO_PHONE_NUMBER'],
           to: test_phone,
-          body: "[TEST] #{message}"
+          body: "[TEST #{idx+1}B] #{message_b}"
         )
         sent += 1
-        puts "✓ Sent friend match test"
+        print "."
       end
     rescue => e
-      puts "✗ Failed: #{e.message}"
+      puts "\n✗ Failed message #{idx+1}B: #{e.message}"
+      failed += 1
+    end
+
+    sleep 0.5  # Small delay between messages
+
+    # Progress update every 5 matches
+    if (idx + 1) % 5 == 0
+      puts "\n  Progress: #{idx + 1}/#{count} matches sent (#{sent} messages)"
     end
   end
 
-  puts "\n✓ Test complete - Sent #{sent} messages to #{test_phone}"
-  puts "  NO messages were sent to any other numbers"
+  puts "\n\n" + "=" * 60
+  puts "✅ TEST COMPLETE"
+  puts "=" * 60
+  puts "  Messages sent: #{sent}/#{total_messages}"
+  puts "  Failed: #{failed}"
+  puts "  All messages sent to: #{test_phone}"
+  puts "  NO real participants were contacted"
+  puts "\n💡 Check your phone (#{test_phone}) for the messages!"
 end
 
 # ============================================================================
