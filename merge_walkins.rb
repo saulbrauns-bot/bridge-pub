@@ -2,6 +2,15 @@
 require 'csv'
 require 'set'
 
+# Normalize phone number to exactly 10 digits (consistent with bridge_matcher.rb)
+# Handles country codes by taking last 10 digits
+def normalize_phone(phone)
+  return '' if phone.nil? || phone.empty?
+  digits = phone.to_s.gsub(/[^0-9]/, '')
+  # Always take last 10 digits to handle country codes like +1 or 1
+  digits.length >= 10 ? digits[-10..-1] : digits
+end
+
 MAIN_CSV = 'merged_participants.csv'
 WALKIN_CSV = 'walkin_test.csv'
 OUTPUT_CSV = 'merged_participants.csv'
@@ -19,7 +28,7 @@ puts "\nLoading #{MAIN_CSV}..."
 CSV.foreach(MAIN_CSV, headers: true) do |row|
   main_participants << row
   email = row['What is your student email?']&.strip&.downcase
-  phone = row['What is your phone number?']&.strip&.gsub(/[^0-9]/, '')
+  phone = normalize_phone(row['What is your phone number?'])
 
   main_emails.add(email) if email && !email.empty?
   main_phones.add(phone) if phone && !phone.empty?
@@ -43,7 +52,7 @@ CSV.foreach(WALKIN_CSV, headers: true) do |row|
 
   # Normalize for duplicate check
   email_normalized = email&.downcase || ''
-  phone_normalized = phone.gsub(/[^0-9]/, '')
+  phone_normalized = normalize_phone(phone)
 
   # Check for duplicates
   if main_emails.include?(email_normalized)
