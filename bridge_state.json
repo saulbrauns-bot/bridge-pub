@@ -1,6 +1,1180 @@
 {
   "match_batches": [
-
+    {
+      "batch_number": 1,
+      "generated_at": "2026-02-06T03:37:40Z",
+      "sent_at": null,
+      "matches": [
+        {
+          "person_a_email": "sc258@rice.edu",
+          "person_a_name": "Sarah Choi",
+          "person_a_wristband": 68,
+          "person_a_phone": "6825514222",
+          "person_b_email": "pab10@rice.edu",
+          "person_b_name": "Peter Butera",
+          "person_b_wristband": 190,
+          "person_b_phone": "2078774380",
+          "type": "romantic",
+          "compatibility_score": 125
+        },
+        {
+          "person_a_email": "lt65@rice.edu",
+          "person_a_name": "Laylee Taghizadeh",
+          "person_a_wristband": 25,
+          "person_a_phone": "8328581926",
+          "person_b_email": "dr101@rice.edu",
+          "person_b_name": "Daniel",
+          "person_b_wristband": 35,
+          "person_b_phone": "8304802158",
+          "type": "romantic",
+          "compatibility_score": 115
+        },
+        {
+          "person_a_email": "ok18@rice.edu",
+          "person_a_name": "Oliwia",
+          "person_a_wristband": 5,
+          "person_a_phone": "2817456536",
+          "person_b_email": "aj163@rice.edu",
+          "person_b_name": "AJ",
+          "person_b_wristband": 169,
+          "person_b_phone": "8324727395",
+          "type": "romantic",
+          "compatibility_score": 115
+        },
+        {
+          "person_a_email": "cz103@rice.edu",
+          "person_a_name": "claire",
+          "person_a_wristband": 33,
+          "person_a_phone": "9714726246",
+          "person_b_email": "Ar303@rice.edu",
+          "person_b_name": "Ansel",
+          "person_b_wristband": 185,
+          "person_b_phone": "4693869341",
+          "type": "romantic",
+          "compatibility_score": 115
+        },
+        {
+          "person_a_email": "Je58@rice.edu",
+          "person_a_name": "Jeswill Ewungkem",
+          "person_a_wristband": 2,
+          "person_a_phone": "4849048752",
+          "person_b_email": "eq6@rice.edu",
+          "person_b_name": "Emma Qian",
+          "person_b_wristband": 32,
+          "person_b_phone": "8328471001",
+          "type": "romantic",
+          "compatibility_score": 115
+        },
+        {
+          "person_a_email": "Cc321@rice.edu",
+          "person_a_name": "Coffey Collier",
+          "person_a_wristband": 13,
+          "person_a_phone": "4059208520",
+          "person_b_email": "od16@rice.edu",
+          "person_b_name": "Omkar",
+          "person_b_wristband": 149,
+          "person_b_phone": "4695580583",
+          "type": "romantic",
+          "compatibility_score": 115
+        },
+        {
+          "person_a_email": "Kc215@rice.edu",
+          "person_a_name": "Katie Czelusta",
+          "person_a_wristband": 10,
+          "person_a_phone": "2812023012",
+          "person_b_email": "At253@rice.edu",
+          "person_b_name": "Adam",
+          "person_b_wristband": 182,
+          "person_b_phone": "8032920205",
+          "type": "romantic",
+          "compatibility_score": 115
+        },
+        {
+          "person_a_email": "bh80@rice.edu",
+          "person_a_name": "Boyan Holt",
+          "person_a_wristband": 55,
+          "person_a_phone": "2065999945",
+          "person_b_email": "sg277@rice.edu",
+          "person_b_name": "Syna",
+          "person_b_wristband": 173,
+          "person_b_phone": "3463978756",
+          "type": "romantic",
+          "compatibility_score": 110
+        },
+        {
+          "person_a_email": "Js306@rice.edu",
+          "person_a_name": "Joe Slipper",
+          "person_a_wristband": 1,
+          "person_a_phone": "3464008926",
+          "person_b_email": "Nc100@rice.edu",
+          "person_b_name": "Niamh",
+          "person_b_wristband": 53,
+          "person_b_phone": "7135033237",
+          "type": "romantic",
+          "compatibility_score": 110
+        },
+        {
+          "person_a_email": "da120@rice.edu",
+          "person_a_name": "David Afflu",
+          "person_a_wristband": 3,
+          "person_a_phone": "2819052611",
+          "person_b_email": "Kitty.walters@rice.edu",
+          "person_b_name": "Kitty",
+          "person_b_wristband": 72,
+          "person_b_phone": "9016120030",
+          "type": "romantic",
+          "compatibility_score": 110
+        },
+        {
+          "person_a_email": "jy181@rice.edu",
+          "person_a_name": "Janie Ye",
+          "person_a_wristband": 46,
+          "person_a_phone": "7635014671",
+          "person_b_email": "mn108@rice.edu",
+          "person_b_name": "Muneeb Nazir",
+          "person_b_wristband": 154,
+          "person_b_phone": "9045971809",
+          "type": "romantic",
+          "compatibility_score": 110
+        },
+        {
+          "person_a_email": "low@rice.edu",
+          "person_a_name": "Edwin",
+          "person_a_wristband": 4,
+          "person_a_phone": "3465418757",
+          "person_b_email": "bv23@rice.edu",
+          "person_b_name": "Banesa",
+          "person_b_wristband": 9,
+          "person_b_phone": "5202526847",
+          "type": "romantic",
+          "compatibility_score": 110
+        },
+        {
+          "person_a_email": "akk7@rice.edu",
+          "person_a_name": "Aly Khanmohamed",
+          "person_a_wristband": 63,
+          "person_a_phone": "2102406807",
+          "person_b_email": "mp160@rice.edu",
+          "person_b_name": "Meera Priyan",
+          "person_b_wristband": 152,
+          "person_b_phone": "6467057747",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "ck52@rice.edu",
+          "person_a_name": "Christophe Kwizera",
+          "person_a_wristband": 57,
+          "person_a_phone": "8328676715",
+          "person_b_email": "mh120@rice.edu",
+          "person_b_name": "Mysha",
+          "person_b_wristband": 70,
+          "person_b_phone": "7133205718",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "jm323@rice.edu",
+          "person_a_name": "Judson McGinnes",
+          "person_a_wristband": 165,
+          "person_a_phone": "9154791704",
+          "person_b_email": "st162@rice.edu",
+          "person_b_name": "Saran Tugsjargal",
+          "person_b_wristband": 172,
+          "person_b_phone": "5106317530",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "cr116@rice.edu",
+          "person_a_name": "Cindy Ren",
+          "person_a_wristband": 52,
+          "person_a_phone": "8326729591",
+          "person_b_email": "aa537@rice.edu",
+          "person_b_name": "Atish Amistapur",
+          "person_b_wristband": 75,
+          "person_b_phone": "3468687575",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "mf106@rice.edu",
+          "person_a_name": "Maria Fernandez",
+          "person_a_wristband": 19,
+          "person_a_phone": "7867317132",
+          "person_b_email": "dc118@rice.edu",
+          "person_b_name": "Demetris Chrysostomou",
+          "person_b_wristband": 67,
+          "person_b_phone": "8328814225",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "am307@rice.edu",
+          "person_a_name": "Anjali Mathew",
+          "person_a_wristband": 140,
+          "person_a_phone": "6508851185",
+          "person_b_email": "oz6@rice.edu",
+          "person_b_name": "Oscar",
+          "person_b_wristband": 163,
+          "person_b_phone": "2487049826",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "jg270@rice.edu",
+          "person_a_name": "julia",
+          "person_a_wristband": 144,
+          "person_a_phone": "2147905210",
+          "person_b_email": "jyk2@rice.edu",
+          "person_b_name": "Jasper Katalevsky",
+          "person_b_wristband": 155,
+          "person_b_phone": "7205457393",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "as628@rice.edu",
+          "person_a_name": "Amelia Shoemaker",
+          "person_a_wristband": 54,
+          "person_a_phone": "7038874196",
+          "person_b_email": "cs282@rice.edu",
+          "person_b_name": "Carter Sakai",
+          "person_b_wristband": 138,
+          "person_b_phone": "6267106174",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "lw125@rice.edu",
+          "person_a_name": "Lilly Wu",
+          "person_a_wristband": 11,
+          "person_a_phone": "4084836458",
+          "person_b_email": "Kr75@rice.edu",
+          "person_b_name": "Krishna",
+          "person_b_wristband": 194,
+          "person_b_phone": "8089131004",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "ev35@rice.edu",
+          "person_a_name": "Emma Vogelsang",
+          "person_a_wristband": 146,
+          "person_a_phone": "8328909031",
+          "person_b_email": "cw237@rice.edu",
+          "person_b_name": "Chris Williams",
+          "person_b_wristband": 150,
+          "person_b_phone": "4699189597",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "Tm157@rice.edu",
+          "person_a_name": "Timothy Merrell",
+          "person_a_wristband": 186,
+          "person_a_phone": "9868887630",
+          "person_b_email": "md165@rice.edu",
+          "person_b_name": "Madison E. Daniels",
+          "person_b_wristband": 187,
+          "person_b_phone": "4807510938",
+          "type": "romantic",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "aa516@rice.edu",
+          "person_a_name": "Akanbelie Abagi",
+          "person_a_wristband": 76,
+          "person_a_phone": "8327072431",
+          "person_b_email": "rr153@rice.edu",
+          "person_b_name": "Rayhan Roy",
+          "person_b_wristband": 168,
+          "person_b_phone": "8327677899",
+          "type": "romantic",
+          "compatibility_score": 100
+        },
+        {
+          "person_a_email": "vk50@rice.edu",
+          "person_a_name": "Victoria Kozikowski",
+          "person_a_wristband": 143,
+          "person_a_phone": "7182080192",
+          "person_b_email": "zl167@rice.edu",
+          "person_b_name": "Murphy Li",
+          "person_b_wristband": 157,
+          "person_b_phone": "8325463726",
+          "type": "romantic",
+          "compatibility_score": 100
+        },
+        {
+          "person_a_email": "rw73@rice.edu",
+          "person_a_name": "Ruiyang Wu",
+          "person_a_wristband": 61,
+          "person_a_phone": "9193960207",
+          "person_b_email": "Ak252@rice.edu",
+          "person_b_name": "Annie",
+          "person_b_wristband": 170,
+          "person_b_phone": "7207719931",
+          "type": "romantic",
+          "compatibility_score": 100
+        },
+        {
+          "person_a_email": "zl202@rice.edu",
+          "person_a_name": "Allen Li",
+          "person_a_wristband": 51,
+          "person_a_phone": "2408105533",
+          "person_b_email": "jd222@rice.edu",
+          "person_b_name": "Jenny",
+          "person_b_wristband": 195,
+          "person_b_phone": "7138223187",
+          "type": "romantic",
+          "compatibility_score": 100
+        },
+        {
+          "person_a_email": "dss8@rice.edu",
+          "person_a_name": "Divya Shenoy",
+          "person_a_wristband": 175,
+          "person_a_phone": "2039792075",
+          "person_b_email": "is38@rice.edu",
+          "person_b_name": "Ismail",
+          "person_b_wristband": 188,
+          "person_b_phone": "7138247186",
+          "type": "romantic",
+          "compatibility_score": 100
+        },
+        {
+          "person_a_email": "div2@rice.edu",
+          "person_a_name": "David",
+          "person_a_wristband": 7,
+          "person_a_phone": "9083465132",
+          "person_b_email": "cw157@rice.edu",
+          "person_b_name": "Caelyn",
+          "person_b_wristband": 64,
+          "person_b_phone": "7133409953",
+          "type": "romantic",
+          "compatibility_score": 100
+        },
+        {
+          "person_a_email": "ab283@rice.edu",
+          "person_a_name": "Akim Bonhomme",
+          "person_a_wristband": 77,
+          "person_a_phone": "7864845683",
+          "person_b_email": "ar320@rice.edu",
+          "person_b_name": "Ana Catarina Santos",
+          "person_b_wristband": 96,
+          "person_b_phone": "7132617996",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "eh52@rice.edu",
+          "person_a_name": "Eisha Hemchand",
+          "person_a_wristband": 104,
+          "person_a_phone": "4693870092",
+          "person_b_email": "Bp66@rice.edu",
+          "person_b_name": "Ben Pearce",
+          "person_b_wristband": 174,
+          "person_b_phone": "3463029322",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "rs276@rice.edu",
+          "person_a_name": "Rachel Sinaiko",
+          "person_a_wristband": 162,
+          "person_a_phone": "9174562093",
+          "person_b_email": "al218@rice.edu",
+          "person_b_name": "Andrew Lansford",
+          "person_b_wristband": 191,
+          "person_b_phone": "8328029248",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "vc63@rice.edu",
+          "person_a_name": "Valentina",
+          "person_a_wristband": 166,
+          "person_a_phone": "4126397945",
+          "person_b_email": "Vv63@rice.edu",
+          "person_b_name": "Vishwas Vijayan",
+          "person_b_wristband": 179,
+          "person_b_phone": "4696865574",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "haidernadaf67@gmail.com",
+          "person_a_name": "haider",
+          "person_a_wristband": 23,
+          "person_a_phone": "9900768505",
+          "person_b_email": "ajg18@rice.edu",
+          "person_b_name": "Ashlee Glover",
+          "person_b_wristband": 27,
+          "person_b_phone": "7135851604",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "Bfb1@rice.edu",
+          "person_a_name": "Brandon Braccia",
+          "person_a_wristband": 93,
+          "person_a_phone": "5512255446",
+          "person_b_email": "sj163@rice.edu",
+          "person_b_name": "Shyla",
+          "person_b_wristband": 128,
+          "person_b_phone": "8328836560",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "qat1@rice.edu",
+          "person_a_name": "Quincy Tate",
+          "person_a_wristband": 176,
+          "person_a_phone": "3195120104",
+          "person_b_email": "lr77@rice.edu",
+          "person_b_name": "Lakshanyaa Rajkumar",
+          "person_b_wristband": 180,
+          "person_b_phone": "9033905773",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "kc211@rice.edu",
+          "person_a_name": "Kaylee Cooper",
+          "person_a_wristband": 112,
+          "person_a_phone": "3617038664",
+          "person_b_email": "dg122@rice.edu",
+          "person_b_name": "David",
+          "person_b_wristband": 156,
+          "person_b_phone": "8473161716",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "Jf162@rice.edu",
+          "person_a_name": "Jack",
+          "person_a_wristband": 17,
+          "person_a_phone": "4705223018",
+          "person_b_email": "kr88@rice.edu",
+          "person_b_name": "Kate Ryan",
+          "person_b_wristband": 20,
+          "person_b_phone": "8456822007",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "aj110@rice.edu",
+          "person_a_name": "amaya j",
+          "person_a_wristband": 6,
+          "person_a_phone": "8037673603",
+          "person_b_email": "nc75@rice.edu",
+          "person_b_name": "Nikita Chowdree",
+          "person_b_wristband": 40,
+          "person_b_phone": "8329853904",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "sk283@rice.edu",
+          "person_a_name": "Sohee Kim",
+          "person_a_wristband": 14,
+          "person_a_phone": "8317177869",
+          "person_b_email": "jg186@rice.edu",
+          "person_b_name": "Jose Noriega",
+          "person_b_wristband": 59,
+          "person_b_phone": "8582149229",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "Bd63@rice.edu",
+          "person_a_name": "Bianca Dotson",
+          "person_a_wristband": 22,
+          "person_a_phone": "4804943593",
+          "person_b_email": "hc103@rice.edu",
+          "person_b_name": "Hemesh Chadalavada",
+          "person_b_wristband": 78,
+          "person_b_phone": "4014367744",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "ayp2@rice.edu",
+          "person_a_name": "Aanika Porras",
+          "person_a_wristband": 148,
+          "person_a_phone": "4085934059",
+          "person_b_email": "jl368@rice.edu",
+          "person_b_name": "jack li",
+          "person_b_wristband": 164,
+          "person_b_phone": "8322028708",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "cet3@rice.edu",
+          "person_a_name": "Carson Talbott",
+          "person_a_wristband": 43,
+          "person_a_phone": "2026571223",
+          "person_b_email": "Kd56@rice.edu",
+          "person_b_name": "Kate Doherty",
+          "person_b_wristband": 73,
+          "person_b_phone": "5404243874",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "ik52@rice.edu",
+          "person_a_name": "Isaac Koffi-Moyet",
+          "person_a_wristband": 60,
+          "person_a_phone": "4439298719",
+          "person_b_email": "dh108@rice.edu",
+          "person_b_name": "Daniela",
+          "person_b_wristband": 192,
+          "person_b_phone": "7188728286",
+          "type": "romantic",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "Jp231@rice.edu",
+          "person_a_name": "Jake Pessin",
+          "person_a_wristband": 133,
+          "person_a_phone": "8184291619",
+          "person_b_email": "al181@rice.edu",
+          "person_b_name": "Abigail",
+          "person_b_wristband": 139,
+          "person_b_phone": "6145997034",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "ak285@rice.edu",
+          "person_a_name": "Arben",
+          "person_a_wristband": 12,
+          "person_a_phone": "7132068798",
+          "person_b_email": "rd103@rice.edu",
+          "person_b_name": "Renee Duan",
+          "person_b_wristband": 88,
+          "person_b_phone": "9259894172",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "ir33@rice.edu",
+          "person_a_name": "Ian Rodriguez",
+          "person_a_wristband": 69,
+          "person_a_phone": "8302009312",
+          "person_b_email": "rc183@rice.edu",
+          "person_b_name": "Ria Chauhan",
+          "person_b_wristband": 98,
+          "person_b_phone": "2016009446",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "sz122@rice.edu",
+          "person_a_name": "Steve Zhang",
+          "person_a_wristband": 16,
+          "person_a_phone": "8588666257",
+          "person_b_email": "tk78@rice.edu",
+          "person_b_name": "Tarini Khemlani",
+          "person_b_wristband": 167,
+          "person_b_phone": "7133598995",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "Im61@rice.edu",
+          "person_a_name": "Ishanel Martinez",
+          "person_a_wristband": 15,
+          "person_a_phone": "5303704668",
+          "person_b_email": "cz85@rice.edu",
+          "person_b_name": "Christopher Zhao",
+          "person_b_wristband": 158,
+          "person_b_phone": "6122866860",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "Pr33@rice.edu",
+          "person_a_name": "Peter Ren",
+          "person_a_wristband": 90,
+          "person_a_phone": "7328610862",
+          "person_b_email": "mw205@rice.edu",
+          "person_b_name": "Marjorie Wang",
+          "person_b_wristband": 137,
+          "person_b_phone": "3466382665",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "pb52@rice.edu",
+          "person_a_name": "Patrick",
+          "person_a_wristband": 30,
+          "person_a_phone": "7133808904",
+          "person_b_email": "Lil3@rice.edu",
+          "person_b_name": "Lena",
+          "person_b_wristband": 65,
+          "person_b_phone": "8327029332",
+          "type": "romantic",
+          "compatibility_score": 90
+        },
+        {
+          "person_a_email": "Egy1@rice.edu",
+          "person_a_name": "Eliana Yared",
+          "person_a_wristband": 81,
+          "person_a_phone": "4692225748",
+          "person_b_email": "Lk70@rice.edu",
+          "person_b_name": "Logan Koplovitz",
+          "person_b_wristband": 109,
+          "person_b_phone": "9709228201",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "lpf2@rice.edu",
+          "person_a_name": "Lindsey Frost",
+          "person_a_wristband": 126,
+          "person_a_phone": "7605665151",
+          "person_b_email": "md163@rice.edu",
+          "person_b_name": "Marco de Azevedo Soares",
+          "person_b_wristband": 147,
+          "person_b_phone": "2039181997",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "jma21@rice.edu",
+          "person_a_name": "Jacob Andreini",
+          "person_a_wristband": 28,
+          "person_a_phone": "2162808750",
+          "person_b_email": "Il36@rice.edu",
+          "person_b_name": "Izzy Leyton",
+          "person_b_wristband": 102,
+          "person_b_phone": "9178166450",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "vz10@rice.edu",
+          "person_a_name": "Veronica",
+          "person_a_wristband": 101,
+          "person_a_phone": "6502406256",
+          "person_b_email": "do32@rice.edu",
+          "person_b_name": "Diego Ojeda Villavicencio",
+          "person_b_wristband": 132,
+          "person_b_phone": "7135628858",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "bursar@rice.edu",
+          "person_a_name": "Johannes Von Chudling",
+          "person_a_wristband": 38,
+          "person_a_phone": "7133484946",
+          "person_b_email": "nr80@rice.edu",
+          "person_b_name": "Nithya Ravi",
+          "person_b_wristband": 58,
+          "person_b_phone": "3467638766",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "Sc367@rice.edu",
+          "person_a_name": "Satina Chen",
+          "person_a_wristband": 94,
+          "person_a_phone": "3475309306",
+          "person_b_email": "ma233@rice.edu",
+          "person_b_name": "Mehmet Acikel",
+          "person_b_wristband": 129,
+          "person_b_phone": "7324745133",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "lw123@rice.edu",
+          "person_a_name": "Lauren Wright",
+          "person_a_wristband": 34,
+          "person_a_phone": "4705802776",
+          "person_b_email": "thankyou@rice.edu",
+          "person_b_name": "John Kennedy but they call me Jack",
+          "person_b_wristband": 122,
+          "person_b_phone": "2819469429",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "sv85@rice.edu",
+          "person_a_name": "Sarah Vohra",
+          "person_a_wristband": 18,
+          "person_a_phone": "4088051406",
+          "person_b_email": "nk101@rice.edu",
+          "person_b_name": "Noah Kaufman",
+          "person_b_wristband": 37,
+          "person_b_phone": "3104290373",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "sw157@rice.edu",
+          "person_a_name": "Samuel Wen",
+          "person_a_wristband": 85,
+          "person_a_phone": "8178971209",
+          "person_b_email": "al278@rice.edu",
+          "person_b_name": "Andria",
+          "person_b_wristband": 107,
+          "person_b_phone": "2817458939",
+          "type": "romantic",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "ew82@rice.edu",
+          "person_a_name": "Elaine Wang",
+          "person_a_wristband": 110,
+          "person_a_phone": "8328106666",
+          "person_b_email": "is53@rice.edu",
+          "person_b_name": "Ian",
+          "person_b_wristband": 119,
+          "person_b_phone": "902184475",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "wv5@rice.edu",
+          "person_a_name": "William Volen",
+          "person_a_wristband": 31,
+          "person_a_phone": "9048085466",
+          "person_b_email": "aishwarya.ramasubramanian@rice.edu",
+          "person_b_name": "Aishwarya Ramasubramanian",
+          "person_b_wristband": 142,
+          "person_b_phone": "9495655491",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "mk233@rice.edu",
+          "person_a_name": "Mason Kresloff",
+          "person_a_wristband": 84,
+          "person_a_phone": "8562662411",
+          "person_b_email": "ey27@rice.edu",
+          "person_b_name": "Emma Young",
+          "person_b_wristband": 114,
+          "person_b_phone": "2079397711",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "nt57@rice.edu",
+          "person_a_name": "Nailya",
+          "person_a_wristband": 48,
+          "person_a_phone": "3464079040",
+          "person_b_email": "ma201@rice.edu",
+          "person_b_name": "Marcelino Alaniz",
+          "person_b_wristband": 66,
+          "person_b_phone": "2815092678",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "as658@rice.edu",
+          "person_a_name": "Auden Smith",
+          "person_a_wristband": 183,
+          "person_a_phone": "8327716813",
+          "person_b_email": "Wc73@rice.edu",
+          "person_b_name": "Warren Chang",
+          "person_b_wristband": 189,
+          "person_b_phone": "3464203934",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "mb275@rice.edu",
+          "person_a_name": "Marcus Bewtra",
+          "person_a_wristband": 44,
+          "person_a_phone": "9175244418",
+          "person_b_email": "ar306@rice.edu",
+          "person_b_name": "Andrew Rynsburger",
+          "person_b_wristband": 49,
+          "person_b_phone": "6162519862",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "ky63@rice.edu",
+          "person_a_name": "Katharine Yao",
+          "person_a_wristband": 113,
+          "person_a_phone": "8325340905",
+          "person_b_email": "Ip31@rice.edu",
+          "person_b_name": "Isaias Palacios",
+          "person_b_wristband": 134,
+          "person_b_phone": "7733010781",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "au23@rice.edu",
+          "person_a_name": "Ali Usman",
+          "person_a_wristband": 26,
+          "person_a_phone": "2248069445",
+          "person_b_email": "js505@gmail.com",
+          "person_b_name": "Jane Story",
+          "person_b_wristband": 184,
+          "person_b_phone": "7155442062",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "hl203@rice.edu",
+          "person_a_name": "Hayden Lucas",
+          "person_a_wristband": 108,
+          "person_a_phone": "2128776217",
+          "person_b_email": "aa510@rice.edu",
+          "person_b_name": "Amiya",
+          "person_b_wristband": 117,
+          "person_b_phone": "4804079900",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "lh70@rice.edu",
+          "person_a_name": "Lily Hestjean",
+          "person_a_wristband": 36,
+          "person_a_phone": "3127233954",
+          "person_b_email": "ngarg@rice.edu",
+          "person_b_name": "Nilesh Garg",
+          "person_b_wristband": 177,
+          "person_b_phone": "8327925633",
+          "type": "romantic",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "am531@rice.edu",
+          "person_a_name": "amanda",
+          "person_a_wristband": 105,
+          "person_a_phone": "4435000318",
+          "person_b_email": "aar11@rice.edu",
+          "person_b_name": "Avery Richardson",
+          "person_b_wristband": 151,
+          "person_b_phone": "8303699517",
+          "type": "romantic",
+          "compatibility_score": 75
+        },
+        {
+          "person_a_email": "cm233@rice.edu",
+          "person_a_name": "Chae",
+          "person_a_wristband": 79,
+          "person_a_phone": "7135189356",
+          "person_b_email": "aa552@rice.edu",
+          "person_b_name": "Alex Aguila",
+          "person_b_wristband": 80,
+          "person_b_phone": "7863986966",
+          "type": "romantic",
+          "compatibility_score": 75
+        },
+        {
+          "person_a_email": "kks8@rice.edu",
+          "person_a_name": "Keshav",
+          "person_a_wristband": 45,
+          "person_a_phone": "2816449320",
+          "person_b_email": "er106@rice.edu",
+          "person_b_name": "Evelyn Rodriguez",
+          "person_b_wristband": 87,
+          "person_b_phone": "4693759614",
+          "type": "romantic",
+          "compatibility_score": 75
+        },
+        {
+          "person_a_email": "ab285@rice.edu",
+          "person_a_name": "Ankit Burudgunte",
+          "person_a_wristband": 160,
+          "person_a_phone": "8325426518",
+          "person_b_email": "ap223@rice.edu",
+          "person_b_name": "Amay Parmar",
+          "person_b_wristband": 161,
+          "person_b_phone": "2092899166",
+          "type": "romantic",
+          "compatibility_score": 70
+        },
+        {
+          "person_a_email": "Bld3@rice.edu",
+          "person_a_name": "Brady Detwiler",
+          "person_a_wristband": 47,
+          "person_a_phone": "4842198733",
+          "person_b_email": "mg225@rice.edu",
+          "person_b_name": "Marilyn Gan",
+          "person_b_wristband": 159,
+          "person_b_phone": "6265586696",
+          "type": "romantic",
+          "compatibility_score": 70
+        },
+        {
+          "person_a_email": "Lr62@rice.edu",
+          "person_a_name": "Leo",
+          "person_a_wristband": 99,
+          "person_a_phone": "2147724908",
+          "person_b_email": "ap280@rice.edu",
+          "person_b_name": "Alyssa Jane",
+          "person_b_wristband": 118,
+          "person_b_phone": "8584149316",
+          "type": "romantic",
+          "compatibility_score": 65
+        },
+        {
+          "person_a_email": "Jg272@rice.edu",
+          "person_a_name": "Jayden Greicius",
+          "person_a_wristband": 21,
+          "person_a_phone": "7204831175",
+          "person_b_email": "sz122@gmail.com",
+          "person_b_name": "Steve Zhang",
+          "person_b_wristband": 83,
+          "person_b_phone": "8588666257",
+          "type": "romantic",
+          "compatibility_score": 65
+        },
+        {
+          "person_a_email": "lj33@rice.edu",
+          "person_a_name": "Lukas",
+          "person_a_wristband": 39,
+          "person_a_phone": "8303605649",
+          "person_b_email": "ob25@rice.edu",
+          "person_b_name": "Oliver Boyden",
+          "person_b_wristband": 106,
+          "person_b_phone": "4148757945",
+          "type": "romantic",
+          "compatibility_score": 65
+        },
+        {
+          "person_a_email": "ea87@rice.edu",
+          "person_a_name": "Enrique",
+          "person_a_wristband": 89,
+          "person_a_phone": "7874150922",
+          "person_b_email": "al277@rice.edu",
+          "person_b_name": "Anne Lu",
+          "person_b_wristband": 130,
+          "person_b_phone": "6019279628",
+          "type": "romantic",
+          "compatibility_score": 65
+        },
+        {
+          "person_a_email": "cy66@rice.edu",
+          "person_a_name": "Chetan Yenigalla",
+          "person_a_wristband": 8,
+          "person_a_phone": "6292446357",
+          "person_b_email": "ns123@rice.edu",
+          "person_b_name": "Navika Sonig",
+          "person_b_wristband": 153,
+          "person_b_phone": "6094541800",
+          "type": "romantic",
+          "compatibility_score": 60
+        },
+        {
+          "person_a_email": "lg106@rice.edu",
+          "person_a_name": "Lucie",
+          "person_a_wristband": 86,
+          "person_a_phone": "2816029933",
+          "person_b_email": "Aa511@rice.edu",
+          "person_b_name": "Asher Anantham",
+          "person_b_wristband": 120,
+          "person_b_phone": "2407818900",
+          "type": "romantic",
+          "compatibility_score": 55
+        },
+        {
+          "person_a_email": "rb200@rice.edu",
+          "person_a_name": "Rafael Botran",
+          "person_a_wristband": 24,
+          "person_a_phone": "7868906076",
+          "person_b_email": "km108@rice.edu",
+          "person_b_name": "Kenny Manning",
+          "person_b_wristband": 62,
+          "person_b_phone": "5084986268",
+          "type": "friend",
+          "compatibility_score": 110
+        },
+        {
+          "person_a_email": "rs225@rice.edu",
+          "person_a_name": "Rutledge Sander",
+          "person_a_wristband": 95,
+          "person_a_phone": "8439260728",
+          "person_b_email": "ig52@rice.edu",
+          "person_b_name": "Isaiah Green",
+          "person_b_wristband": 123,
+          "person_b_phone": "7027647648",
+          "type": "friend",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "er85@rice.edu",
+          "person_a_name": "Emilio Reza",
+          "person_a_wristband": 71,
+          "person_a_phone": "6822703347",
+          "person_b_email": "vw20",
+          "person_b_name": "Vivian",
+          "person_b_wristband": 181,
+          "person_b_phone": "3465623288",
+          "type": "friend",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "vt20",
+          "person_a_name": "Aneesh",
+          "person_a_wristband": 82,
+          "person_a_phone": "3465655209",
+          "person_b_email": "suhasnarra@gmail.com",
+          "person_b_name": "Suhas Narra",
+          "person_b_wristband": 136,
+          "person_b_phone": "8142186068",
+          "type": "friend",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "rw66@rice.edu",
+          "person_a_name": "Ruohan Wang",
+          "person_a_wristband": 56,
+          "person_a_phone": "4243848551",
+          "person_b_email": "abv3@rice.edu",
+          "person_b_name": "Adam Vuong",
+          "person_b_wristband": 178,
+          "person_b_phone": "3059227052",
+          "type": "friend",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "sg283@rice.edu",
+          "person_a_name": "Saahith Garg",
+          "person_a_wristband": 111,
+          "person_a_phone": "8326232480",
+          "person_b_email": "cz105@rice.edu",
+          "person_b_name": "Caden",
+          "person_b_wristband": 193,
+          "person_b_phone": "7032325680",
+          "type": "friend",
+          "compatibility_score": 105
+        },
+        {
+          "person_a_email": "jw300@rice.edu",
+          "person_a_name": "James",
+          "person_a_wristband": 42,
+          "person_a_phone": "7132890315",
+          "person_b_email": "rohanamin0807@gmail.com",
+          "person_b_name": "Rohan Amin",
+          "person_b_wristband": 141,
+          "person_b_phone": "3109122346",
+          "type": "friend",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "nmo1@rice.edu",
+          "person_a_name": "Noah Oh",
+          "person_a_wristband": 50,
+          "person_a_phone": "2015662805",
+          "person_b_email": "Vv35@rice.edu",
+          "person_b_name": "Aspen Viamontes",
+          "person_b_wristband": 125,
+          "person_b_phone": "3469782260",
+          "type": "friend",
+          "compatibility_score": 95
+        },
+        {
+          "person_a_email": "ko18@rice.edu",
+          "person_a_name": "Kosi Onwuamaegbu",
+          "person_a_wristband": 41,
+          "person_a_phone": "3014124233",
+          "person_b_email": "np86@rice.edu",
+          "person_b_name": "Neil Patel",
+          "person_b_wristband": 171,
+          "person_b_phone": "7203883121",
+          "type": "friend",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "as373@rice.edu",
+          "person_a_name": "Arhan Sankhla",
+          "person_a_wristband": 29,
+          "person_a_phone": "4808683156",
+          "person_b_email": "rs168@rice.edu",
+          "person_b_name": "Rahul Santhanam",
+          "person_b_wristband": 103,
+          "person_b_phone": "6504009202",
+          "type": "friend",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "Jh321@rice.edu",
+          "person_a_name": "Joshua Hernandez",
+          "person_a_wristband": 92,
+          "person_a_phone": "7705390185",
+          "person_b_email": "mt182@rice.edu",
+          "person_b_name": "Mark",
+          "person_b_wristband": 116,
+          "person_b_phone": "9739315357",
+          "type": "friend",
+          "compatibility_score": 85
+        },
+        {
+          "person_a_email": "jk216@rice.edu",
+          "person_a_name": "Jacob Lee King",
+          "person_a_wristband": 124,
+          "person_a_phone": "8302209995",
+          "person_b_email": "Mjr16@rice.edu",
+          "person_b_name": "Matthew Ramos",
+          "person_b_wristband": 131,
+          "person_b_phone": "2019720080",
+          "type": "friend",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "zk31@rice.edu",
+          "person_a_name": "Zain",
+          "person_a_wristband": 91,
+          "person_a_phone": "2028551012",
+          "person_b_email": "hw106@rice.edu",
+          "person_b_name": "Harrison White",
+          "person_b_wristband": 127,
+          "person_b_phone": "2395723842",
+          "type": "friend",
+          "compatibility_score": 80
+        },
+        {
+          "person_a_email": "gm63@rice.edu",
+          "person_a_name": "Geovanny Melgar",
+          "person_a_wristband": 74,
+          "person_a_phone": "8328550471",
+          "person_b_email": "cg165@rice.edu",
+          "person_b_name": "Carlos Gonzalez",
+          "person_b_wristband": 100,
+          "person_b_phone": "8323584624",
+          "type": "friend",
+          "compatibility_score": 70
+        },
+        {
+          "person_a_email": "rg64@rice.edu",
+          "person_a_name": "Rodolfo Garcia",
+          "person_a_wristband": 97,
+          "person_a_phone": "8062403914",
+          "person_b_email": "sl206@rice.edu",
+          "person_b_name": "Steven Luo",
+          "person_b_wristband": 135,
+          "person_b_phone": "9787605708",
+          "type": "friend",
+          "compatibility_score": 70
+        },
+        {
+          "person_a_email": "ah276@rice.edu",
+          "person_a_name": "Andrew Han",
+          "person_a_wristband": 115,
+          "person_a_phone": "7378950546",
+          "person_b_email": "me83@rice.edu",
+          "person_b_name": "Hassan",
+          "person_b_wristband": 145,
+          "person_b_phone": "3467754510",
+          "person_c_email": "bk62@rice.edu",
+          "person_c_name": "Benjamin Casey Kwait-Gonchar the Third",
+          "person_c_wristband": 121,
+          "person_c_phone": "9172141943",
+          "type": "friend_group_of_3",
+          "compatibility_score": 0
+        }
+      ]
+    }
   ],
   "participants": {
     "Js306@rice.edu": {
@@ -14,17 +1188,19 @@
         "Female"
       ],
       "school": "Business",
-      "ideal_friday": "Exploring new places",
+      "ideal_friday": "Attending a big party",
       "decision_guide": "Emotion",
       "plan_spontaneous": "Spontaneous",
       "fitness_importance": "Extremely important",
       "important_value": "Humor",
-      "reading": "No",
+      "reading": "Yes",
       "checked_in": true,
       "wristband_number": 1,
       "matched_with_emails": [
-
-      ]
+        "Nc100@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Je58@rice.edu": {
       "key": "Je58@rice.edu",
@@ -46,8 +1222,10 @@
       "checked_in": true,
       "wristband_number": 2,
       "matched_with_emails": [
-
-      ]
+        "eq6@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "da120@rice.edu": {
       "key": "da120@rice.edu",
@@ -69,8 +1247,10 @@
       "checked_in": true,
       "wristband_number": 3,
       "matched_with_emails": [
-
-      ]
+        "Kitty.walters@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "low@rice.edu": {
       "key": "low@rice.edu",
@@ -92,8 +1272,10 @@
       "checked_in": true,
       "wristband_number": 4,
       "matched_with_emails": [
-
-      ]
+        "bv23@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ok18@rice.edu": {
       "key": "ok18@rice.edu",
@@ -115,8 +1297,10 @@
       "checked_in": true,
       "wristband_number": 5,
       "matched_with_emails": [
-
-      ]
+        "aj163@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "aj110@rice.edu": {
       "key": "aj110@rice.edu",
@@ -139,8 +1323,10 @@
       "checked_in": true,
       "wristband_number": 6,
       "matched_with_emails": [
-
-      ]
+        "nc75@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "div2@rice.edu": {
       "key": "div2@rice.edu",
@@ -162,8 +1348,10 @@
       "checked_in": true,
       "wristband_number": 7,
       "matched_with_emails": [
-
-      ]
+        "cw157@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cy66@rice.edu": {
       "key": "cy66@rice.edu",
@@ -185,8 +1373,10 @@
       "checked_in": true,
       "wristband_number": 8,
       "matched_with_emails": [
-
-      ]
+        "ns123@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "bv23@rice.edu": {
       "key": "bv23@rice.edu",
@@ -208,8 +1398,10 @@
       "checked_in": true,
       "wristband_number": 9,
       "matched_with_emails": [
-
-      ]
+        "low@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Kc215@rice.edu": {
       "key": "Kc215@rice.edu",
@@ -231,8 +1423,10 @@
       "checked_in": true,
       "wristband_number": 10,
       "matched_with_emails": [
-
-      ]
+        "At253@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lw125@rice.edu": {
       "key": "lw125@rice.edu",
@@ -254,8 +1448,10 @@
       "checked_in": true,
       "wristband_number": 11,
       "matched_with_emails": [
-
-      ]
+        "Kr75@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "ak285@rice.edu": {
       "key": "ak285@rice.edu",
@@ -277,8 +1473,10 @@
       "checked_in": true,
       "wristband_number": 12,
       "matched_with_emails": [
-
-      ]
+        "rd103@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "Cc321@rice.edu": {
       "key": "Cc321@rice.edu",
@@ -300,14 +1498,16 @@
       "checked_in": true,
       "wristband_number": 13,
       "matched_with_emails": [
-
-      ]
+        "od16@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "sk283@rice.edu": {
       "key": "sk283@rice.edu",
       "name": "Sohee Kim",
       "email": "sk283@rice.edu",
-      "phone": "831-717-7869",
+      "phone": "8317177869",
       "grade": "Sophomore",
       "gender": "Female",
       "gender_preferences": [
@@ -323,8 +1523,10 @@
       "checked_in": true,
       "wristband_number": 14,
       "matched_with_emails": [
-
-      ]
+        "jg186@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Im61@rice.edu": {
       "key": "Im61@rice.edu",
@@ -347,8 +1549,10 @@
       "checked_in": true,
       "wristband_number": 15,
       "matched_with_emails": [
-
-      ]
+        "cz85@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "sz122@rice.edu": {
       "key": "sz122@rice.edu",
@@ -370,8 +1574,10 @@
       "checked_in": true,
       "wristband_number": 16,
       "matched_with_emails": [
-
-      ]
+        "tk78@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Jf162@rice.edu": {
       "key": "Jf162@rice.edu",
@@ -393,8 +1599,10 @@
       "checked_in": true,
       "wristband_number": 17,
       "matched_with_emails": [
-
-      ]
+        "kr88@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "sv85@rice.edu": {
       "key": "sv85@rice.edu",
@@ -416,8 +1624,10 @@
       "checked_in": true,
       "wristband_number": 18,
       "matched_with_emails": [
-
-      ]
+        "nk101@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "mf106@rice.edu": {
       "key": "mf106@rice.edu",
@@ -439,8 +1649,10 @@
       "checked_in": true,
       "wristband_number": 19,
       "matched_with_emails": [
-
-      ]
+        "dc118@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "kr88@rice.edu": {
       "key": "kr88@rice.edu",
@@ -462,8 +1674,10 @@
       "checked_in": true,
       "wristband_number": 20,
       "matched_with_emails": [
-
-      ]
+        "Jf162@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Jg272@rice.edu": {
       "key": "Jg272@rice.edu",
@@ -485,8 +1699,10 @@
       "checked_in": true,
       "wristband_number": 21,
       "matched_with_emails": [
-
-      ]
+        "sz122@gmail.com"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Bd63@rice.edu": {
       "key": "Bd63@rice.edu",
@@ -508,14 +1724,16 @@
       "checked_in": true,
       "wristband_number": 22,
       "matched_with_emails": [
-
-      ]
+        "hc103@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "haidernadaf67@gmail.com": {
       "key": "haidernadaf67@gmail.com",
       "name": "haider",
       "email": "haidernadaf67@gmail.com",
-      "phone": "'+91 9900768505",
+      "phone": "9900768505",
       "grade": "Senior",
       "gender": "Male",
       "gender_preferences": [
@@ -531,8 +1749,10 @@
       "checked_in": true,
       "wristband_number": 23,
       "matched_with_emails": [
-
-      ]
+        "ajg18@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "rb200@rice.edu": {
       "key": "rb200@rice.edu",
@@ -554,8 +1774,10 @@
       "checked_in": true,
       "wristband_number": 24,
       "matched_with_emails": [
-
-      ]
+        "km108@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lt65@rice.edu": {
       "key": "lt65@rice.edu",
@@ -577,8 +1799,10 @@
       "checked_in": true,
       "wristband_number": 25,
       "matched_with_emails": [
-
-      ]
+        "dr101@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "au23@rice.edu": {
       "key": "au23@rice.edu",
@@ -600,8 +1824,10 @@
       "checked_in": true,
       "wristband_number": 26,
       "matched_with_emails": [
-
-      ]
+        "js505@gmail.com"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ajg18@rice.edu": {
       "key": "ajg18@rice.edu",
@@ -623,8 +1849,10 @@
       "checked_in": true,
       "wristband_number": 27,
       "matched_with_emails": [
-
-      ]
+        "haidernadaf67@gmail.com"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "jma21@rice.edu": {
       "key": "jma21@rice.edu",
@@ -646,8 +1874,10 @@
       "checked_in": true,
       "wristband_number": 28,
       "matched_with_emails": [
-
-      ]
+        "Il36@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "as373@rice.edu": {
       "key": "as373@rice.edu",
@@ -669,8 +1899,10 @@
       "checked_in": true,
       "wristband_number": 29,
       "matched_with_emails": [
-
-      ]
+        "rs168@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "pb52@rice.edu": {
       "key": "pb52@rice.edu",
@@ -692,8 +1924,10 @@
       "checked_in": true,
       "wristband_number": 30,
       "matched_with_emails": [
-
-      ]
+        "Lil3@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "wv5@rice.edu": {
       "key": "wv5@rice.edu",
@@ -715,8 +1949,10 @@
       "checked_in": true,
       "wristband_number": 31,
       "matched_with_emails": [
-
-      ]
+        "aishwarya.ramasubramanian@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "eq6@rice.edu": {
       "key": "eq6@rice.edu",
@@ -738,8 +1974,10 @@
       "checked_in": true,
       "wristband_number": 32,
       "matched_with_emails": [
-
-      ]
+        "Je58@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cz103@rice.edu": {
       "key": "cz103@rice.edu",
@@ -762,8 +2000,10 @@
       "checked_in": true,
       "wristband_number": 33,
       "matched_with_emails": [
-
-      ]
+        "Ar303@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lw123@rice.edu": {
       "key": "lw123@rice.edu",
@@ -785,8 +2025,10 @@
       "checked_in": true,
       "wristband_number": 34,
       "matched_with_emails": [
-
-      ]
+        "thankyou@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "dr101@rice.edu": {
       "key": "dr101@rice.edu",
@@ -808,8 +2050,10 @@
       "checked_in": true,
       "wristband_number": 35,
       "matched_with_emails": [
-
-      ]
+        "lt65@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lh70@rice.edu": {
       "key": "lh70@rice.edu",
@@ -831,8 +2075,10 @@
       "checked_in": true,
       "wristband_number": 36,
       "matched_with_emails": [
-
-      ]
+        "ngarg@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "nk101@rice.edu": {
       "key": "nk101@rice.edu",
@@ -854,8 +2100,10 @@
       "checked_in": true,
       "wristband_number": 37,
       "matched_with_emails": [
-
-      ]
+        "sv85@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "bursar@rice.edu": {
       "key": "bursar@rice.edu",
@@ -877,8 +2125,10 @@
       "checked_in": true,
       "wristband_number": 38,
       "matched_with_emails": [
-
-      ]
+        "nr80@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lj33@rice.edu": {
       "key": "lj33@rice.edu",
@@ -902,8 +2152,10 @@
       "checked_in": true,
       "wristband_number": 39,
       "matched_with_emails": [
-
-      ]
+        "ob25@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "nc75@rice.edu": {
       "key": "nc75@rice.edu",
@@ -925,8 +2177,10 @@
       "checked_in": true,
       "wristband_number": 40,
       "matched_with_emails": [
-
-      ]
+        "aj110@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ko18@rice.edu": {
       "key": "ko18@rice.edu",
@@ -948,8 +2202,10 @@
       "checked_in": true,
       "wristband_number": 41,
       "matched_with_emails": [
-
-      ]
+        "np86@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "jw300@rice.edu": {
       "key": "jw300@rice.edu",
@@ -971,8 +2227,10 @@
       "checked_in": true,
       "wristband_number": 42,
       "matched_with_emails": [
-
-      ]
+        "rohanamin0807@gmail.com"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cet3@rice.edu": {
       "key": "cet3@rice.edu",
@@ -994,8 +2252,10 @@
       "checked_in": true,
       "wristband_number": 43,
       "matched_with_emails": [
-
-      ]
+        "Kd56@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "mb275@rice.edu": {
       "key": "mb275@rice.edu",
@@ -1017,8 +2277,10 @@
       "checked_in": true,
       "wristband_number": 44,
       "matched_with_emails": [
-
-      ]
+        "ar306@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "kks8@rice.edu": {
       "key": "kks8@rice.edu",
@@ -1040,8 +2302,10 @@
       "checked_in": true,
       "wristband_number": 45,
       "matched_with_emails": [
-
-      ]
+        "er106@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "jy181@rice.edu": {
       "key": "jy181@rice.edu",
@@ -1063,8 +2327,10 @@
       "checked_in": true,
       "wristband_number": 46,
       "matched_with_emails": [
-
-      ]
+        "mn108@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Bld3@rice.edu": {
       "key": "Bld3@rice.edu",
@@ -1086,8 +2352,10 @@
       "checked_in": true,
       "wristband_number": 47,
       "matched_with_emails": [
-
-      ]
+        "mg225@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "nt57@rice.edu": {
       "key": "nt57@rice.edu",
@@ -1109,12 +2377,14 @@
       "checked_in": true,
       "wristband_number": 48,
       "matched_with_emails": [
-
-      ]
+        "ma201@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ar306@rice.edu": {
       "key": "ar306@rice.edu",
-      "name": "Andrew",
+      "name": "Andrew Rynsburger",
       "email": "ar306@rice.edu",
       "phone": "6162519862",
       "grade": "Freshman",
@@ -1132,8 +2402,10 @@
       "checked_in": true,
       "wristband_number": 49,
       "matched_with_emails": [
-
-      ]
+        "mb275@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "nmo1@rice.edu": {
       "key": "nmo1@rice.edu",
@@ -1155,8 +2427,10 @@
       "checked_in": true,
       "wristband_number": 50,
       "matched_with_emails": [
-
-      ]
+        "Vv35@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "zl202@rice.edu": {
       "key": "zl202@rice.edu",
@@ -1178,8 +2452,10 @@
       "checked_in": true,
       "wristband_number": 51,
       "matched_with_emails": [
-
-      ]
+        "jd222@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cr116@rice.edu": {
       "key": "cr116@rice.edu",
@@ -1201,8 +2477,10 @@
       "checked_in": true,
       "wristband_number": 52,
       "matched_with_emails": [
-
-      ]
+        "aa537@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Nc100@rice.edu": {
       "key": "Nc100@rice.edu",
@@ -1224,8 +2502,10 @@
       "checked_in": true,
       "wristband_number": 53,
       "matched_with_emails": [
-
-      ]
+        "Js306@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "as628@rice.edu": {
       "key": "as628@rice.edu",
@@ -1247,8 +2527,10 @@
       "checked_in": true,
       "wristband_number": 54,
       "matched_with_emails": [
-
-      ]
+        "cs282@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "bh80@rice.edu": {
       "key": "bh80@rice.edu",
@@ -1270,8 +2552,10 @@
       "checked_in": true,
       "wristband_number": 55,
       "matched_with_emails": [
-
-      ]
+        "sg277@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "rw66@rice.edu": {
       "key": "rw66@rice.edu",
@@ -1293,8 +2577,10 @@
       "checked_in": true,
       "wristband_number": 56,
       "matched_with_emails": [
-
-      ]
+        "abv3@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ck52@rice.edu": {
       "key": "ck52@rice.edu",
@@ -1316,8 +2602,10 @@
       "checked_in": true,
       "wristband_number": 57,
       "matched_with_emails": [
-
-      ]
+        "mh120@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "nr80@rice.edu": {
       "key": "nr80@rice.edu",
@@ -1339,8 +2627,10 @@
       "checked_in": true,
       "wristband_number": 58,
       "matched_with_emails": [
-
-      ]
+        "bursar@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "jg186@rice.edu": {
       "key": "jg186@rice.edu",
@@ -1362,8 +2652,10 @@
       "checked_in": true,
       "wristband_number": 59,
       "matched_with_emails": [
-
-      ]
+        "sk283@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ik52@rice.edu": {
       "key": "ik52@rice.edu",
@@ -1385,8 +2677,10 @@
       "checked_in": true,
       "wristband_number": 60,
       "matched_with_emails": [
-
-      ]
+        "dh108@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "rw73@rice.edu": {
       "key": "rw73@rice.edu",
@@ -1408,8 +2702,10 @@
       "checked_in": true,
       "wristband_number": 61,
       "matched_with_emails": [
-
-      ]
+        "Ak252@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "km108@rice.edu": {
       "key": "km108@rice.edu",
@@ -1431,8 +2727,10 @@
       "checked_in": true,
       "wristband_number": 62,
       "matched_with_emails": [
-
-      ]
+        "rb200@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "akk7@rice.edu": {
       "key": "akk7@rice.edu",
@@ -1454,8 +2752,10 @@
       "checked_in": true,
       "wristband_number": 63,
       "matched_with_emails": [
-
-      ]
+        "mp160@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cw157@rice.edu": {
       "key": "cw157@rice.edu",
@@ -1477,14 +2777,16 @@
       "checked_in": true,
       "wristband_number": 64,
       "matched_with_emails": [
-
-      ]
+        "div2@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Lil3@rice.edu": {
       "key": "Lil3@rice.edu",
       "name": "Lena",
       "email": "Lil3@rice.edu",
-      "phone": "832-702-9332",
+      "phone": "8327029332",
       "grade": "Junior",
       "gender": "Female",
       "gender_preferences": [
@@ -1500,8 +2802,10 @@
       "checked_in": true,
       "wristband_number": 65,
       "matched_with_emails": [
-
-      ]
+        "pb52@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ma201@rice.edu": {
       "key": "ma201@rice.edu",
@@ -1523,8 +2827,10 @@
       "checked_in": true,
       "wristband_number": 66,
       "matched_with_emails": [
-
-      ]
+        "nt57@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "dc118@rice.edu": {
       "key": "dc118@rice.edu",
@@ -1546,8 +2852,10 @@
       "checked_in": true,
       "wristband_number": 67,
       "matched_with_emails": [
-
-      ]
+        "mf106@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "sc258@rice.edu": {
       "key": "sc258@rice.edu",
@@ -1569,8 +2877,10 @@
       "checked_in": true,
       "wristband_number": 68,
       "matched_with_emails": [
-
-      ]
+        "pab10@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ir33@rice.edu": {
       "key": "ir33@rice.edu",
@@ -1592,8 +2902,10 @@
       "checked_in": true,
       "wristband_number": 69,
       "matched_with_emails": [
-
-      ]
+        "rc183@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "mh120@rice.edu": {
       "key": "mh120@rice.edu",
@@ -1615,8 +2927,10 @@
       "checked_in": true,
       "wristband_number": 70,
       "matched_with_emails": [
-
-      ]
+        "ck52@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "er85@rice.edu": {
       "key": "er85@rice.edu",
@@ -1638,8 +2952,10 @@
       "checked_in": true,
       "wristband_number": 71,
       "matched_with_emails": [
-
-      ]
+        "vw20"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Kitty.walters@rice.edu": {
       "key": "Kitty.walters@rice.edu",
@@ -1661,8 +2977,10 @@
       "checked_in": true,
       "wristband_number": 72,
       "matched_with_emails": [
-
-      ]
+        "da120@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Kd56@rice.edu": {
       "key": "Kd56@rice.edu",
@@ -1684,8 +3002,10 @@
       "checked_in": true,
       "wristband_number": 73,
       "matched_with_emails": [
-
-      ]
+        "cet3@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "gm63@rice.edu": {
       "key": "gm63@rice.edu",
@@ -1707,8 +3027,10 @@
       "checked_in": true,
       "wristband_number": 74,
       "matched_with_emails": [
-
-      ]
+        "cg165@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "aa537@rice.edu": {
       "key": "aa537@rice.edu",
@@ -1730,14 +3052,16 @@
       "checked_in": true,
       "wristband_number": 75,
       "matched_with_emails": [
-
-      ]
+        "cr116@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "aa516@rice.edu": {
       "key": "aa516@rice.edu",
       "name": "Akanbelie Abagi",
       "email": "aa516@rice.edu",
-      "phone": "832-707-2431",
+      "phone": "8327072431",
       "grade": "Freshman",
       "gender": "Female",
       "gender_preferences": [
@@ -1753,8 +3077,10 @@
       "checked_in": true,
       "wristband_number": 76,
       "matched_with_emails": [
-
-      ]
+        "rr153@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ab283@rice.edu": {
       "key": "ab283@rice.edu",
@@ -1776,8 +3102,10 @@
       "checked_in": true,
       "wristband_number": 77,
       "matched_with_emails": [
-
-      ]
+        "ar320@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "hc103@rice.edu": {
       "key": "hc103@rice.edu",
@@ -1799,8 +3127,10 @@
       "checked_in": true,
       "wristband_number": 78,
       "matched_with_emails": [
-
-      ]
+        "Bd63@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "cm233@rice.edu": {
       "key": "cm233@rice.edu",
@@ -1822,8 +3152,10 @@
       "checked_in": true,
       "wristband_number": 79,
       "matched_with_emails": [
-
-      ]
+        "aa552@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "aa552@rice.edu": {
       "key": "aa552@rice.edu",
@@ -1845,8 +3177,10 @@
       "checked_in": true,
       "wristband_number": 80,
       "matched_with_emails": [
-
-      ]
+        "cm233@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Egy1@rice.edu": {
       "key": "Egy1@rice.edu",
@@ -1868,8 +3202,10 @@
       "checked_in": true,
       "wristband_number": 81,
       "matched_with_emails": [
-
-      ]
+        "Lk70@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "vt20": {
       "key": "vt20",
@@ -1891,8 +3227,10 @@
       "checked_in": true,
       "wristband_number": 82,
       "matched_with_emails": [
-
-      ]
+        "suhasnarra@gmail.com"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "sz122@gmail.com": {
       "key": "sz122@gmail.com",
@@ -1914,14 +3252,16 @@
       "checked_in": true,
       "wristband_number": 83,
       "matched_with_emails": [
-
-      ]
+        "Jg272@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "mk233@rice.edu": {
       "key": "mk233@rice.edu",
       "name": "Mason Kresloff",
       "email": "mk233@rice.edu",
-      "phone": "856-266-2411",
+      "phone": "8562662411",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -1937,8 +3277,10 @@
       "checked_in": true,
       "wristband_number": 84,
       "matched_with_emails": [
-
-      ]
+        "ey27@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "sw157@rice.edu": {
       "key": "sw157@rice.edu",
@@ -1960,8 +3302,10 @@
       "checked_in": true,
       "wristband_number": 85,
       "matched_with_emails": [
-
-      ]
+        "al278@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lg106@rice.edu": {
       "key": "lg106@rice.edu",
@@ -1983,8 +3327,10 @@
       "checked_in": true,
       "wristband_number": 86,
       "matched_with_emails": [
-
-      ]
+        "Aa511@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "er106@rice.edu": {
       "key": "er106@rice.edu",
@@ -2006,8 +3352,10 @@
       "checked_in": true,
       "wristband_number": 87,
       "matched_with_emails": [
-
-      ]
+        "kks8@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "rd103@rice.edu": {
       "key": "rd103@rice.edu",
@@ -2030,8 +3378,10 @@
       "checked_in": true,
       "wristband_number": 88,
       "matched_with_emails": [
-
-      ]
+        "ak285@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ea87@rice.edu": {
       "key": "ea87@rice.edu",
@@ -2053,8 +3403,10 @@
       "checked_in": true,
       "wristband_number": 89,
       "matched_with_emails": [
-
-      ]
+        "al277@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Pr33@rice.edu": {
       "key": "Pr33@rice.edu",
@@ -2076,8 +3428,10 @@
       "checked_in": true,
       "wristband_number": 90,
       "matched_with_emails": [
-
-      ]
+        "mw205@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "zk31@rice.edu": {
       "key": "zk31@rice.edu",
@@ -2099,8 +3453,10 @@
       "checked_in": true,
       "wristband_number": 91,
       "matched_with_emails": [
-
-      ]
+        "hw106@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Jh321@rice.edu": {
       "key": "Jh321@rice.edu",
@@ -2120,10 +3476,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 93,
+      "wristband_number": 92,
       "matched_with_emails": [
-
-      ]
+        "mt182@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Bfb1@rice.edu": {
       "key": "Bfb1@rice.edu",
@@ -2143,10 +3501,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 94,
+      "wristband_number": 93,
       "matched_with_emails": [
-
-      ]
+        "sj163@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Sc367@rice.edu": {
       "key": "Sc367@rice.edu",
@@ -2166,10 +3526,12 @@
       "important_value": "Ambition",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 95,
+      "wristband_number": 94,
       "matched_with_emails": [
-
-      ]
+        "ma233@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "rs225@rice.edu": {
       "key": "rs225@rice.edu",
@@ -2189,16 +3551,18 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 96,
+      "wristband_number": 95,
       "matched_with_emails": [
-
-      ]
+        "ig52@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ar320@rice.edu": {
       "key": "ar320@rice.edu",
       "name": "Ana Catarina Santos",
       "email": "ar320@rice.edu",
-      "phone": "17132617996",
+      "phone": "7132617996",
       "grade": null,
       "gender": "Female",
       "gender_preferences": [
@@ -2212,16 +3576,18 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 97,
+      "wristband_number": 96,
       "matched_with_emails": [
-
-      ]
+        "ab283@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "rg64@rice.edu": {
       "key": "rg64@rice.edu",
       "name": "Rodolfo Garcia",
       "email": "rg64@rice.edu",
-      "phone": "806-240-3914",
+      "phone": "8062403914",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -2235,10 +3601,12 @@
       "important_value": "Honesty",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 98,
+      "wristband_number": 97,
       "matched_with_emails": [
-
-      ]
+        "sl206@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "rc183@rice.edu": {
       "key": "rc183@rice.edu",
@@ -2258,10 +3626,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 99,
+      "wristband_number": 98,
       "matched_with_emails": [
-
-      ]
+        "ir33@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "Lr62@rice.edu": {
       "key": "Lr62@rice.edu",
@@ -2281,16 +3651,18 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 100,
+      "wristband_number": 99,
       "matched_with_emails": [
-
-      ]
+        "ap280@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cg165@rice.edu": {
       "key": "cg165@rice.edu",
       "name": "Carlos Gonzalez",
       "email": "cg165@rice.edu",
-      "phone": "(832) 358-4624",
+      "phone": "8323584624",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -2304,16 +3676,18 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 101,
+      "wristband_number": 100,
       "matched_with_emails": [
-
-      ]
+        "gm63@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "vz10@rice.edu": {
       "key": "vz10@rice.edu",
       "name": "Veronica",
       "email": "vz10@rice.edu",
-      "phone": "650-240-6256",
+      "phone": "6502406256",
       "grade": null,
       "gender": "Female",
       "gender_preferences": [
@@ -2327,10 +3701,12 @@
       "important_value": "Kindness",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 102,
+      "wristband_number": 101,
       "matched_with_emails": [
-
-      ]
+        "do32@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Il36@rice.edu": {
       "key": "Il36@rice.edu",
@@ -2350,10 +3726,12 @@
       "important_value": "Ambition",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 103,
+      "wristband_number": 102,
       "matched_with_emails": [
-
-      ]
+        "jma21@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "rs168@rice.edu": {
       "key": "rs168@rice.edu",
@@ -2373,10 +3751,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 104,
+      "wristband_number": 103,
       "matched_with_emails": [
-
-      ]
+        "as373@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "eh52@rice.edu": {
       "key": "eh52@rice.edu",
@@ -2386,21 +3766,22 @@
       "grade": null,
       "gender": "Female",
       "gender_preferences": [
-        "Male",
-        "Female"
+        "Male"
       ],
       "school": "Engineering",
-      "ideal_friday": "Exploring new places",
+      "ideal_friday": "Attending a big party",
       "decision_guide": "Logic",
-      "plan_spontaneous": "Plan",
+      "plan_spontaneous": "Spontaneous",
       "fitness_importance": "Extremely important",
       "important_value": "Kindness",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 105,
+      "wristband_number": 104,
       "matched_with_emails": [
-
-      ]
+        "Bp66@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "am531@rice.edu": {
       "key": "am531@rice.edu",
@@ -2420,10 +3801,12 @@
       "important_value": "Ambition",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 106,
+      "wristband_number": 105,
       "matched_with_emails": [
-
-      ]
+        "aar11@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ob25@rice.edu": {
       "key": "ob25@rice.edu",
@@ -2443,34 +3826,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 107,
+      "wristband_number": 106,
       "matched_with_emails": [
-
-      ]
-    },
-    "bojangles123@gmail.com": {
-      "key": "bojangles123@gmail.com",
-      "name": "Bojangles",
-      "email": "bojangles123@gmail.com",
-      "phone": "8624558022",
-      "grade": null,
-      "gender": "Non-binary",
-      "gender_preferences": [
-        "Male",
-        "Female"
+        "lj33@rice.edu"
       ],
-      "school": "Music",
-      "ideal_friday": "Relaxing at home",
-      "decision_guide": "Emotion",
-      "plan_spontaneous": "Spontaneous",
-      "fitness_importance": "Extremely important",
-      "important_value": "Kindness",
-      "reading": "Yes",
-      "checked_in": true,
-      "wristband_number": 108,
-      "matched_with_emails": [
-
-      ]
+      "payment_required": true,
+      "payment_received": false
     },
     "al278@rice.edu": {
       "key": "al278@rice.edu",
@@ -2490,10 +3851,12 @@
       "important_value": "Ambition",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 109,
+      "wristband_number": 107,
       "matched_with_emails": [
-
-      ]
+        "sw157@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "hl203@rice.edu": {
       "key": "hl203@rice.edu",
@@ -2513,10 +3876,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 110,
+      "wristband_number": 108,
       "matched_with_emails": [
-
-      ]
+        "aa510@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "Lk70@rice.edu": {
       "key": "Lk70@rice.edu",
@@ -2536,10 +3901,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 111,
+      "wristband_number": 109,
       "matched_with_emails": [
-
-      ]
+        "Egy1@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "ew82@rice.edu": {
       "key": "ew82@rice.edu",
@@ -2559,10 +3926,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 112,
+      "wristband_number": 110,
       "matched_with_emails": [
-
-      ]
+        "is53@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "sg283@rice.edu": {
       "key": "sg283@rice.edu",
@@ -2582,10 +3951,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 113,
+      "wristband_number": 111,
       "matched_with_emails": [
-
-      ]
+        "cz105@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "kc211@rice.edu": {
       "key": "kc211@rice.edu",
@@ -2605,10 +3976,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 114,
+      "wristband_number": 112,
       "matched_with_emails": [
-
-      ]
+        "dg122@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ky63@rice.edu": {
       "key": "ky63@rice.edu",
@@ -2628,10 +4001,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 115,
+      "wristband_number": 113,
       "matched_with_emails": [
-
-      ]
+        "Ip31@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ey27@rice.edu": {
       "key": "ey27@rice.edu",
@@ -2651,14 +4026,16 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 116,
+      "wristband_number": 114,
       "matched_with_emails": [
-
-      ]
+        "mk233@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "ah276@rice.edu": {
       "key": "ah276@rice.edu",
-      "name": "Andrew",
+      "name": "Andrew Han",
       "email": "ah276@rice.edu",
       "phone": "7378950546",
       "grade": null,
@@ -2674,10 +4051,13 @@
       "important_value": "Ambition",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 117,
+      "wristband_number": 115,
       "matched_with_emails": [
-
-      ]
+        "me83@rice.edu",
+        "bk62@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "mt182@rice.edu": {
       "key": "mt182@rice.edu",
@@ -2697,10 +4077,12 @@
       "important_value": "Honesty",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 118,
+      "wristband_number": 116,
       "matched_with_emails": [
-
-      ]
+        "Jh321@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "aa510@rice.edu": {
       "key": "aa510@rice.edu",
@@ -2720,10 +4102,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 119,
+      "wristband_number": 117,
       "matched_with_emails": [
-
-      ]
+        "hl203@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ap280@rice.edu": {
       "key": "ap280@rice.edu",
@@ -2743,16 +4127,18 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 120,
+      "wristband_number": 118,
       "matched_with_emails": [
-
-      ]
+        "Lr62@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "is53@rice.edu": {
       "key": "is53@rice.edu",
       "name": "Ian",
       "email": "is53@rice.edu",
-      "phone": "9;02184475",
+      "phone": "902184475",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -2766,16 +4152,18 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 121,
+      "wristband_number": 119,
       "matched_with_emails": [
-
-      ]
+        "ew82@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Aa511@rice.edu": {
       "key": "Aa511@rice.edu",
       "name": "Asher Anantham",
       "email": "Aa511@rice.edu",
-      "phone": "12407818900",
+      "phone": "2407818900",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -2789,10 +4177,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 122,
+      "wristband_number": 120,
       "matched_with_emails": [
-
-      ]
+        "lg106@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "bk62@rice.edu": {
       "key": "bk62@rice.edu",
@@ -2812,16 +4202,19 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 123,
+      "wristband_number": 121,
       "matched_with_emails": [
-
-      ]
+        "ah276@rice.edu",
+        "me83@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "thankyou@rice.edu": {
       "key": "thankyou@rice.edu",
       "name": "John Kennedy but they call me Jack",
       "email": "thankyou@rice.edu",
-      "phone": "'+12819469429",
+      "phone": "2819469429",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -2835,16 +4228,18 @@
       "important_value": "Ambition",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 124,
+      "wristband_number": 122,
       "matched_with_emails": [
-
-      ]
+        "lw123@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "ig52@rice.edu": {
       "key": "ig52@rice.edu",
       "name": "Isaiah Green",
       "email": "ig52@rice.edu",
-      "phone": "702-764-7648",
+      "phone": "7027647648",
       "grade": null,
       "gender": "Male",
       "gender_preferences": [
@@ -2858,10 +4253,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 125,
+      "wristband_number": 123,
       "matched_with_emails": [
-
-      ]
+        "rs225@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "jk216@rice.edu": {
       "key": "jk216@rice.edu",
@@ -2881,10 +4278,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 126,
+      "wristband_number": 124,
       "matched_with_emails": [
-
-      ]
+        "Mjr16@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Vv35@rice.edu": {
       "key": "Vv35@rice.edu",
@@ -2905,10 +4304,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 127,
+      "wristband_number": 125,
       "matched_with_emails": [
-
-      ]
+        "nmo1@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "lpf2@rice.edu": {
       "key": "lpf2@rice.edu",
@@ -2928,10 +4329,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 128,
+      "wristband_number": 126,
       "matched_with_emails": [
-
-      ]
+        "md163@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "hw106@rice.edu": {
       "key": "hw106@rice.edu",
@@ -2951,10 +4354,12 @@
       "important_value": "Humor",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 129,
+      "wristband_number": 127,
       "matched_with_emails": [
-
-      ]
+        "zk31@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "sj163@rice.edu": {
       "key": "sj163@rice.edu",
@@ -2974,10 +4379,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 130,
+      "wristband_number": 128,
       "matched_with_emails": [
-
-      ]
+        "Bfb1@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "ma233@rice.edu": {
       "key": "ma233@rice.edu",
@@ -2997,10 +4404,12 @@
       "important_value": "Ambition",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 131,
+      "wristband_number": 129,
       "matched_with_emails": [
-
-      ]
+        "Sc367@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "al277@rice.edu": {
       "key": "al277@rice.edu",
@@ -3020,10 +4429,12 @@
       "important_value": "Kindness",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 132,
+      "wristband_number": 130,
       "matched_with_emails": [
-
-      ]
+        "ea87@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Mjr16@rice.edu": {
       "key": "Mjr16@rice.edu",
@@ -3043,10 +4454,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 133,
+      "wristband_number": 131,
       "matched_with_emails": [
-
-      ]
+        "jk216@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "do32@rice.edu": {
       "key": "do32@rice.edu",
@@ -3066,10 +4479,12 @@
       "important_value": "Kindness",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 134,
+      "wristband_number": 132,
       "matched_with_emails": [
-
-      ]
+        "vz10@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Jp231@rice.edu": {
       "key": "Jp231@rice.edu",
@@ -3089,10 +4504,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 135,
+      "wristband_number": 133,
       "matched_with_emails": [
-
-      ]
+        "al181@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "Ip31@rice.edu": {
       "key": "Ip31@rice.edu",
@@ -3113,10 +4530,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 136,
+      "wristband_number": 134,
       "matched_with_emails": [
-
-      ]
+        "ky63@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "sl206@rice.edu": {
       "key": "sl206@rice.edu",
@@ -3136,10 +4555,12 @@
       "important_value": "Honesty",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 137,
+      "wristband_number": 135,
       "matched_with_emails": [
-
-      ]
+        "rg64@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "suhasnarra@gmail.com": {
       "key": "suhasnarra@gmail.com",
@@ -3159,10 +4580,12 @@
       "important_value": "Ambition",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 138,
+      "wristband_number": 136,
       "matched_with_emails": [
-
-      ]
+        "vt20"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "mw205@rice.edu": {
       "key": "mw205@rice.edu",
@@ -3182,10 +4605,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 139,
+      "wristband_number": 137,
       "matched_with_emails": [
-
-      ]
+        "Pr33@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "cs282@rice.edu": {
       "key": "cs282@rice.edu",
@@ -3205,10 +4630,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 140,
+      "wristband_number": 138,
       "matched_with_emails": [
-
-      ]
+        "as628@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "al181@rice.edu": {
       "key": "al181@rice.edu",
@@ -3228,10 +4655,12 @@
       "important_value": "Humor",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 141,
+      "wristband_number": 139,
       "matched_with_emails": [
-
-      ]
+        "Jp231@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "am307@rice.edu": {
       "key": "am307@rice.edu",
@@ -3251,10 +4680,12 @@
       "important_value": "Kindness",
       "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 142,
+      "wristband_number": 140,
       "matched_with_emails": [
-
-      ]
+        "oz6@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
     "rohanamin0807@gmail.com": {
       "key": "rohanamin0807@gmail.com",
@@ -3274,60 +4705,1646 @@
       "important_value": "Honesty",
       "reading": "No",
       "checked_in": true,
-      "wristband_number": 146,
+      "wristband_number": 141,
       "matched_with_emails": [
-
-      ]
+        "jw300@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
     },
     "aishwarya.ramasubramanian@rice.edu": {
       "key": "aishwarya.ramasubramanian@rice.edu",
       "name": "Aishwarya Ramasubramanian",
       "email": "aishwarya.ramasubramanian@rice.edu",
       "phone": "9495655491",
-      "grade": "Female",
-      "gender": "Male",
+      "grade": null,
+      "gender": "Female",
       "gender_preferences": [
-
+        "Male"
       ],
-      "school": "Exploring new places",
-      "ideal_friday": "Logic",
-      "decision_guide": "Plan",
-      "plan_spontaneous": "Extremely important",
-      "fitness_importance": "Humor",
-      "important_value": "Yes",
-      "reading": "completed",
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 142,
+      "matched_with_emails": [
+        "wv5@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "vk50@rice.edu": {
+      "key": "vk50@rice.edu",
+      "name": "Victoria Kozikowski",
+      "email": "vk50@rice.edu",
+      "phone": "7182080192",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 143,
+      "matched_with_emails": [
+        "zl167@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "jg270@rice.edu": {
+      "key": "jg270@rice.edu",
+      "name": "julia",
+      "email": "jg270@rice.edu",
+      "phone": "2147905210",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
       "checked_in": true,
       "wristband_number": 144,
       "matched_with_emails": [
-
-      ]
+        "jyk2@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     },
-    "sb278@rice.edu": {
-      "key": "sb278@rice.edu",
-      "name": "Saul Brauns",
-      "email": "sb278@rice.edu",
-      "phone": "16466236536",
+    "me83@rice.edu": {
+      "key": "me83@rice.edu",
+      "name": "Hassan",
+      "email": "me83@rice.edu",
+      "phone": "3467754510",
       "grade": "Freshman",
       "gender": "Male",
       "gender_preferences": [
         "Female"
       ],
-      "school": "Unknown",
-      "ideal_friday": "Unknown",
-      "decision_guide": "Unknown",
-      "plan_spontaneous": "Unknown",
-      "fitness_importance": "Unknown",
-      "important_value": "Unknown",
-      "reading": "Unknown",
+      "school": "Business",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
       "checked_in": true,
-      "wristband_number": 200,
+      "wristband_number": 145,
       "matched_with_emails": [
-
-      ]
+        "ah276@rice.edu",
+        "bk62@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
+    },
+    "ev35@rice.edu": {
+      "key": "ev35@rice.edu",
+      "name": "Emma Vogelsang",
+      "email": "ev35@rice.edu",
+      "phone": "8328909031",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Music",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 146,
+      "matched_with_emails": [
+        "cw237@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "md163@rice.edu": {
+      "key": "md163@rice.edu",
+      "name": "Marco de Azevedo Soares",
+      "email": "md163@rice.edu",
+      "phone": "2039181997",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 147,
+      "matched_with_emails": [
+        "lpf2@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "ayp2@rice.edu": {
+      "key": "ayp2@rice.edu",
+      "name": "Aanika Porras",
+      "email": "ayp2@rice.edu",
+      "phone": "4085934059",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 148,
+      "matched_with_emails": [
+        "jl368@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
+    },
+    "od16@rice.edu": {
+      "key": "od16@rice.edu",
+      "name": "Omkar",
+      "email": "od16@rice.edu",
+      "phone": "4695580583",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 149,
+      "matched_with_emails": [
+        "Cc321@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "cw237@rice.edu": {
+      "key": "cw237@rice.edu",
+      "name": "Chris Williams",
+      "email": "cw237@rice.edu",
+      "phone": "4699189597",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 150,
+      "matched_with_emails": [
+        "ev35@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "aar11@rice.edu": {
+      "key": "aar11@rice.edu",
+      "name": "Avery Richardson",
+      "email": "aar11@rice.edu",
+      "phone": "8303699517",
+      "grade": "Senior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 151,
+      "matched_with_emails": [
+        "am531@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "mp160@rice.edu": {
+      "key": "mp160@rice.edu",
+      "name": "Meera Priyan",
+      "email": "mp160@rice.edu",
+      "phone": "6467057747",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 152,
+      "matched_with_emails": [
+        "akk7@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "ns123@rice.edu": {
+      "key": "ns123@rice.edu",
+      "name": "Navika Sonig",
+      "email": "ns123@rice.edu",
+      "phone": "6094541800",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 153,
+      "matched_with_emails": [
+        "cy66@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "mn108@rice.edu": {
+      "key": "mn108@rice.edu",
+      "name": "Muneeb Nazir",
+      "email": "mn108@rice.edu",
+      "phone": "9045971809",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 154,
+      "matched_with_emails": [
+        "jy181@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
+    },
+    "jyk2@rice.edu": {
+      "key": "jyk2@rice.edu",
+      "name": "Jasper Katalevsky",
+      "email": "jyk2@rice.edu",
+      "phone": "7205457393",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 155,
+      "matched_with_emails": [
+        "jg270@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "dg122@rice.edu": {
+      "key": "dg122@rice.edu",
+      "name": "David",
+      "email": "dg122@rice.edu",
+      "phone": "8473161716",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 156,
+      "matched_with_emails": [
+        "kc211@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "zl167@rice.edu": {
+      "key": "zl167@rice.edu",
+      "name": "Murphy Li",
+      "email": "zl167@rice.edu",
+      "phone": "8325463726",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Business",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 157,
+      "matched_with_emails": [
+        "vk50@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "cz85@rice.edu": {
+      "key": "cz85@rice.edu",
+      "name": "Christopher Zhao",
+      "email": "cz85@rice.edu",
+      "phone": "6122866860",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 158,
+      "matched_with_emails": [
+        "Im61@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "mg225@rice.edu": {
+      "key": "mg225@rice.edu",
+      "name": "Marilyn Gan",
+      "email": "mg225@rice.edu",
+      "phone": "6265586696",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Not very important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 159,
+      "matched_with_emails": [
+        "Bld3@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "ab285@rice.edu": {
+      "key": "ab285@rice.edu",
+      "name": "Ankit Burudgunte",
+      "email": "ab285@rice.edu",
+      "phone": "8325426518",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 160,
+      "matched_with_emails": [
+        "ap223@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "ap223@rice.edu": {
+      "key": "ap223@rice.edu",
+      "name": "Amay Parmar",
+      "email": "ap223@rice.edu",
+      "phone": "2092899166",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 161,
+      "matched_with_emails": [
+        "ab285@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "rs276@rice.edu": {
+      "key": "rs276@rice.edu",
+      "name": "Rachel Sinaiko",
+      "email": "rs276@rice.edu",
+      "phone": "9174562093",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 162,
+      "matched_with_emails": [
+        "al218@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "oz6@rice.edu": {
+      "key": "oz6@rice.edu",
+      "name": "Oscar",
+      "email": "oz6@rice.edu",
+      "phone": "2487049826",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 163,
+      "matched_with_emails": [
+        "am307@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "jl368@rice.edu": {
+      "key": "jl368@rice.edu",
+      "name": "jack li",
+      "email": "jl368@rice.edu",
+      "phone": "8322028708",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Humanities",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 164,
+      "matched_with_emails": [
+        "ayp2@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "jm323@rice.edu": {
+      "key": "jm323@rice.edu",
+      "name": "Judson McGinnes",
+      "email": "jm323@rice.edu",
+      "phone": "9154791704",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Neutral",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 165,
+      "matched_with_emails": [
+        "st162@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "vc63@rice.edu": {
+      "key": "vc63@rice.edu",
+      "name": "Valentina",
+      "email": "vc63@rice.edu",
+      "phone": "4126397945",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 166,
+      "matched_with_emails": [
+        "Vv63@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "tk78@rice.edu": {
+      "key": "tk78@rice.edu",
+      "name": "Tarini Khemlani",
+      "email": "tk78@rice.edu",
+      "phone": "7133598995",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Architecture",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 167,
+      "matched_with_emails": [
+        "sz122@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "rr153@rice.edu": {
+      "key": "rr153@rice.edu",
+      "name": "Rayhan Roy",
+      "email": "rr153@rice.edu",
+      "phone": "8327677899",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 168,
+      "matched_with_emails": [
+        "aa516@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "aj163@rice.edu": {
+      "key": "aj163@rice.edu",
+      "name": "AJ",
+      "email": "aj163@rice.edu",
+      "phone": "8324727395",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 169,
+      "matched_with_emails": [
+        "ok18@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Ak252@rice.edu": {
+      "key": "Ak252@rice.edu",
+      "name": "Annie",
+      "email": "Ak252@rice.edu",
+      "phone": "7207719931",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 170,
+      "matched_with_emails": [
+        "rw73@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "np86@rice.edu": {
+      "key": "np86@rice.edu",
+      "name": "Neil Patel",
+      "email": "np86@rice.edu",
+      "phone": "7203883121",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 171,
+      "matched_with_emails": [
+        "ko18@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "st162@rice.edu": {
+      "key": "st162@rice.edu",
+      "name": "Saran Tugsjargal",
+      "email": "st162@rice.edu",
+      "phone": "5106317530",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 172,
+      "matched_with_emails": [
+        "jm323@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "sg277@rice.edu": {
+      "key": "sg277@rice.edu",
+      "name": "Syna",
+      "email": "sg277@rice.edu",
+      "phone": "3463978756",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 173,
+      "matched_with_emails": [
+        "bh80@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Bp66@rice.edu": {
+      "key": "Bp66@rice.edu",
+      "name": "Ben Pearce",
+      "email": "Bp66@rice.edu",
+      "phone": "3463029322",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 174,
+      "matched_with_emails": [
+        "eh52@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "dss8@rice.edu": {
+      "key": "dss8@rice.edu",
+      "name": "Divya Shenoy",
+      "email": "dss8@rice.edu",
+      "phone": "2039792075",
+      "grade": "Junior",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 175,
+      "matched_with_emails": [
+        "is38@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "qat1@rice.edu": {
+      "key": "qat1@rice.edu",
+      "name": "Quincy Tate",
+      "email": "qat1@rice.edu",
+      "phone": "3195120104",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 176,
+      "matched_with_emails": [
+        "lr77@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
+    },
+    "ngarg@rice.edu": {
+      "key": "ngarg@rice.edu",
+      "name": "Nilesh Garg",
+      "email": "ngarg@rice.edu",
+      "phone": "8327925633",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 177,
+      "matched_with_emails": [
+        "lh70@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "abv3@rice.edu": {
+      "key": "abv3@rice.edu",
+      "name": "Adam Vuong",
+      "email": "abv3@rice.edu",
+      "phone": "3059227052",
+      "grade": "Senior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 178,
+      "matched_with_emails": [
+        "rw66@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Vv63@rice.edu": {
+      "key": "Vv63@rice.edu",
+      "name": "Vishwas Vijayan",
+      "email": "Vv63@rice.edu",
+      "phone": "4696865574",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 179,
+      "matched_with_emails": [
+        "vc63@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "lr77@rice.edu": {
+      "key": "lr77@rice.edu",
+      "name": "Lakshanyaa Rajkumar",
+      "email": "lr77@rice.edu",
+      "phone": "9033905773",
+      "grade": "Sophomore",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 180,
+      "matched_with_emails": [
+        "qat1@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "vw20": {
+      "key": "vw20",
+      "name": "Vivian",
+      "email": "vw20",
+      "phone": "3465623288",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 181,
+      "matched_with_emails": [
+        "er85@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "At253@rice.edu": {
+      "key": "At253@rice.edu",
+      "name": "Adam",
+      "email": "At253@rice.edu",
+      "phone": "8032920205",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Social Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Ambition",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 182,
+      "matched_with_emails": [
+        "Kc215@rice.edu"
+      ],
+      "payment_required": false,
+      "payment_received": false
+    },
+    "as658@rice.edu": {
+      "key": "as658@rice.edu",
+      "name": "Auden Smith",
+      "email": "as658@rice.edu",
+      "phone": "8327716813",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Music",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 183,
+      "matched_with_emails": [
+        "Wc73@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "js505@gmail.com": {
+      "key": "js505@gmail.com",
+      "name": "Jane Story",
+      "email": "js505@gmail.com",
+      "phone": "7155442062",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Music",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 184,
+      "matched_with_emails": [
+        "au23@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Ar303@rice.edu": {
+      "key": "Ar303@rice.edu",
+      "name": "Ansel",
+      "email": "Ar303@rice.edu",
+      "phone": "4693869341",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 185,
+      "matched_with_emails": [
+        "cz103@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Tm157@rice.edu": {
+      "key": "Tm157@rice.edu",
+      "name": "Timothy Merrell",
+      "email": "Tm157@rice.edu",
+      "phone": "9868887630",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 186,
+      "matched_with_emails": [
+        "md165@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "md165@rice.edu": {
+      "key": "md165@rice.edu",
+      "name": "Madison E. Daniels",
+      "email": "md165@rice.edu",
+      "phone": "4807510938",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 187,
+      "matched_with_emails": [
+        "Tm157@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "is38@rice.edu": {
+      "key": "is38@rice.edu",
+      "name": "Ismail",
+      "email": "is38@rice.edu",
+      "phone": "7138247186",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 188,
+      "matched_with_emails": [
+        "dss8@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Wc73@rice.edu": {
+      "key": "Wc73@rice.edu",
+      "name": "Warren Chang",
+      "email": "Wc73@rice.edu",
+      "phone": "3464203934",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Relaxing at home",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 189,
+      "matched_with_emails": [
+        "as658@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "pab10@rice.edu": {
+      "key": "pab10@rice.edu",
+      "name": "Peter Butera",
+      "email": "pab10@rice.edu",
+      "phone": "2078774380",
+      "grade": "Junior",
+      "gender": "Male",
+      "gender_preferences": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Exploring new places",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 190,
+      "matched_with_emails": [
+        "sc258@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "al218@rice.edu": {
+      "key": "al218@rice.edu",
+      "name": "Andrew Lansford",
+      "email": "al218@rice.edu",
+      "phone": "8328029248",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Business",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Not very important",
+      "important_value": "Humor",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 191,
+      "matched_with_emails": [
+        "rs276@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "dh108@rice.edu": {
+      "key": "dh108@rice.edu",
+      "name": "Daniela",
+      "email": "dh108@rice.edu",
+      "phone": "7188728286",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Emotion",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 192,
+      "matched_with_emails": [
+        "ik52@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "cz105@rice.edu": {
+      "key": "cz105@rice.edu",
+      "name": "Caden",
+      "email": "cz105@rice.edu",
+      "phone": "7032325680",
+      "grade": "Freshman",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Natural Sciences",
+      "ideal_friday": "Attending a big party",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Spontaneous",
+      "fitness_importance": "Extremely important",
+      "important_value": "Honesty",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 193,
+      "matched_with_emails": [
+        "sg283@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "Kr75@rice.edu": {
+      "key": "Kr75@rice.edu",
+      "name": "Krishna",
+      "email": "Kr75@rice.edu",
+      "phone": "8089131004",
+      "grade": "Sophomore",
+      "gender": "Male",
+      "gender_preferences": [
+        "Female"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Somewhat important",
+      "important_value": "Ambition",
+      "reading": "No",
+      "checked_in": true,
+      "wristband_number": 194,
+      "matched_with_emails": [
+        "lw125@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
+    },
+    "jd222@rice.edu": {
+      "key": "jd222@rice.edu",
+      "name": "Jenny",
+      "email": "jd222@rice.edu",
+      "phone": "7138223187",
+      "grade": "Freshman",
+      "gender": "Female",
+      "gender_preferences": [
+        "Male"
+      ],
+      "school": "Engineering",
+      "ideal_friday": "Dinner with close friends",
+      "decision_guide": "Logic",
+      "plan_spontaneous": "Plan",
+      "fitness_importance": "Extremely important",
+      "important_value": "Kindness",
+      "reading": "Yes",
+      "checked_in": true,
+      "wristband_number": 195,
+      "matched_with_emails": [
+        "zl202@rice.edu"
+      ],
+      "payment_required": true,
+      "payment_received": false
     }
   },
-  "next_wristband_number": 147,
-  "last_operation": "check_in",
-  "last_updated": "2026-02-05T19:54:36Z",
-  "next_walkin_wristband_number": 201
+  "next_wristband_number": 196,
+  "last_operation": "generate_matches",
+  "last_updated": "2026-02-06T03:37:40Z",
+  "next_walkin_wristband_number": 250,
+  "special_requests": [
+    {
+      "requester_name": "Mehmet Acikel",
+      "requester_phone": "7324745133",
+      "requested_name": "Katherine Emmanuel",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Isaiah Green",
+      "requester_phone": "7027647648",
+      "requested_name": "Elisa Zapata",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Benjamin Casey Kwait-Gonchar the Third",
+      "requester_phone": "9172141943",
+      "requested_name": "Sami Johnson",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Andrew Han",
+      "requester_phone": "7378950546",
+      "requested_name": "Micayla Pang",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Emma Young",
+      "requester_phone": "2079397711",
+      "requested_name": "7133805141",
+      "requested_phone": "7133805141",
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Saahith Garg",
+      "requester_phone": "8326232480",
+      "requested_name": "Kevin Wu",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Logan Koplovitz",
+      "requester_phone": "9709228201",
+      "requested_name": "Sofia Kalofonos",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Oliver Boyden",
+      "requester_phone": "4148757945",
+      "requested_name": "Jake Pessin",
+      "requested_phone": "8184291619",
+      "batches_together": 1,
+      "matched": false
+    },
+    {
+      "requester_name": "Izzy Leyton",
+      "requester_phone": "9178166450",
+      "requested_name": "Ethan Judge",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Ana Catarina Santos",
+      "requester_phone": "7132617996",
+      "requested_name": "Mehmet Acikel",
+      "requested_phone": "7324745133",
+      "batches_together": 1,
+      "matched": false
+    },
+    {
+      "requester_name": "Samuel Wen",
+      "requester_phone": "8178971209",
+      "requested_name": "9018718595",
+      "requested_phone": "9018718595",
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Steve Zhang",
+      "requester_phone": "8588666257",
+      "requested_name": "+1 (631) 346-6036",
+      "requested_phone": "6313466036",
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Aly Khanmohamed",
+      "requester_phone": "2102406807",
+      "requested_name": "Nur Almajali",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Boyan Holt",
+      "requester_phone": "2065999945",
+      "requested_name": "713 423 5017",
+      "requested_phone": "7134235017",
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "6162519862",
+      "requester_phone": "6162519862",
+      "requested_name": "Luke Hanson",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Carson Talbott",
+      "requester_phone": "2026571223",
+      "requested_name": "ana sofia navarro",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Nikita Chowdree",
+      "requester_phone": "8329853904",
+      "requested_name": "8303605649",
+      "requested_phone": "8303605649",
+      "batches_together": 1,
+      "matched": false
+    },
+    {
+      "requester_name": "Johannes Von Chudling",
+      "requester_phone": "7133484946",
+      "requested_name": "Hanna Hilberth",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Arhan Sankhla",
+      "requester_phone": "4808683156",
+      "requested_name": "Nicole Gonzalez",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Ashlee Glover",
+      "requester_phone": "7135851604",
+      "requested_name": "2816581748",
+      "requested_phone": "2816581748",
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Rafael Botran",
+      "requester_phone": "7868906076",
+      "requested_name": "Nicole Gonzalez",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Oliwia",
+      "requester_phone": "2817456536",
+      "requested_name": "Rohan Amin",
+      "requested_phone": "3109122346",
+      "batches_together": 1,
+      "matched": false
+    },
+    {
+      "requester_name": "Joe Slipper",
+      "requester_phone": "3464008926",
+      "requested_name": "Judy Deng",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Krishna",
+      "requester_phone": "8089131004",
+      "requested_name": "Kathy Cai",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Andrew Lansford",
+      "requester_phone": "8328029248",
+      "requested_name": "Abby Zhang",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Adam Vuong",
+      "requester_phone": "3059227052",
+      "requested_name": "Mikaela Garza",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Divya Shenoy",
+      "requester_phone": "2039792075",
+      "requested_name": "Sanjay Senthilvelan",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Saran Tugsjargal",
+      "requester_phone": "5106317530",
+      "requested_name": "Ashwin Colby",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Valentina",
+      "requester_phone": "4126397945",
+      "requested_name": "512-705-7028",
+      "requested_phone": "5127057028",
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Amay Parmar",
+      "requester_phone": "2092899166",
+      "requested_name": "8325426518",
+      "requested_phone": "8325426518",
+      "batches_together": 1,
+      "matched": false
+    },
+    {
+      "requester_name": "Ankit Burudgunte",
+      "requester_phone": "8325426518",
+      "requested_name": "(209) 289-9166",
+      "requested_phone": "2092899166",
+      "batches_together": 1,
+      "matched": false
+    },
+    {
+      "requester_name": "Jasper Katalevsky",
+      "requester_phone": "7205457393",
+      "requested_name": "Isabella balise",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    },
+    {
+      "requester_name": "Chris Williams",
+      "requester_phone": "4699189597",
+      "requested_name": "Kesh Gupta",
+      "requested_phone": null,
+      "batches_together": 0,
+      "matched": false
+    }
+  ],
+  "last_checked_in_key": "rohanamin0807@gmail.com",
+  "last_checked_in_type": "regular",
+  "last_checked_out_key": null
 }

@@ -3,6 +3,7 @@ require 'csv'
 require 'json'
 require 'time'
 require 'set'
+require_relative 'generate_matches_page'
 
 # Load environment variables from .env file
 if File.exist?('.env')
@@ -14,9 +15,39 @@ if File.exist?('.env')
 end
 
 # Constants
-MERGED_CSV = 'merged_participants.csv'
+MERGED_CSV = 'current_bridge_pub_complete.csv'
 STATE_FILE = 'bridge_state.json'
 EXPORT_FILE = 'bridge_matches_export.csv'
+
+# Free entry list (don't owe $3)
+FREE_ENTRY_EMAILS = [
+  'ayp2@rice.edu',           # Aanika Porras
+  'ak285@rice.edu',          # Arben
+  'Bd63@rice.edu',           # Bianca Dotson
+  'bh80@rice.edu',           # Boyan Holt
+  'dc118@rice.edu',          # Demetris Chrysostomou
+  'hw106@rice.edu',          # Harrison White
+  'hl203@rice.edu',          # Hayden Lucas
+  'hc103@rice.edu',          # Hemesh Chadalavada
+  'Il36@rice.edu',           # Izzy Leyton
+  'Lk70@rice.edu',           # Logan Koplovitz
+  'Mjr16@rice.edu',          # Matthew Ramos
+  'ma233@rice.edu',          # Mehmet Acikel
+  'rw73@rice.edu',           # Ruiyang Wu
+  'sj163@rice.edu',          # Shyla
+  'qat1@rice.edu',           # Quincy Tate
+  'Cc321@rice.edu',          # Coffey Collier
+  'ey27@rice.edu',           # Emma Young
+  'km108@rice.edu',          # Kenny Manning
+  'er106@rice.edu',          # Evelyn Rodriguez
+  'lw125@rice.edu',          # Lilly Wu
+  'mn108@rice.edu',          # Muneeb Nazir
+  'rohanamin0807@gmail.com', # Rohan Amin
+  'me83@rice.edu',           # Hassan
+  'At253@rice.edu',          # Adam
+  'rc183@rice.edu',          # Ria Chauhan
+  'cs282@rice.edu'           # Carter Sakai
+].map(&:downcase)
 
 GRADES = {
   'Freshman' => 1,
@@ -39,6 +70,7 @@ $state = {
   'participants' => {},
   'next_wristband_number' => 1,
   'next_walkin_wristband_number' => 250,
+  'special_requests' => [],
   'last_operation' => nil,
   'last_updated' => nil
 }
@@ -113,10 +145,41 @@ def load_state
 
     # Ensure new fields exist (for backwards compatibility)
     $state['next_walkin_wristband_number'] ||= 250
+    $state['special_requests'] ||= []
 
     puts "✓ State loaded (#{$state['participants'].size} participants in state)"
   else
     puts "No previous state found, starting fresh"
+  end
+end
+
+def load_special_requests
+  if File.exist?('special_requests.json')
+    puts "Loading special requests..."
+    requests = JSON.parse(File.read('special_requests.json'))
+
+    # Merge with existing state (preserve batches_together counter)
+    requests.each do |request|
+      existing = $state['special_requests'].find do |r|
+        r['requester_phone'] == request['requester_phone'] &&
+        r['requested_phone'] == request['requested_phone']
+      end
+
+      if existing
+        # Update names but keep counters
+        existing['requester_name'] = request['requester_name']
+        existing['requested_name'] = request['requested_name']
+        existing['requested_phone'] = request['requested_phone'] if request['requested_phone']
+      else
+        # Add new request
+        $state['special_requests'] << request
+      end
+    end
+
+    save_state
+    puts "✓ Loaded #{$state['special_requests'].size} special requests"
+  else
+    puts "No special_requests.json found (skip special matching)"
   end
 end
 
@@ -137,12 +200,20 @@ def merge_state_with_participants
       $state['participants'][key].merge!(participant)
     else
       # New participant, initialize state
+      # Check if they're on the free entry list
+      is_free = FREE_ENTRY_EMAILS.include?(key.downcase)
+
       $state['participants'][key] = participant.merge({
         'checked_in' => false,
         'wristband_number' => nil,
-        'matched_with_emails' => []
+        'matched_with_emails' => [],
+        'payment_required' => !is_free
       })
     end
+
+    # Update payment_required based on free entry list (for existing participants)
+    is_free = FREE_ENTRY_EMAILS.include?(key.downcase)
+    $state['participants'][key]['payment_required'] = !is_free
   end
 
   # Remove participants from state who are NOT in the loaded CSV
@@ -180,9 +251,16 @@ def show_menu
   total_matches = $state['match_batches'].sum { |b| b['matches'].size }
   batches_sent = $state['match_batches'].count { |b| b['sent_at'] }
 
+  # Count gender breakdown
+  checked_in = get_checked_in_participants.values
+  males = checked_in.count { |p| p['gender']&.downcase == 'male' }
+  females = checked_in.count { |p| p['gender']&.downcase == 'female' }
+  non_binary = checked_in.count { |p| p['gender']&.downcase == 'non-binary' }
+
   puts "\n" + "=" * 60
   puts "=== BRIDGE PUB MATCHER ==="
   puts "Batches sent: #{batches_sent} | Total matches: #{total_matches} | Checked in: #{checked_in_count}"
+  puts "Gender: #{males}M / #{females}F / #{non_binary}NB"
   puts "=" * 60
   puts
   puts "1. Check in participant (pre-registered)"
@@ -196,6 +274,7 @@ def show_menu
   puts "9. Exit"
   puts "10. Check in EVERYONE (auto)"
   puts "11. Check in WALK-IN (wristband #250+)"
+  puts "12. Undo last check-in/out"
   puts
   print "Choose option: "
 end
@@ -219,8 +298,9 @@ def main_menu
       exit 0
     when '10' then check_in_everyone
     when '11' then check_in_walkin
+    when '12' then undo_last_checkin
     else
-      puts "\n✗ Invalid option. Please choose 1-11."
+      puts "\n✗ Invalid option. Please choose 1-12."
     end
 
     puts "\nPress Enter to continue..."
@@ -274,18 +354,32 @@ def check_in_participant
     return
   end
 
-  # Assign wristband
-  wristband = $state['next_wristband_number']
+  # Assign wristband (or reuse if they had one before)
+  if participant['wristband_number'].nil?
+    wristband = $state['next_wristband_number']
+    participant['wristband_number'] = wristband
+    $state['next_wristband_number'] += 1
+  else
+    wristband = participant['wristband_number']
+    puts "  (Reusing previous wristband)"
+  end
   participant['checked_in'] = true
-  participant['wristband_number'] = wristband
-  $state['next_wristband_number'] += 1
 
   $state['last_operation'] = 'check_in'
+  $state['last_checked_in_key'] = key
+  $state['last_checked_in_type'] = 'regular'
   save_state
 
   puts "\n✓ Checked in: #{participant['name']}"
   puts "  Wristband ##{wristband}"
   puts "  Phone: #{participant['phone']}"
+
+  # Show payment status
+  if participant['payment_required']
+    puts "  💰 OWES $3"
+  else
+    puts "  ✓ FREE ENTRY"
+  end
 end
 
 def check_in_walkin
@@ -330,18 +424,32 @@ def check_in_walkin
     return
   end
 
-  # Assign walk-in wristband (200+)
-  wristband = $state['next_walkin_wristband_number']
+  # Assign walk-in wristband (or reuse if they had one before)
+  if participant['wristband_number'].nil?
+    wristband = $state['next_walkin_wristband_number']
+    participant['wristband_number'] = wristband
+    $state['next_walkin_wristband_number'] += 1
+  else
+    wristband = participant['wristband_number']
+    puts "  (Reusing previous wristband)"
+  end
   participant['checked_in'] = true
-  participant['wristband_number'] = wristband
-  $state['next_walkin_wristband_number'] += 1
 
   $state['last_operation'] = 'check_in_walkin'
+  $state['last_checked_in_key'] = key
+  $state['last_checked_in_type'] = 'walkin'
   save_state
 
   puts "\n✓ Checked in WALK-IN: #{participant['name']}"
   puts "  Wristband ##{wristband} (WALK-IN)"
   puts "  Phone: #{participant['phone']}"
+
+  # Show payment status
+  if participant['payment_required']
+    puts "  💰 OWES $3"
+  else
+    puts "  ✓ FREE ENTRY"
+  end
 end
 
 def check_out_participant
@@ -396,6 +504,7 @@ def check_out_participant
   participant['checked_in'] = false
 
   $state['last_operation'] = 'check_out'
+  $state['last_checked_out_key'] = key
   save_state
 
   puts "\n✓ Checked out: #{participant['name']} (Wristband ##{participant['wristband_number']})"
@@ -433,6 +542,117 @@ def check_in_everyone
 
   puts "\n\n✓ Checked in #{checked_in_count} people"
   puts "  Wristband numbers: ##{$state['next_wristband_number'] - checked_in_count} to ##{$state['next_wristband_number'] - 1}"
+end
+
+def undo_last_checkin
+  puts "\n=== UNDO LAST OPERATION ==="
+
+  last_op = $state['last_operation']
+
+  unless last_op == 'check_in' || last_op == 'check_in_walkin' || last_op == 'check_out'
+    puts "\n✗ No recent check-in/out to undo"
+    puts "  Last operation: #{last_op || 'none'}"
+    return
+  end
+
+  # Determine which operation to undo
+  if last_op == 'check_out'
+    # Undo a check-out (re-check them in)
+    key = $state['last_checked_out_key']
+
+    unless key
+      puts "\n✗ No check-out to undo"
+      return
+    end
+
+    participant = $state['participants'][key]
+
+    unless participant
+      puts "\n✗ Cannot find participant"
+      return
+    end
+
+    if participant['checked_in']
+      puts "\n✗ #{participant['name']} is already checked in"
+      return
+    end
+
+    # Show what will be undone
+    puts "\nLast check-out:"
+    puts "  Name: #{participant['name']}"
+    puts "  Wristband: ##{participant['wristband_number']}"
+
+    print "\nUndo this check-out (re-check them in)? (yes/no): "
+    confirm = gets.chomp.downcase
+
+    return unless confirm == 'yes' || confirm == 'y'
+
+    # Re-check them in
+    participant['checked_in'] = true
+
+    # Clear tracking
+    $state['last_checked_out_key'] = nil
+    $state['last_operation'] = 'undo_checkout'
+
+    save_state
+
+    puts "\n✓ Undone! #{participant['name']} is checked back in"
+    puts "  Wristband: ##{participant['wristband_number']}"
+
+  else
+    # Undo a check-in
+    key = $state['last_checked_in_key']
+
+    unless key
+      puts "\n✗ No check-in to undo"
+      return
+    end
+
+    participant = $state['participants'][key]
+
+    unless participant
+      puts "\n✗ Cannot find participant"
+      return
+    end
+
+    unless participant['checked_in']
+      puts "\n✗ #{participant['name']} is not checked in"
+      return
+    end
+
+    # Show what will be undone
+    puts "\nLast check-in:"
+    puts "  Name: #{participant['name']}"
+    puts "  Wristband: ##{participant['wristband_number']}"
+    puts "  Type: #{$state['last_checked_in_type'] || 'regular'}"
+
+    print "\nUndo this check-in? (yes/no): "
+    confirm = gets.chomp.downcase
+
+    return unless confirm == 'yes' || confirm == 'y'
+
+    # Undo the check-in
+    wristband_freed = participant['wristband_number']
+    participant['checked_in'] = false
+    participant['wristband_number'] = nil
+
+    # Decrement the appropriate counter
+    if $state['last_checked_in_type'] == 'walkin'
+      $state['next_walkin_wristband_number'] -= 1
+    else
+      $state['next_wristband_number'] -= 1
+    end
+
+    # Clear tracking
+    $state['last_checked_in_key'] = nil
+    $state['last_checked_in_type'] = nil
+    $state['last_operation'] = 'undo_checkin'
+
+    save_state
+
+    puts "\n✓ Undone! #{participant['name']} is no longer checked in"
+    puts "  Wristband ##{wristband_freed} is now available again"
+  end
 end
 
 # ============================================================================
@@ -480,8 +700,23 @@ def view_status
     puts "\nChecked in participants:"
     checked_in.sort_by { |k, p| p['wristband_number'] }.each do |key, p|
       match_count = p['matched_with_emails'].size
-      puts "  ##{p['wristband_number']} - #{p['name']} (#{match_count} matches)"
+      payment_status = if p['payment_required']
+        " [OWES $3]"
+      else
+        " [FREE]"
+      end
+      puts "  ##{p['wristband_number']} - #{p['name']} (#{match_count} matches)#{payment_status}"
     end
+
+    # Show payment summary
+    owed_count = checked_in.count { |k, p| p['payment_required'] }
+    free_count = checked_in.count { |k, p| !p['payment_required'] }
+    total_owed = owed_count * 3
+
+    puts "\n💰 Payment Summary:"
+    puts "  Free entry: #{free_count}"
+    puts "  Owe $3: #{owed_count}"
+    puts "  Total to collect: $#{total_owed}"
   else
     puts "\nNo participants checked in yet"
   end
@@ -517,6 +752,10 @@ def view_status
         puts "Gender: #{p['gender']} (likes #{p['gender_preferences'].join('/')})"
         puts "Grade: #{p['grade'] || 'Not specified'}"
         puts "Total matches: #{p['matched_with_emails'].size}"
+
+        # Show payment status
+        payment_status = p['payment_required'] ? "OWES $3" : "FREE ENTRY"
+        puts "Payment: #{payment_status}"
 
         if p['matched_with_emails'].any?
           puts "\nMatched with:"
@@ -657,42 +896,138 @@ def generate_matches
 
   puts "Generating matches for #{checked_in.size} checked-in participants..."
 
-  # Helper function to check if someone has had a friend match before
-  def has_friend_match?(person_key)
-    $state['match_batches'].any? do |batch|
-      batch['matches'].any? do |match|
-        match['type'] == 'friend' &&
-        (match['person_a_email'] == person_key || match['person_b_email'] == person_key)
+  # PHASE 0: Special Request Matching
+  puts "\n=== PHASE 0: Special Request Matching ==="
+
+  matched = Set.new
+  special_matches = []
+  special_request_updates = []  # Track updates to apply only if saved
+
+  # Helper to find participant by phone
+  def find_by_phone(phone, checked_in)
+    phone_normalized = phone.to_s.gsub(/[^0-9]/, '')
+    checked_in.find { |p| p['phone'].gsub(/[^0-9]/, '') == phone_normalized }
+  end
+
+  # Helper to find participant by name (EXACT match only to prevent false positives)
+  def find_by_name(name, checked_in)
+    return nil if name.nil? || name.empty?
+    name_lower = name.downcase.strip
+
+    # ONLY exact full name match - no fuzzy matching
+    # This prevents "Kevin Wu" from matching "Lilly Wu"
+    checked_in.find { |p| p['name']&.downcase&.strip == name_lower }
+  end
+
+  $state['special_requests'].each do |request|
+    next if request['matched']  # Already matched in previous batch
+
+    requester = find_by_phone(request['requester_phone'], checked_in)
+
+    # Match by phone OR exact full name
+    requested = nil
+
+    # Try phone first
+    if request['requested_phone']
+      requested = find_by_phone(request['requested_phone'], checked_in)
+    end
+
+    # If not found by phone, try exact name match
+    if requested.nil? && request['requested_name']
+      requested = find_by_name(request['requested_name'], checked_in)
+    end
+
+    # Both must be checked in
+    if requester && requested
+      # PREVIEW the increment (don't save yet)
+      preview_batches = request['batches_together'] + 1
+      puts "  #{request['requester_name']} ↔ #{request['requested_name']}: Batch #{preview_batches}/2 together"
+
+      # Track this update to apply later if user confirms
+      special_request_updates << { 'request' => request, 'increment' => true }
+
+      # Match on second batch together
+      if preview_batches == 2
+        # Check if we already added this pair (avoid duplicates for mutual requests)
+        already_added = special_matches.any? do |m|
+          (m['p1']['key'] == requester['key'] && m['p2']['key'] == requested['key']) ||
+          (m['p1']['key'] == requested['key'] && m['p2']['key'] == requester['key'])
+        end
+
+        unless already_added
+          special_matches << {
+            'p1' => requester,
+            'p2' => requested,
+            'score' => 999,  # High score for display
+            'type' => 'special_request'
+          }
+          matched << requester['key']
+          matched << requested['key']
+          puts "    ✓ SPECIAL MATCH!"
+        else
+          puts "    (Already matched via mutual request)"
+        end
+
+        # Track that this will be marked as matched
+        special_request_updates.last['mark_matched'] = true
       end
     end
   end
 
-  # PHASE 1: Romantic matching for people who already had friend matches
-  puts "\n=== PHASE 1: Romantic Matching (Priority for previous friend matches) ==="
+  puts "✓ Phase 0: #{special_matches.size} special request matches"
 
-  people_with_friend_matches = checked_in.select { |p| has_friend_match?(p['key']) }
+  # Helper function to check if someone has had a friend match before
+  def has_friend_match?(person_key)
+    $state['match_batches'].any? do |batch|
+      batch['matches'].any? do |match|
+        # Check both regular friend matches and groups of 3
+        if match['type'] == 'friend'
+          match['person_a_email'] == person_key || match['person_b_email'] == person_key
+        elsif match['type'] == 'friend_group_of_3'
+          match['person_a_email'] == person_key ||
+          match['person_b_email'] == person_key ||
+          match['person_c_email'] == person_key
+        else
+          false
+        end
+      end
+    end
+  end
+
+  # PHASE 1 & 2: Romantic matching with priority for people who had friend matches
+  puts "\n=== PHASE 1 & 2: Romantic Matching (Prioritized by friend match history) ==="
+
+  people_with_friend_matches = Set.new(checked_in.select { |p| has_friend_match?(p['key']) }.map { |p| p['key'] })
   puts "#{people_with_friend_matches.size} people had friend matches before (prioritized)"
 
-  priority_pairs = []
-  people_with_friend_matches.each_with_index do |p1, i|
+  # Build all possible romantic pairs
+  all_pairs = []
+  checked_in.each_with_index do |p1, i|
     checked_in[i+1..-1].each do |p2|
       next unless can_match?(p1, p2, romantic: true)
 
+      # Calculate priority: both had friend matches (2) > one had friend match (1) > neither (0)
+      p1_had_friend = people_with_friend_matches.include?(p1['key']) ? 1 : 0
+      p2_had_friend = people_with_friend_matches.include?(p2['key']) ? 1 : 0
+      priority = p1_had_friend + p2_had_friend
+
       score = calculate_compatibility_score(p1, p2)
-      priority_pairs << {
+      all_pairs << {
         'p1' => p1,
         'p2' => p2,
-        'score' => score
+        'score' => score,
+        'priority' => priority
       }
     end
   end
 
-  priority_pairs.sort_by! { |pair| -pair['score'] }
+  # Sort by priority first (descending), then by score (descending)
+  all_pairs.sort_by! { |pair| [-pair['priority'], -pair['score']] }
 
-  matched = Set.new
+  # matched set already initialized in PHASE 0 (includes special request matches)
   romantic_matches = []
 
-  priority_pairs.each do |pair|
+  all_pairs.each do |pair|
     p1_key = pair['p1']['key']
     p2_key = pair['p2']['key']
 
@@ -703,44 +1038,13 @@ def generate_matches
     matched << p2_key
   end
 
-  puts "✓ Phase 1: #{romantic_matches.size} priority romantic matches"
-
-  # PHASE 2: Romantic matching for everyone else
-  puts "\n=== PHASE 2: Romantic Matching (Everyone else) ==="
-
-  remaining = checked_in.reject { |p| matched.include?(p['key']) }
-  puts "#{remaining.size} people remaining"
-
-  regular_pairs = []
-  remaining.each_with_index do |p1, i|
-    remaining[i+1..-1].each do |p2|
-      next unless can_match?(p1, p2, romantic: true)
-
-      score = calculate_compatibility_score(p1, p2)
-      regular_pairs << {
-        'p1' => p1,
-        'p2' => p2,
-        'score' => score
-      }
-    end
-  end
-
-  regular_pairs.sort_by! { |pair| -pair['score'] }
-
-  regular_pairs.each do |pair|
-    p1_key = pair['p1']['key']
-    p2_key = pair['p2']['key']
-
-    next if matched.include?(p1_key) || matched.include?(p2_key)
-
-    romantic_matches << pair
-    matched << p1_key
-    matched << p2_key
-  end
-
-  total_romantic = romantic_matches.size
-  puts "✓ Phase 2: #{total_romantic - romantic_matches.size} regular romantic matches"
-  puts "✓ Total romantic matches: #{total_romantic}"
+  puts "✓ Romantic matches: #{romantic_matches.size}"
+  priority_2 = romantic_matches.count { |p| p['priority'] == 2 }
+  priority_1 = romantic_matches.count { |p| p['priority'] == 1 }
+  priority_0 = romantic_matches.count { |p| p['priority'] == 0 }
+  puts "  - Both had friend matches: #{priority_2}"
+  puts "  - One had friend match: #{priority_1}"
+  puts "  - Neither had friend match: #{priority_0}"
 
   # PHASE 3: Friend matching for people who never had a friend match
   # ONLY match people blocked by hard constraints (grade or gender), NOT low compatibility
@@ -783,6 +1087,7 @@ def generate_matches
           'p1' => p1,
           'p2' => p2,
           'score' => score,
+          'type' => 'friend',
           'reason' => gender_blocked ? 'gender_preference' : 'grade_incompatibility'
         }
       end
@@ -833,7 +1138,7 @@ def generate_matches
     puts "⚠️  1 person eligible but needs at least 2 for friend matching"
   end
 
-  total_matches = romantic_matches + friend_matches.map { |f| f.merge('type' => 'friend') }
+  total_matches = special_matches.map { |s| s.merge('type' => 'special_request') } + romantic_matches + friend_matches.map { |f| f.merge('type' => 'friend') }
 
   if total_matches.empty?
     puts "\n✗ No compatible matches found"
@@ -848,6 +1153,15 @@ def generate_matches
   puts "\n" + "=" * 60
   puts "MATCH PREVIEW"
   puts "=" * 60
+
+  if special_matches.any?
+    puts "\n⭐ Special Request Matches (#{special_matches.size}) - 2nd batch together:"
+    special_matches.each_with_index do |pair, i|
+      p1 = pair['p1']
+      p2 = pair['p2']
+      puts "#{i+1}. #{p1['name']} (##{p1['wristband_number']}) ↔ #{p2['name']} (##{p2['wristband_number']}) [SPECIAL REQUEST]"
+    end
+  end
 
   if romantic_matches.any?
     puts "\nRomantic Matches (#{romantic_matches.size}):"
@@ -897,8 +1211,8 @@ def generate_matches
     'matches' => []
   }
 
-  # Save regular pairs (romantic and friend pairs of 2)
-  (romantic_matches + friend_matches).each do |pair|
+  # Save all pairs (special requests, romantic, and friend pairs of 2)
+  (special_matches + romantic_matches + friend_matches).each do |pair|
     p1 = pair['p1']
     p2 = pair['p2']
     type = pair['type'] || 'romantic'
@@ -955,6 +1269,12 @@ def generate_matches
     }
   end
 
+  # Apply special request updates (only now that user confirmed)
+  special_request_updates.each do |update|
+    update['request']['batches_together'] += 1
+    update['request']['matched'] = true if update['mark_matched']
+  end
+
   $state['match_batches'] << batch
   $state['last_operation'] = 'generate_matches'
   save_state
@@ -981,6 +1301,17 @@ def send_matches
   puts "  2. Find the send_matches function (line ~655)"
   puts "  3. Comment out or remove the safety lockout section"
   puts "\n❌ No messages will be sent."
+
+  # Still generate the webpage as backup
+  puts "\n📱 Generating backup webpage..."
+  unsent_batches = $state['match_batches'].select { |b| !b['sent_at'] }
+  if unsent_batches.any?
+    batch = unsent_batches.last
+    generate_matches_webpage($state, batch['batch_number'])
+    puts "\n✓ Backup webpage ready: matches_display.html"
+    puts "  You can open this in a browser to see all matches"
+  end
+
   return
 
   # Check for Twilio credentials
@@ -1174,6 +1505,12 @@ def send_matches
   save_state
 
   puts "\n✓ Batch ##{batch['batch_number']} marked as sent"
+
+  # Generate backup webpage
+  puts "\n📱 Generating backup webpage..."
+  generate_matches_webpage($state, batch['batch_number'])
+  puts "✓ Webpage updated: matches_display.html"
+  puts "  Open this in a browser if you need to reference matches"
 end
 
 # ============================================================================
@@ -1221,6 +1558,7 @@ def reset_system
   puts "  - Clear all check-ins"
   puts "  - Clear all matches"
   puts "  - Reset wristband numbers"
+  puts "  - Reset special request states"
   puts "  - Keep participant data"
 
   print "\nType 'RESET' to confirm: "
@@ -1238,10 +1576,17 @@ def reset_system
     p['matched_with_emails'] = []
   end
 
+  # Reset special requests to unmatched state
+  $state['special_requests']&.each do |request|
+    request['batches_together'] = 0
+    request['matched'] = false
+  end
+
   $state['last_operation'] = 'reset'
   save_state
 
   puts "\n✓ System reset complete"
+  puts "  - All special requests reset (batches_together: 0, matched: false)"
 end
 
 def reload_data
@@ -1283,6 +1628,7 @@ def main
 
   load_participants
   load_state
+  load_special_requests
   merge_state_with_participants
 
   puts "\n✓ System ready"
