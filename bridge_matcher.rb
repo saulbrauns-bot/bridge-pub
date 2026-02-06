@@ -288,7 +288,7 @@ def show_menu
   puts "10. Check in EVERYONE (auto)"
   puts "11. Check in WALK-IN (wristband #250+)"
   puts "12. Undo last check-in/out"
-  puts "13. 🧪 TEST MODE - Send to 646-623-6536 ONLY"
+  puts "13. ✏️  Edit wristband number"
   puts "14. 🔄 Resend failed batch"
   puts "15. 🧪 TEST REAL SEND - Simulate Option 5 (to my number only)"
   puts
@@ -315,7 +315,7 @@ def main_menu
     when '10' then check_in_everyone
     when '11' then check_in_walkin
     when '12' then undo_last_checkin
-    when '13' then test_send_to_my_number
+    when '13' then edit_wristband_number
     when '14' then resend_batch
     when '15' then test_real_send_process
     else
@@ -1560,178 +1560,81 @@ end
 # TEST MODE - SEND TO SAUL'S NUMBER ONLY
 # ============================================================================
 
-def test_send_to_my_number
-  test_phone = '+16466236536'  # SAUL'S NUMBER - ONLY NUMBER THAT WILL RECEIVE MESSAGES
+def edit_wristband_number
+  puts "\n=== EDIT WRISTBAND NUMBER ==="
 
-  puts "\n" + "=" * 60
-  puts "🧪 TEST MODE - SEND TO #{test_phone} ONLY"
-  puts "=" * 60
+  print "\nSearch for participant (name or email): "
+  search = gets.chomp.downcase
 
-  puts "\n⚠️  EXTREME SAFETY CHECKS:"
-  puts "  ✓ ALL messages will ONLY be sent to: #{test_phone}"
-  puts "  ✓ NO other numbers will EVER receive messages"
-  puts "  ✓ This simulates real batch sending for testing"
+  # Find matching participants
+  matches = $state['participants'].values.select do |p|
+    p['name'].downcase.include?(search) || p['email'].downcase.include?(search)
+  end
 
-  # Check for Twilio credentials
-  unless ENV['TWILIO_ACCOUNT_SID'] && ENV['TWILIO_AUTH_TOKEN'] && ENV['TWILIO_PHONE_NUMBER']
-    puts "\n✗ Twilio credentials not configured!"
-    puts "  Please create a .env file with:"
-    puts "    TWILIO_ACCOUNT_SID=your_sid"
-    puts "    TWILIO_AUTH_TOKEN=your_token"
-    puts "    TWILIO_PHONE_NUMBER=+1234567890"
+  if matches.empty?
+    puts "\n✗ No participants found matching '#{search}'"
     return
   end
 
-  # Find unsent batches
-  unsent_batches = $state['match_batches'].select { |b| !b['sent_at'] }
-
-  if unsent_batches.empty?
-    puts "\n✗ No unsent matches to test"
-    puts "  Generate matches first (option 4)"
-    return
-  end
-
-  batch = unsent_batches.last
-  matches = batch['matches']
-
-  puts "\nBatch ##{batch['batch_number']} - #{matches.size} total matches available"
-
-  # Ask how many matches to test
-  puts "\n" + "=" * 60
-  print "How many MATCHES to send as test? (1-#{matches.size}): "
-  count = gets.chomp.to_i
-
-  if count < 1 || count > matches.size
-    puts "\n✗ Invalid number. Must be between 1 and #{matches.size}"
-    return
-  end
-
-  # Calculate total messages (each match = 2 messages)
-  total_messages = count * 2
-  test_matches = matches.take(count)
-
-  puts "\n📊 TEST SUMMARY:"
-  puts "  Matches to send: #{count}"
-  puts "  Total messages: #{total_messages} (each match sends to 2 people)"
-  puts "  All messages go to: #{test_phone}"
-  puts "  NO real participants will be contacted"
-
-  # Show breakdown
-  romantic_count = test_matches.count { |m| m['type'] == 'romantic' }
-  friend_count = test_matches.count { |m| m['type'] == 'friend' }
-  puts "\n  Match types:"
-  puts "    Romantic: #{romantic_count}"
-  puts "    Friend: #{friend_count}"
-
-  # Show message preview
-  if test_matches.first
-    m = test_matches.first
-    puts "\n📱 FIRST MESSAGE PREVIEW:"
-    if m['type'] == 'romantic'
-      puts "  \"[TEST] Your Bridge match is ##{m['person_b_wristband']}!\""
-    else
-      puts "  \"[TEST] We didn't find a romantic interest for you this round, but you'd make great friends with ##{m['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
+  if matches.size == 1
+    participant = matches.first
+  else
+    puts "\nFound #{matches.size} matches:"
+    matches.each_with_index do |p, i|
+      status = p['checked_in'] ? '✓' : '✗'
+      puts "#{i + 1}. #{p['name']} (#{p['email']}) - Wristband ##{p['wristband_number']} [#{status} checked in]"
     end
+
+    print "\nChoose number (1-#{matches.size}): "
+    choice = gets.chomp.to_i
+
+    if choice < 1 || choice > matches.size
+      puts "\n✗ Invalid choice"
+      return
+    end
+
+    participant = matches[choice - 1]
   end
 
   puts "\n" + "=" * 60
-  puts "🔒 FINAL SAFETY CONFIRMATION"
+  puts "Participant: #{participant['name']}"
+  puts "Email: #{participant['email']}"
+  puts "Current wristband: ##{participant['wristband_number']}"
+  puts "Checked in: #{participant['checked_in'] ? 'YES' : 'NO'}"
   puts "=" * 60
-  puts "You are about to send #{total_messages} messages to #{test_phone}"
-  print "\nType 'SEND #{count} TEST' to confirm (case sensitive): "
-  confirm = gets.chomp
 
-  unless confirm == "SEND #{count} TEST"
-    puts "\n✗ Confirmation failed. No messages sent."
+  print "\nEnter new wristband number: "
+  new_number = gets.chomp.to_i
+
+  if new_number < 1
+    puts "\n✗ Invalid wristband number"
     return
   end
 
-  # Try to require twilio-ruby
-  begin
-    require 'twilio-ruby'
-  rescue LoadError
-    puts "\n✗ twilio-ruby gem not installed!"
-    puts "  Run: gem install twilio-ruby"
-    return
-  end
+  # Check if wristband number is already in use
+  existing = $state['participants'].values.find { |p| p['wristband_number'] == new_number && p['key'] != participant['key'] }
 
-  # Initialize Twilio client
-  client = Twilio::REST::Client.new(
-    ENV['TWILIO_ACCOUNT_SID'],
-    ENV['TWILIO_AUTH_TOKEN']
-  )
+  if existing
+    puts "\n⚠️  WARNING: Wristband ##{new_number} is already assigned to #{existing['name']}"
+    print "Continue anyway? (yes/no): "
+    confirm = gets.chomp.downcase
 
-  puts "\n🚀 Sending #{total_messages} test messages to #{test_phone}..."
-  puts "Press Ctrl+C to stop\n\n"
-
-  sent = 0
-  failed = 0
-
-  test_matches.each_with_index do |match, idx|
-    # Send to person A (goes to test_phone)
-    message_a = if match['type'] == 'romantic'
-      "Your Bridge match is ##{match['person_b_wristband']}!"
-    else
-      "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
-    end
-
-    begin
-      # TRIPLE CHECK: Only send to test_phone
-      if test_phone == '+16466236536'
-        client.messages.create(
-          from: ENV['TWILIO_PHONE_NUMBER'],
-          to: test_phone,
-          body: "[TEST #{idx+1}A] #{message_a}"
-        )
-        sent += 1
-        print "."
-      end
-    rescue => e
-      puts "\n✗ Failed message #{idx+1}A: #{e.message}"
-      failed += 1
-    end
-
-    sleep 0.5  # Small delay between messages
-
-    # Send to person B (goes to test_phone)
-    message_b = if match['type'] == 'romantic'
-      "Your Bridge match is ##{match['person_a_wristband']}!"
-    else
-      "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_a_wristband']}! You'll be prioritized for a romantic match next round."
-    end
-
-    begin
-      # TRIPLE CHECK: Only send to test_phone
-      if test_phone == '+16466236536'
-        client.messages.create(
-          from: ENV['TWILIO_PHONE_NUMBER'],
-          to: test_phone,
-          body: "[TEST #{idx+1}B] #{message_b}"
-        )
-        sent += 1
-        print "."
-      end
-    rescue => e
-      puts "\n✗ Failed message #{idx+1}B: #{e.message}"
-      failed += 1
-    end
-
-    sleep 0.5  # Small delay between messages
-
-    # Progress update every 5 matches
-    if (idx + 1) % 5 == 0
-      puts "\n  Progress: #{idx + 1}/#{count} matches sent (#{sent} messages)"
+    unless confirm == 'yes' || confirm == 'y'
+      puts "\n✗ Cancelled"
+      return
     end
   end
 
-  puts "\n\n" + "=" * 60
-  puts "✅ TEST COMPLETE"
-  puts "=" * 60
-  puts "  Messages sent: #{sent}/#{total_messages}"
-  puts "  Failed: #{failed}"
-  puts "  All messages sent to: #{test_phone}"
-  puts "  NO real participants were contacted"
-  puts "\n💡 Check your phone (#{test_phone}) for the messages!"
+  old_number = participant['wristband_number']
+  participant['wristband_number'] = new_number
+
+  # Save state
+  $state['last_operation'] = 'edit_wristband'
+  $state['last_updated'] = Time.now.utc.iso8601
+  save_state
+
+  puts "\n✓ Wristband updated successfully!"
+  puts "  #{participant['name']}: ##{old_number} → ##{new_number}"
 end
 
 # ============================================================================
