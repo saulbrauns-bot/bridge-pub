@@ -288,6 +288,8 @@ def show_menu
   puts "10. Check in EVERYONE (auto)"
   puts "11. Check in WALK-IN (wristband #250+)"
   puts "12. Undo last check-in/out"
+  puts "13. 🧪 TEST MODE - Send to 646-623-6536 ONLY"
+  puts "14. 🔄 Resend failed batch"
   puts
   print "Choose option: "
 end
@@ -312,8 +314,10 @@ def main_menu
     when '10' then check_in_everyone
     when '11' then check_in_walkin
     when '12' then undo_last_checkin
+    when '13' then test_send_to_my_number
+    when '14' then resend_batch
     else
-      puts "\n✗ Invalid option. Please choose 1-12."
+      puts "\n✗ Invalid option. Please choose 1-14."
     end
 
     puts "\nPress Enter to continue..."
@@ -1527,6 +1531,327 @@ def send_matches
   generate_matches_webpage($state, batch['batch_number'])
   puts "✓ Webpage updated: matches_display.html"
   puts "  Open this in a browser if you need to reference matches"
+end
+
+# ============================================================================
+# TEST MODE - SEND TO SAUL'S NUMBER ONLY
+# ============================================================================
+
+def test_send_to_my_number
+  test_phone = '+16466236536'  # SAUL'S NUMBER - ONLY NUMBER THAT WILL RECEIVE MESSAGES
+
+  puts "\n" + "=" * 60
+  puts "🧪 TEST MODE - SEND TO #{test_phone} ONLY"
+  puts "=" * 60
+
+  puts "\n⚠️  SAFETY CHECKS:"
+  puts "  ✓ Messages will ONLY be sent to: #{test_phone}"
+  puts "  ✓ NO other numbers will receive messages"
+  puts "  ✓ This is for testing Twilio integration"
+
+  # Check for Twilio credentials
+  unless ENV['TWILIO_ACCOUNT_SID'] && ENV['TWILIO_AUTH_TOKEN'] && ENV['TWILIO_PHONE_NUMBER']
+    puts "\n✗ Twilio credentials not configured!"
+    puts "  Please create a .env file with:"
+    puts "    TWILIO_ACCOUNT_SID=your_sid"
+    puts "    TWILIO_AUTH_TOKEN=your_token"
+    puts "    TWILIO_PHONE_NUMBER=+1234567890"
+    return
+  end
+
+  # Find unsent batches
+  unsent_batches = $state['match_batches'].select { |b| !b['sent_at'] }
+
+  if unsent_batches.empty?
+    puts "\n✗ No unsent matches to test"
+    puts "  Generate matches first (option 4)"
+    return
+  end
+
+  batch = unsent_batches.last
+  matches = batch['matches']
+
+  puts "\nBatch ##{batch['batch_number']} - #{matches.size} matches"
+  puts "Will send test messages showing different match types to #{test_phone}"
+
+  # Show examples of what will be sent
+  romantic_match = matches.find { |m| m['type'] == 'romantic' }
+  friend_match = matches.find { |m| m['type'] == 'friend' }
+
+  puts "\nTest messages that will be sent:"
+  if romantic_match
+    puts "\n1. Romantic match example:"
+    puts "   To: #{test_phone}"
+    puts "   Message: \"Your Bridge match is ##{romantic_match['person_b_wristband']}!\""
+  end
+
+  if friend_match
+    puts "\n2. Friend match example:"
+    puts "   To: #{test_phone}"
+    puts "   Message: \"We didn't find a romantic interest for you this round, but you'd make great friends with ##{friend_match['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
+  end
+
+  puts "\n" + "=" * 60
+  puts "🔒 FINAL SAFETY CONFIRMATION"
+  puts "=" * 60
+  print "\nType 'TEST #{test_phone}' to confirm (case sensitive): "
+  confirm = gets.chomp
+
+  unless confirm == "TEST #{test_phone}"
+    puts "\n✗ Confirmation failed. No messages sent."
+    return
+  end
+
+  # Try to require twilio-ruby
+  begin
+    require 'twilio-ruby'
+  rescue LoadError
+    puts "\n✗ twilio-ruby gem not installed!"
+    puts "  Run: gem install twilio-ruby"
+    return
+  end
+
+  # Initialize Twilio client
+  client = Twilio::REST::Client.new(
+    ENV['TWILIO_ACCOUNT_SID'],
+    ENV['TWILIO_AUTH_TOKEN']
+  )
+
+  puts "\nSending test messages to #{test_phone}..."
+  sent = 0
+
+  # Send romantic example if available
+  if romantic_match
+    message = "Your Bridge match is ##{romantic_match['person_b_wristband']}!"
+    begin
+      # TRIPLE CHECK: Only send to test_phone
+      if test_phone == '+16466236536'
+        client.messages.create(
+          from: ENV['TWILIO_PHONE_NUMBER'],
+          to: test_phone,
+          body: "[TEST] #{message}"
+        )
+        sent += 1
+        puts "✓ Sent romantic match test"
+      end
+    rescue => e
+      puts "✗ Failed: #{e.message}"
+    end
+    sleep 1
+  end
+
+  # Send friend example if available
+  if friend_match
+    message = "We didn't find a romantic interest for you this round, but you'd make great friends with ##{friend_match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
+    begin
+      # TRIPLE CHECK: Only send to test_phone
+      if test_phone == '+16466236536'
+        client.messages.create(
+          from: ENV['TWILIO_PHONE_NUMBER'],
+          to: test_phone,
+          body: "[TEST] #{message}"
+        )
+        sent += 1
+        puts "✓ Sent friend match test"
+      end
+    rescue => e
+      puts "✗ Failed: #{e.message}"
+    end
+  end
+
+  puts "\n✓ Test complete - Sent #{sent} messages to #{test_phone}"
+  puts "  NO messages were sent to any other numbers"
+end
+
+# ============================================================================
+# RESEND BATCH - For failed sends
+# ============================================================================
+
+def resend_batch
+  puts "\n=== RESEND FAILED BATCH ==="
+
+  # Find batches that were marked as sent
+  sent_batches = $state['match_batches'].select { |b| b['sent_at'] }
+
+  if sent_batches.empty?
+    puts "\n✗ No batches have been sent yet"
+    return
+  end
+
+  puts "\nSent batches:"
+  sent_batches.each_with_index do |batch, i|
+    puts "#{i + 1}. Batch ##{batch['batch_number']} - #{batch['matches'].size} matches - Sent: #{batch['sent_at']}"
+  end
+
+  print "\nWhich batch to resend? (number): "
+  choice = gets.chomp.to_i
+
+  if choice < 1 || choice > sent_batches.size
+    puts "\n✗ Invalid choice"
+    return
+  end
+
+  batch = sent_batches[choice - 1]
+  matches = batch['matches']
+
+  puts "\n⚠️  You are about to RESEND Batch ##{batch['batch_number']}"
+  puts "  This will send #{matches.size * 2} messages to all participants"
+  puts "  Originally sent at: #{batch['sent_at']}"
+
+  print "\nType 'RESEND ALL' to confirm (case sensitive): "
+  confirm = gets.chomp
+
+  unless confirm == 'RESEND ALL'
+    puts "\n✗ Cancelled. No messages sent."
+    return
+  end
+
+  # Check for Twilio credentials
+  unless ENV['TWILIO_ACCOUNT_SID'] && ENV['TWILIO_AUTH_TOKEN'] && ENV['TWILIO_PHONE_NUMBER']
+    puts "\n✗ Twilio credentials not configured!"
+    return
+  end
+
+  # Try to require twilio-ruby
+  begin
+    require 'twilio-ruby'
+  rescue LoadError
+    puts "\n✗ twilio-ruby gem not installed!"
+    puts "  Run: gem install twilio-ruby"
+    return
+  end
+
+  # Initialize Twilio client
+  client = Twilio::REST::Client.new(
+    ENV['TWILIO_ACCOUNT_SID'],
+    ENV['TWILIO_AUTH_TOKEN']
+  )
+
+  puts "\nResending messages..."
+
+  sent = 0
+  failed = 0
+  failed_sends = []
+
+  matches.each do |match|
+    if match['type'] == 'friend_group_of_3'
+      # Handle group of 3
+      people = [
+        { 'name' => match['person_a_name'], 'phone' => match['person_a_phone'], 'wristband' => match['person_a_wristband'],
+          'others' => [match['person_b_wristband'], match['person_c_wristband']] },
+        { 'name' => match['person_b_name'], 'phone' => match['person_b_phone'], 'wristband' => match['person_b_wristband'],
+          'others' => [match['person_a_wristband'], match['person_c_wristband']] },
+        { 'name' => match['person_c_name'], 'phone' => match['person_c_phone'], 'wristband' => match['person_c_wristband'],
+          'others' => [match['person_a_wristband'], match['person_b_wristband']] }
+      ]
+
+      people.each do |person|
+        message = "We didn't find a romantic interest for you this round, but you'd make great friends with ##{person['others'][0]} and ##{person['others'][1]}! You'll be prioritized for a romantic match next round."
+
+        begin
+          client.messages.create(
+            from: ENV['TWILIO_PHONE_NUMBER'],
+            to: person['phone'],
+            body: message
+          )
+          sent += 1
+          print "."
+        rescue => e
+          puts "\n✗ Failed to send to #{person['name']}: #{e.message}"
+          failed += 1
+          failed_sends << {
+            'name' => person['name'],
+            'phone' => person['phone'],
+            'wristband' => person['wristband'],
+            'match_wristband' => person['others'].join(', '),
+            'error' => e.message
+          }
+        end
+        sleep 0.1
+      end
+    else
+      # Regular pair (romantic or friend pair of 2)
+      # Send to person A
+      message_a = if match['type'] == 'romantic'
+        "Your Bridge match is ##{match['person_b_wristband']}!"
+      else
+        "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
+      end
+
+      begin
+        client.messages.create(
+          from: ENV['TWILIO_PHONE_NUMBER'],
+          to: match['person_a_phone'],
+          body: message_a
+        )
+        sent += 1
+        print "."
+      rescue => e
+        puts "\n✗ Failed to send to #{match['person_a_name']}: #{e.message}"
+        failed += 1
+        failed_sends << {
+          'name' => match['person_a_name'],
+          'phone' => match['person_a_phone'],
+          'wristband' => match['person_a_wristband'],
+          'match_wristband' => match['person_b_wristband'],
+          'error' => e.message
+        }
+      end
+
+      sleep 0.1
+
+      # Send to person B
+      message_b = if match['type'] == 'romantic'
+        "Your Bridge match is ##{match['person_a_wristband']}!"
+      else
+        "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_a_wristband']}! You'll be prioritized for a romantic match next round."
+      end
+
+      begin
+        client.messages.create(
+          from: ENV['TWILIO_PHONE_NUMBER'],
+          to: match['person_b_phone'],
+          body: message_b
+        )
+        sent += 1
+        print "."
+      rescue => e
+        puts "\n✗ Failed to send to #{match['person_b_name']}: #{e.message}"
+        failed += 1
+        failed_sends << {
+          'name' => match['person_b_name'],
+          'phone' => match['person_b_phone'],
+          'wristband' => match['person_b_wristband'],
+          'match_wristband' => match['person_a_wristband'],
+          'error' => e.message
+        }
+      end
+
+      sleep 0.1
+    end
+  end
+
+  puts "\n\n✓ Resent #{sent} messages"
+  puts "✗ Failed #{failed} messages" if failed > 0
+
+  # Save failed sends to file
+  if failed_sends.any?
+    File.open('failed_sends.txt', 'a') do |f|
+      f.puts "\n" + "=" * 60
+      f.puts "RESEND Batch ##{batch['batch_number']} - #{Time.now}"
+      f.puts "=" * 60
+      failed_sends.each do |fail|
+        f.puts "#{fail['name']} (Wristband ##{fail['wristband']})"
+        f.puts "  Phone: #{fail['phone']}"
+        f.puts "  Match: Wristband ##{fail['match_wristband']}"
+        f.puts "  Error: #{fail['error']}"
+        f.puts
+      end
+    end
+    puts "⚠️  Failed sends logged to: failed_sends.txt"
+  end
+
+  puts "\n✓ Batch ##{batch['batch_number']} resent"
 end
 
 # ============================================================================
