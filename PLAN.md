@@ -1,4 +1,7 @@
 # Bridge Pub Matching System - Implementation Plan
+**Last Updated:** Feb 5, 2026
+**Event:** Friday 10pm-1am
+**Current Participants:** 195
 
 ---
 
@@ -6,11 +9,15 @@
 
 **🚨 DO NOT SEND MESSAGES BEFORE THE EVENT! 🚨**
 
+**Twilio Safety Lockout Status:** ENABLED (line ~1274 in bridge_matcher.rb)
+- **MUST REMOVE BEFORE FRIDAY**
+- Search for "SAFETY LOCKOUT" and delete that section
+
 **While testing and preparing:**
 - ✅ Generate matches to test the algorithm (Option 4)
 - ✅ Review match quality and compatibility scores
 - ✅ Check in test participants
-- ❌ **DO NOT USE OPTION 5 (SEND VIA TWILIO)**
+- ❌ **DO NOT USE OPTION 5 (SEND VIA TWILIO) - IT'S DISABLED ANYWAY**
 - ❌ **DO NOT SEND REAL MESSAGES TO PARTICIPANTS**
 
 **Only send messages on Friday night during the actual event!**
@@ -19,60 +26,84 @@ Messages cannot be unsent. Test thoroughly but DO NOT hit send until the party.
 
 ---
 
-## Overview
+## System Overview
 
-A Ruby-based matching system for the Bridge dating app event at Rice University's pub. The system manages participant check-ins, generates optimal romantic matches across 3 rounds throughout the night, and sends matches via Twilio SMS.
+A Ruby-based matching system for the Bridge dating app event at Rice University's pub. The system manages participant check-ins, generates optimal romantic matches with special request support, and sends matches via Twilio SMS.
 
 **Event Details:**
 - Date: Friday
 - Time: 10:00 PM - 1:00 AM
-- Match drops: Flexible - send whenever you want to energize the party
 - Venue: Pub at Rice
-- Match limit: UNLIMITED - generate and send as many batches as you want!
+- Expected turnout: 80-120 people
+- Walk-ins expected: ~50 people
+- Match batches: 3-4 during the night
 
-## System Architecture
+---
 
-### Files Structure
+## Files Structure
+
 ```
 bridge-pub/
-├── typeformbridgepub.csv          # Original survey data
-├── waitlist_duplicate_rows.csv    # Additional contact info
-├── merged_participants.csv        # Clean merged data (✅ created)
-├── .env                           # Twilio credentials
-├── bridge_matcher.rb              # Main Ruby script (to build)
-├── bridge_state.json              # Runtime state (auto-generated)
-└── PLAN.md                        # This file
+├── current_bridge_pub_complete.csv    # Master participant list (195 people)
+├── special_requests.json              # 33 special requests
+├── bridge_matcher.rb                  # Main Ruby script
+├── bridge_state.json                  # Runtime state (auto-generated)
+├── add_new_registrations.rb           # Merge new walk-in registrations
+├── normalize_phones.rb                # Phone standardization utility
+├── validate_special_requests.rb       # Check which special requests work
+├── debug_special_requests.rb          # Debug special request matching
+├── .env                               # Twilio credentials
+├── PLAN.md                            # This file
+├── COMPREHENSIVE_AUDIT.md             # Full system audit
+└── FRIDAY_CHECKLIST.md                # Pre-event checklist
 ```
 
-### Core Components
+---
 
-#### 1. Data Layer
-- **Source:** `merged_participants.csv` (initial: 145 participants, will grow)
-- **Preprocessing:** Re-runnable merge script for new survey responses
-- **Data Updates:** System supports reloading CSV with new participants mid-event
-- **Missing Data Handling:**
-  - Missing phones: Skip from matching (can't send SMS)
-  - Missing emails: Use name as identifier
-  - Missing grades: Skip grade-based filters for these participants
+## Core Components
 
-**Updating Data Mid-Event:**
-When new survey responses come in:
-1. Download new `typeformbridgepub.csv` from Typeform
-2. Run: `ruby merge_data.rb` to create updated `merged_participants.csv`
-3. In main script, use Menu Option 10: "Reload participant data"
-4. System will:
-   - Load new participants
-   - Preserve existing check-ins and matches
-   - Make new participants available for future rounds
-   - Use email as stable identifier to merge state
+### 1. Data Layer
 
-#### 2. State Management
+**Master File:** `current_bridge_pub_complete.csv` (195 participants)
+- All phone numbers standardized to 10 digits
+- 65 people missing grade (intentionally allowed)
+- 1 person (Ian) has 9-digit phone (needs manual fix)
+
+**Walk-In Workflow:**
+1. Walk-in fills Typeform
+2. Export new CSV from Typeform
+3. Run: `ruby add_new_registrations.rb new_export.csv`
+4. Script validates phones (must be exactly 10 digits)
+5. Merges with current_bridge_pub_complete.csv
+6. Option 8 in main script: Reload participant data
+7. Option 11: Check in walk-in (separate wristband range)
+
+**Phone Validation:**
+- add_new_registrations.rb validates all phones to exactly 10 digits
+- Skips and warns about invalid phones (prevents Ian-style issues)
+
+### 2. Special Requests System
+
+**File:** `special_requests.json` (33 requests)
+
+**How It Works:**
+- Matches by **phone number** (exact) OR **exact full name** (case-insensitive)
+- Requires BOTH people checked in for TWO consecutive batches
+- Batch 1: Counter increments 0→1 (no match)
+- Batch 2: Counter increments 1→2 (**AUTO-MATCH**)
+- Deduplicates mutual requests (A→B and B→A create only 1 match)
+- Matches happen in Phase 0 (before all filters)
+
+**Current Status:**
+- 6 valid requests (both people in system)
+- 27 waiting on walk-ins to register
+
+**Validation:**
+Run `ruby validate_special_requests.rb` to see which requests will work
+
+### 3. State Management
+
 **File:** `bridge_state.json`
-
-**Stable Identifier:** Email address (or name if email missing)
-- State keyed by email to preserve data across CSV reloads
-- When new CSV loaded, existing state merged by matching emails
-- New participants added, existing participants' state preserved
 
 **Structure:**
 ```json
@@ -80,12 +111,14 @@ When new survey responses come in:
   "match_batches": [
     {
       "batch_number": 1,
-      "generated_at": "2026-02-07T23:00:00Z",
-      "sent_at": "2026-02-07T23:01:00Z",
+      "generated_at": "2026-02-05T23:00:00Z",
+      "sent_at": "2026-02-05T23:01:00Z",
       "matches": [
         {
-          "person_a_email": "john_doe@rice.edu",
-          "person_b_email": "jane_smith@rice.edu",
+          "person_a_email": "john@rice.edu",
+          "person_a_wristband": 42,
+          "person_b_email": "jane@rice.edu",
+          "person_b_wristband": 87,
           "type": "romantic",
           "compatibility_score": 85
         }
@@ -93,577 +126,445 @@ When new survey responses come in:
     }
   ],
   "participants": {
-    "john_doe_email@rice.edu": {
+    "john@rice.edu": {
       "name": "John Doe",
-      "email": "john_doe_email@rice.edu",
-      "phone": "1234567890",
+      "email": "john@rice.edu",
+      "phone": "7135551234",
       "checked_in": true,
-      "wristband_number": 1,
-      "matched_with_emails": ["jane_smith@rice.edu", "alice_jones@rice.edu"]
+      "wristband_number": 42,
+      "matched_with_emails": ["jane@rice.edu"]
     }
   },
-  "next_wristband_number": 3,
-  "last_operation": "check_in",
-  "last_updated": "2026-02-07T22:30:00Z"
+  "special_requests": [...],
+  "next_wristband_number": 195,
+  "next_walkin_wristband_number": 250,
+  "last_operation": "generate_matches",
+  "last_updated": "2026-02-05T22:30:00Z"
 }
 ```
+
+**Wristband Ranges:**
+- Pre-registered: #1-249
+- Walk-ins: #250+ (separate counter)
 
 **State Persistence:**
 - Saved after every operation
 - Enables crash recovery
-- Tracks who's been matched together to prevent duplicate pairings
-- No limit on number of match batches
-- No limit on matches per person
-- Continue generating matches as long as compatible pairs exist
+- Tracks all previous matches to prevent duplicates
 
-#### 3. CLI Menu System
+### 4. CLI Menu System
 
 **Main Menu:**
 ```
 === BRIDGE PUB MATCHER ===
-Batches sent: X | Total matches: Y | Checked in: Z
+Participants: 195 | Checked in: 0 | Gender: 0M / 0F / 0NB
+Batches: 0 | Unsent: 0
 
-1. Check in participant
+1. Check in participant (pre-registered)
 2. Check out participant
 3. View current status
 4. Generate new matches
 5. Send matches via Twilio
 6. Export results
 7. Reset system (USE WITH CAUTION)
-8. Reload participant data (for new survey responses)
-9. Exit
+8. Reload participant data
+9. View match history for person
+10. View all matches for batch
+11. Check in walk-in (starts at wristband #250)
+12. Undo last check-in/check-out
+13. Exit
 
 Choose option:
 ```
 
-**Menu Options Explained:**
+**Key Options:**
 
-**Option 1: Check In**
-- Prompt for name or email
-- Search participants
-- Assign next available wristband number
-- Mark as present
-- Save state
+**Option 1: Check In (Pre-Registered)**
+- Search by name/email/phone
+- Assigns next wristband from #1-249 range
+- Reuses existing wristband if re-checking in
 
-**Option 2: Check Out**
-- Prompt for name/email/wristband number
-- Mark as absent
-- Remove from matching pool for future rounds
-- Keep existing matches
-- Save state
+**Option 11: Check In Walk-In**
+- For people not in pre-registration
+- Assigns wristband from #250+ range
+- Must reload data (Option 8) after merging CSV
 
-**Option 3: View Status**
-Display:
-- Total batches sent: X
-- Total participants: X
-- Checked in: X
-- Total matches made: X
-- People with most matches: [Name (X matches)]
-- People never matched: X
-- List of checked-in participants with wristband numbers and match count
-
-**Option 4: Generate New Matches**
-- Run matching algorithm on all available participants
-- Excludes anyone with 3 matches already
-- Excludes anyone matched in previous batches (no re-matching)
-- Display matches before confirmation
-- Shows compatibility scores
-- Ask for confirmation before saving
-- Update state
-- Can be run as many times as needed during event
-
-**Option 5: Send via Twilio**
-- Show most recently generated (unsent) matches
-- Display message preview
-- Confirm before sending
-- Send SMS to all matched participants
-- Log successes/failures
-- Mark batch as "sent" to prevent re-sending
-
-**Option 6: Export Results**
-- Generate CSV with all matches across all batches
-- Format: Batch#, Person1, Wristband1, Person2, Wristband2, Type, Timestamp
+**Option 12: Undo**
+- Reverts last check-in or check-out operation
+- Frees wristband number if check-in
+- Re-checks person in if check-out
 
 **Option 7: Reset System**
-- Double confirmation required
-- Clear all check-ins and matches
-- Keep participant data
+- Clears all check-ins, matches, wristband numbers
+- **Also resets special request state** (batches_together, matched flags)
+- Keeps participant data
+- Requires typing "RESET" to confirm
 
-**Option 8: Reload Participant Data**
-- Use when new survey responses come in
-- Download new CSV from Typeform
-- Run `ruby merge_data.rb` first
-- Then select this option
-- System will:
-  - Reload `merged_participants.csv`
-  - Preserve all existing state (check-ins, matches, wristband numbers)
-  - Add new participants to available pool
-  - Use email as merge key to maintain consistency
-- Display: "Loaded X new participants"
+**Option 8: Reload Data**
+- Reloads current_bridge_pub_complete.csv
+- Preserves all check-ins and matches
+- Adds new participants
+
+---
 
 ## Matching Algorithm
 
-### Hard Filters (Must Pass)
+### Phase 0: Special Requests
 
-1. **Both participants present** - checked in and not checked out
-2. **Phone number available** - need phone to send match
-3. **Not previously matched together** - these two people haven't been matched before
-4. **Gender preference match** - bidirectional compatibility
-   - Person A's gender must be in Person B's preferences
-   - Person B's gender must be in Person A's preferences
-   - Multiple preferences allowed (e.g., "Male, Female" matches both)
-5. **Grade compatibility** - NO freshman-senior matches
-   - Exception: If either person has no grade data, skip this filter
-   - Allowed: Freshman-Sophomore, Freshman-Junior, Sophomore-Junior, Sophomore-Senior, Junior-Senior
+**Highest priority matches - happen before all filters**
 
-### Compatibility Scoring
+1. Load special_requests from state
+2. For each request where matched = false:
+   - Find requester by phone
+   - Find requested person by phone OR exact name
+   - If both checked in: increment batches_together counter
+   - If batches_together reaches 2: **AUTO-MATCH**
+3. Deduplicates mutual requests (A→B + B→A = 1 match)
+4. Marks requests as matched
+5. Returns special matches
 
-**Total possible score: ~130 points**
+### Phase 1 & 2: Prioritized Romantic Matching
 
-```ruby
-def calculate_compatibility_score(person_a, person_b)
-  score = 0
+**All romantic pairs sorted by friend match history**
 
-  # 1. Grade Proximity (0-20 points)
-  if both_have_grades?(person_a, person_b)
-    grade_diff = grade_difference(person_a, person_b)
-    score += case grade_diff
-    when 0 then 20  # Same grade
-    when 1 then 10  # Adjacent (e.g., Fresh-Soph)
-    when 2 then 5   # 2 apart (e.g., Fresh-Junior)
-    else 0
-    end
-  end
+**Priority System:**
+- **Priority 2 (Highest):** Both people had friend matches before
+- **Priority 1 (Medium):** One person had a friend match before
+- **Priority 0 (Lowest):** Neither had friend matches before
 
-  # 2. School Match (0-10 points)
-  if same_school?(person_a, person_b)
-    score += 10
-  end
+**Algorithm:**
+1. Build all possible romantic pairs (hard filters apply)
+2. Assign priority based on friend match history
+3. Sort by priority (descending), then compatibility score (descending)
+4. Match greedily from highest to lowest priority
+5. This ensures people with friend matches get first pick
 
-  # 3. Ideal Friday Night (0-15 points)
-  if same_ideal_friday?(person_a, person_b)
-    score += 15
-  end
+**Hard Filters:**
+- Both checked in
+- Phone numbers available
+- Not previously matched together
+- Gender preference compatible (bidirectional)
+- Grade compatible (no Freshman-Senior, unless grade missing)
 
-  # 4. Decision Guide: Emotion vs Logic (0-15 points)
-  if same_decision_guide?(person_a, person_b)
-    score += 15
-  end
+**Compatibility Scoring (0-130 points):**
+- Grade proximity: 0-20 points
+- School match: 10 points
+- Ideal Friday night: 15 points
+- Emotion vs Logic: 15 points
+- Plan vs Spontaneous: 15 points
+- Fitness importance: 0-20 points
+- Important value: 20 points
+- Reading habit: 10 points
 
-  # 5. Plan vs Spontaneous (0-15 points)
-  if same_plan_preference?(person_a, person_b)
-    score += 15
-  end
+### Phase 3: Friend Matching
 
-  # 6. Fitness Importance (0-20 points) - WEIGHTED HIGHER
-  fitness_diff = fitness_importance_difference(person_a, person_b)
-  score += case fitness_diff
-  when 0 then 20  # Exact match
-  when 1 then 10  # One level apart
-  else 0
-  end
+**Only for people who never had a friend match**
 
-  # 7. Important Value (0-20 points)
-  if same_important_value?(person_a, person_b)
-    score += 20
-  end
+**Hard Constraint Requirement:**
+- Only matches people blocked by gender preference OR grade incompatibility
+- NOT for low compatibility scores
 
-  # 8. Reading Habit (0-10 points)
-  if same_reading_habit?(person_a, person_b)
-    score += 10
-  end
+**Friend Match Limit:** 1 per person lifetime
+- After friend match, person gets priority for romantic matches (Phase 1)
+- Cannot get a second friend match
 
-  return score
-end
-```
+**How It Works:**
+1. Filter eligible: unmatched + never had friend match
+2. Build pairs where blocked by gender OR grade
+3. Sort by compatibility score
+4. Match greedily
+5. If odd number: create one group of 3
 
-### Matching Algorithm Steps
+**Groups of 3:**
+- Last pair + leftover person
+- All 3 receive messages with both other wristband numbers
+- All 3 count as having had friend match
 
-**Algorithm: Maximum Weighted Bipartite Matching**
-
-1. **Build Eligible Pool**
-   - Get all checked-in participants
-   - Filter out those with 3 matches
-   - Filter out those already matched this round
-   - Filter out those missing phone numbers
-
-2. **Generate Compatibility Matrix**
-   - For each pair (A, B):
-     - Check hard filters
-     - If pass, calculate compatibility score
-     - Store score in matrix
-   - Result: NxN matrix of compatibility scores (0 if incompatible)
-
-3. **Find Optimal Matching**
-   - Use greedy maximum weighted matching
-   - Algorithm:
-     ```
-     while unmatched_people_exist:
-       find highest scoring compatible pair (A, B)
-       if no pairs left: break
-       match A with B
-       remove A and B from pool
-     ```
-   - This ensures bidirectional matches
-   - Maximizes total compatibility
-
-4. **Handle Unmatched Participants**
-   - For people still unmatched after romantic matching
-   - Re-run algorithm WITHOUT gender preference filter
-   - Mark matches as "friend" type
-   - Same compatibility scoring otherwise
-
-5. **Return Matches**
-   - Format: Array of {person_a, person_b, score, type}
-   - Sorted by score (highest first)
-
-### Example Matching Scenario
-
-**Batch 1:**
-- 80 people checked in
-- After filtering: 78 eligible (2 missing phones)
-- Compatibility matrix: 78x78
-- Result: 30 romantic pairs matched (60 people)
-- Remaining: 18 people
-- Friend matching: 7 friend pairs (14 people)
-- Still unmatched: 4 people (wait for next batch)
-
-**Batch 2:**
-- 10 more people checked in (90 total)
-- Eligible: Everyone who hasn't been matched with each other yet
-- New compatible pairs after excluding previous matches: ~35 pairs
-- Result: 35 romantic pairs (70 people)
-- Friend matching: 8 friend pairs (16 people)
-- 4 people unmatched this round
-
-**Batch 3:**
-- 5 more people checked in (95 total)
-- Eligible: Everyone, excluding people who were already matched together
-- Compatible pairs remaining: ~40 pairs
-- Result: 40 romantic pairs (80 people)
-- Continue as long as you want!
-
-**Later batches:**
-- Party still going? Generate more!
-- Algorithm automatically excludes previous pairings
-- Each person can get matched multiple times with different people
-- No upper limit!
+---
 
 ## Twilio Integration
 
-### Setup
-
-**Environment Variables (they are in .env):**
-```
-TWILIO_ACCOUNT_SID=your_account_sid
-TWILIO_AUTH_TOKEN=your_auth_token
-TWILIO_PHONE_NUMBER=+1234567890
-```
-
-**Ruby Gem:**
-```ruby
-require 'twilio-ruby'
-
-client = Twilio::REST::Client.new(
-  ENV['TWILIO_ACCOUNT_SID'],
-  ENV['TWILIO_AUTH_TOKEN']
-)
-```
-
-### Message Templates
+### Message Formats
 
 **Romantic Match:**
 ```
-Your Bridge match is {name}, sign in #{wristband_number}!
+"Your Bridge match is #42!"
 ```
 
-**Friend Match:**
+**Friend Match (pair of 2):**
 ```
-We didn't find a romantic interest for you this round, but you'd make great friends with {name}, sign in #{wristband_number}!
-```
-
-### Sending Logic
-
-```ruby
-def send_match_notification(person, matched_with, type)
-  message_body = if type == "romantic"
-    "Your Bridge match is #{matched_with[:name]}, sign in ##{matched_with[:wristband]}!"
-  else
-    "We didn't find a romantic interest for you this round, but you'd make great friends with #{matched_with[:name]}, sign in ##{matched_with[:wristband]}!"
-  end
-
-  client.messages.create(
-    from: ENV['TWILIO_PHONE_NUMBER'],
-    to: person[:phone],
-    body: message_body
-  )
-end
+"We didn't find a romantic interest for you this round, but you'd make great friends with #42! You'll be prioritized for a romantic match next round."
 ```
 
-### Error Handling
-- Retry failed messages (max 3 attempts)
-- Log all send attempts
-- Display summary: X sent, Y failed
-- Save failed numbers for manual follow-up
-
-## Data Structure Details
-
-### Participant Fields (from CSV)
-
-**Required for matching:**
-- Name
-- Phone number
-- Gender
-- Gender preference(s)
-
-**Optional but used in scoring:**
-- Email
-- Grade
-- School
-- Ideal Friday night
-- Decision guide (emotion/logic)
-- Plan vs spontaneous
-- Fitness importance
-- Important value
-- Reading habit
-
-**Survey-specific field (deferred):**
-- Special request (not implemented in v1)
-
-### Grade Mapping
-
-```ruby
-GRADES = {
-  "Freshman" => 1,
-  "Sophomore" => 2,
-  "Junior" => 3,
-  "Senior" => 4
-}
-
-# Grade difference calculation
-def grade_difference(person_a, person_b)
-  (GRADES[person_a.grade] - GRADES[person_b.grade]).abs
-end
-
-# Grade compatibility check
-def grades_compatible?(person_a, person_b)
-  # If either missing grade, allow
-  return true if person_a.grade.nil? || person_b.grade.nil?
-
-  # Block Freshman-Senior
-  diff = grade_difference(person_a, person_b)
-  diff < 3  # Max 2 years apart
-end
+**Friend Match (group of 3):**
+```
+"We didn't find a romantic interest for you this round, but you'd make great friends with #42 and #87! You'll be prioritized for a romantic match next round."
 ```
 
-### Gender Preference Handling
-
-**CSV Structure:**
-- Column 8: "Male" if selected
-- Column 9: "Female" if selected
-- Column 10: "Non-binary" if selected
-
-**Parse Logic:**
-```ruby
-def parse_gender_preferences(row)
-  prefs = []
-  prefs << "Male" if row[7] == "Male"
-  prefs << "Female" if row[8] == "Female"
-  prefs << "Non-binary" if row[9] == "Non-binary"
-  prefs
-end
-
-def gender_compatible?(person_a, person_b)
-  # A's gender must be in B's preferences
-  a_in_b = person_b.gender_preferences.include?(person_a.gender)
-
-  # B's gender must be in A's preferences
-  b_in_a = person_a.gender_preferences.include?(person_b.gender)
-
-  a_in_b && b_in_a
-end
+**Special Request Match:**
+```
+"Your Bridge match is #42!"
+(Same as romantic - sent as type='special_request')
 ```
 
-## Error Handling & Recovery
+### Key Features
+
+- **Anonymous:** Only wristband numbers, no names
+- **Priority messaging:** Friend matches inform people they'll be prioritized
+- **Failed send logging:** Writes to failed_sends.txt
+- **Safety lockout:** Currently enabled - MUST REMOVE BEFORE FRIDAY
+
+### Environment Variables
+
+```bash
+# .env
+TWILIO_ACCOUNT_SID=your_sid_here
+TWILIO_AUTH_TOKEN=your_token_here
+TWILIO_PHONE_NUMBER=+15551234567
+```
+
+---
+
+## Error Handling & Edge Cases
 
 ### Crash Recovery
-
-**On startup:**
-1. Check if `bridge_state.json` exists
-2. If yes: Load state and continue from last operation
-3. If no: Initialize new state
-
-**State checkpoints:**
-- After every check-in/out
-- After generating matches
-- After sending messages
-- Before advancing rounds
+- Restart script: `ruby bridge_matcher.rb`
+- State automatically loaded from bridge_state.json
+- Continue from where you left off
 
 ### Validation Checks
 
 **Before generating matches:**
 - At least 2 people checked in
-- Warn if very few compatible pairs remain (most people already matched together)
+- Compatible pairs exist
 
 **Before sending messages:**
 - Unsent matches exist
-- All matched participants still checked in
 - Twilio credentials configured
-- Confirm before sending (can't unsend!)
+- Confirmation required
 
-### Edge Cases
+### Edge Cases Handled
 
-1. **Odd number of participants:** Some people won't get matched
-2. **Gender imbalance:** Use friend matching for extras
-3. **No compatible matches:** Friend matching fallback
-4. **Person checks out mid-round:** Keep in current round matches, exclude from future
-5. **Duplicate check-in:** Warn and skip
-6. **Invalid wristband lookup:** Show error, prompt again
+1. **Odd number of participants:** Some unmatched
+2. **Gender imbalance (83M/59F):** Friend matching for extras
+3. **No compatible romantic matches:** Friend matching fallback
+4. **Duplicate check-in:** Shows existing wristband
+5. **Check-out then re-check-in:** Reuses same wristband
+6. **9-digit phone:** Validated in new registrations (Ian needs manual fix)
+7. **Missing grade:** Allowed, skips grade filter for these people
+8. **Special request mutual:** Deduplicates A→B and B→A
+9. **Friend match limit:** Enforced at 1 per person
+10. **Groups of 3:** All 3 count as having had friend match
 
-## Usage Instructions
+---
 
-### Setup (One-time)
+## Event Night Workflow
 
-1. **Install Twilio gem:**
+### Setup (Before 9:00 PM)
+
+1. **Remove Twilio Safety Lockout**
    ```bash
-   gem install twilio-ruby
+   # Edit bridge_matcher.rb
+   # Search for "SAFETY LOCKOUT" (line ~1274)
+   # Delete or comment out that entire section
    ```
 
-2. **Create .env file:**
+2. **Fix Ian's Phone**
    ```bash
-   # .env
-   TWILIO_ACCOUNT_SID=your_sid_here
-   TWILIO_AUTH_TOKEN=your_token_here
-   TWILIO_PHONE_NUMBER=+15551234567
+   # Edit current_bridge_pub_complete.csv
+   # Find Ian (row 172)
+   # Change phone from 902184475 to correct 10-digit number
    ```
 
-3. **Verify data:**
+3. **Start Script**
    ```bash
    ruby bridge_matcher.rb
-   # Will load and validate merged_participants.csv
    ```
 
-### Event Night Workflow
+4. **Verify:**
+   - Participants loaded: 195
+   - Special requests loaded: 33
+   - Wristbands ready: #1-249 for pre-reg, #250+ for walk-ins
 
-**Before event (9:00 PM):**
-1. Start script: `ruby bridge_matcher.rb`
-2. Verify participant count
-3. Have wristbands numbered 1-145+ ready
+### During Event (10:00 PM - 1:00 AM)
 
-**During event (10:00 PM - 1:00 AM):**
-
-**Ongoing: Check-ins**
-- Menu Option 1: Check in participants as they arrive
+**Check-Ins (Ongoing):**
+- Option 1: Check in pre-registered participants
 - Hand out numbered wristbands
-- Keep checking people in throughout the night
+- Option 11: Check in walk-ins (after merging CSV)
 
-**Whenever you want to energize the party:**
-1. Menu Option 4: Generate new matches
-2. Review matches and compatibility scores
-3. Confirm
-4. Menu Option 5: Send via Twilio
-5. Watch the excitement unfold!
+**Match Generation (3-4 times during night):**
 
-**Repeat as many times as you want:**
-- Party feeling dry? Generate more matches!
-- New people arrived? Check them in and generate matches!
-- Energy low? Send another batch!
-- People want more matches? Send more!
-- No limit - keep the energy going all night!
+**Batch 1:**
+1. Option 4: Generate matches
+2. Review output:
+   - Special requests: Should see 6 (if all checked in for 2nd time)
+   - Romantic matches with priority breakdown
+   - Friend matches (hard constraints only)
+3. Confirm matches
+4. Option 5: Send via Twilio
+5. Watch the magic happen!
 
-**Post-event:**
-- Menu Option 7: Export results
-- Save all files for analysis
+**Batch 2+:**
+1. More people checked in
+2. Option 4: Generate matches
+3. People with friend matches get priority for romantic
+4. Special requests continue to check (batches_together)
+5. Send matches
+6. Repeat as desired!
 
-**Updating Data Mid-Event (as new responses come in):**
-1. Download latest `typeformbridgepub.csv` from Typeform
-2. (Optional) Update `waitlist_duplicate_rows.csv` if you have new waitlist data
-3. Run: `ruby merge_data.rb`
-4. In main script, Menu Option 9: Reload participant data
-5. New participants now available for check-in
-6. Existing check-ins and matches preserved
+**Walk-In Registration (As Needed):**
+1. Export new Typeform responses
+2. `ruby add_new_registrations.rb new_export.csv`
+3. Script validates phones and merges
+4. Option 8: Reload data
+5. Option 11: Check in walk-ins
+6. Continue matching!
 
-### Troubleshooting
+**Post-Event:**
+- Option 6: Export all results
+- Backup bridge_state.json
+- Delete PII data
+
+---
+
+## Troubleshooting
 
 **Script crashes:**
 - Restart: `ruby bridge_matcher.rb`
-- State automatically restored
-- Continue from where you left off
+- State restored automatically
+- Continue from last checkpoint
 
-**Twilio fails:**
-- Check .env credentials
-- Check phone number format (+1XXXXXXXXXX)
+**Twilio not sending:**
+- Check if safety lockout still enabled (line ~1274)
+- Verify .env credentials
 - Check Twilio account balance
+- Check failed_sends.txt for errors
 
-**Wrong match generated:**
-- DO NOT regenerate (will change all matches)
-- Manually send correction via Twilio dashboard
-- Note for post-event analysis
+**Special requests not matching:**
+- Run `ruby validate_special_requests.rb` to see status
+- Check if both people are in system (requested person may not be registered)
+- Check if batches_together = 2 (need 2 batches where both checked in)
+- Run `ruby debug_special_requests.rb` for detailed info
 
-**New survey responses arrive:**
-1. Download updated `typeformbridgepub.csv`
-2. Run `ruby merge_data.rb` (safe to re-run)
-3. In main script: Menu Option 9 (Reload data)
-4. New participants available for check-in
-5. All existing state preserved
+**Friend matches repeating:**
+- Should be fixed - friend matches now marked with type='friend'
+- has_friend_match?() checks both 'friend' and 'friend_group_of_3'
+- If still happening, check COMPREHENSIVE_AUDIT.md
 
-**Person in state but not in new CSV:**
-- Keep in state (they were checked in)
-- Still eligible for matching
-- Their data frozen at last known state
+**Wrong wristband assigned:**
+- Option 12: Undo last operation
+- Re-check in with correct process
 
-## Technical Specifications
+**Phone validation failing:**
+- add_new_registrations.rb requires exactly 10 digits
+- If valid phone rejected, check for non-numeric characters
+- Manual edit in CSV if needed
 
-### Dependencies
-- Ruby 2.6.10+ (✅ installed)
-- Standard library: CSV, JSON, FileUtils
-- External gem: twilio-ruby
+---
 
-### Performance
-- Matching algorithm: O(n²) for compatibility matrix
-- Expected runtime: < 1 second for 145 participants
-- State file size: ~50KB
+## System Status: 95% Ready
 
-### Data Privacy
-- Phone numbers only used for Twilio
-- No data sent to external services (except Twilio)
-- State file contains PII - delete after event
+### ✓ Completed Features
 
-### Limitations
-- No special request matching (deferred to v2)
-- No manual match editing (regenerate or manual Twilio)
+- ✅ Special request matching (phone OR exact name)
+- ✅ Friend match prioritization for romantic matches
+- ✅ Friend match limit (1 per person)
+- ✅ Groups of 3 support
+- ✅ Walk-in system with separate wristband range
+- ✅ Phone validation (10 digits required)
+- ✅ Undo functionality
+- ✅ Reset system (includes special requests)
+- ✅ Mutual request deduplication
+- ✅ Anonymous messaging (wristband numbers only)
+- ✅ Priority messaging for friend matches
+- ✅ State persistence and crash recovery
+
+### ⚠️ Must Fix Before Friday
+
+1. **Remove Twilio safety lockout** (5 minutes)
+   - Line ~1274 in bridge_matcher.rb
+   - Search for "SAFETY LOCKOUT"
+
+2. **Fix Ian's phone** (2 minutes)
+   - Row 172 in current_bridge_pub_complete.csv
+   - Current: 902184475 (9 digits)
+   - Need: correct 10-digit number
+
+### Known Limitations
+
+- No manual match editing (must regenerate or use Twilio dashboard)
 - No undo for sent messages
-- People can't be matched with the same person twice (but unlimited total matches)
-
-## Future Enhancements (Post-Event)
-
-1. **Special request boosting** - Boost compatibility score for requested matches
-2. **Manual match overrides** - Allow operator to create custom matches
-3. **Match analytics** - Success rates, compatibility score distributions
-4. **Web interface** - Replace CLI with web UI
-5. **Real-time updates** - WebSocket for live match status
-6. **Photo integration** - Include photos in match notifications
+- People can't be matched with same person twice
+- No photo integration
+- CLI only (no web interface)
 
 ---
 
-## Implementation Checklist
+## Testing Checklist
 
-- [✅] Data merge completed
-- [ ] Main script: `bridge_matcher.rb`
-  - [ ] CSV parsing
-  - [ ] State management
-  - [ ] CLI menu
-  - [ ] Check-in/out logic
-  - [ ] Matching algorithm
-  - [ ] Twilio integration
-  - [ ] Error handling
-- [ ] Testing
-  - [ ] Test with sample data
-  - [ ] Test state persistence
-  - [ ] Test Twilio (1-2 test messages)
-- [ ] .env setup (user provides credentials)
-- [ ] Ready for event
+Before Friday:
+
+- [ ] Remove Twilio safety lockout
+- [ ] Fix Ian's phone number
+- [ ] Restart script to load changes
+- [ ] Generate batch 1 with test data
+  - [ ] Verify special requests work
+  - [ ] Verify friend matches limited to 1
+  - [ ] Verify romantic prioritization
+- [ ] Generate batch 2
+  - [ ] Verify special requests trigger on 2nd batch
+  - [ ] Verify friend match people get romantic priority
+- [ ] Send test messages to yourself
+  - [ ] Verify romantic message format
+  - [ ] Verify friend message format
+- [ ] Test walk-in workflow
+- [ ] Test undo functionality
+- [ ] Test reset system
+- [ ] Backup bridge_state.json
 
 ---
 
-**Questions or concerns?** Review this plan before implementation begins.
+## Quick Reference
+
+**Key Files:**
+- `current_bridge_pub_complete.csv` - Master participant list
+- `special_requests.json` - Special request definitions
+- `bridge_state.json` - Runtime state (auto-generated)
+- `bridge_matcher.rb` - Main script
+
+**Key Commands:**
+```bash
+# Start system
+ruby bridge_matcher.rb
+
+# Merge walk-in registrations
+ruby add_new_registrations.rb new_export.csv
+
+# Validate special requests
+ruby validate_special_requests.rb
+
+# Debug special requests
+ruby debug_special_requests.rb
+```
+
+**Wristband Ranges:**
+- Pre-reg: #1-249
+- Walk-ins: #250+
+
+**Match Types:**
+- `special_request` - Phase 0 (requested pairs)
+- `romantic` - Phase 1&2 (compatibility-based)
+- `friend` - Phase 3 (hard constraint failures)
+- `friend_group_of_3` - Phase 3 (odd number handling)
+
+**Priority Levels:**
+- Priority 2: Both had friend matches
+- Priority 1: One had friend match
+- Priority 0: Neither had friend match
+
+---
+
+**Ready for Friday! 🎉**
+
+See COMPREHENSIVE_AUDIT.md for detailed system analysis.

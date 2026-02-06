@@ -1347,13 +1347,13 @@ def send_matches
   if sample_romantic
     puts "\nRomantic match example:"
     puts "  To: #{sample_romantic['person_a_phone']}"
-    puts "  Message: \"Your Bridge match is sign in ##{sample_romantic['person_b_wristband']}!\""
+    puts "  Message: \"Your Bridge match is ##{sample_romantic['person_b_wristband']}!\""
   end
 
   if sample_friend
     puts "\nFriend match example:"
     puts "  To: #{sample_friend['person_a_phone']}"
-    puts "  Message: \"We didn't find a romantic interest for you this round, but you'd make great friends with #{sample_friend['person_b_name']}, sign in ##{sample_friend['person_b_wristband']}!\""
+    puts "  Message: \"We didn't find a romantic interest for you this round, but you'd make great friends with ##{sample_friend['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
   end
 
   print "\nSend #{matches.size * 2} messages? (yes/no): "
@@ -1395,7 +1395,7 @@ def send_matches
       ]
 
       people.each do |person|
-        message = "We didn't find a romantic interest for you this round, but you'd make great friends with sign in ##{person['others'][0]} and ##{person['others'][1]}!"
+        message = "We didn't find a romantic interest for you this round, but you'd make great friends with ##{person['others'][0]} and ##{person['others'][1]}! You'll be prioritized for a romantic match next round."
 
         begin
           client.messages.create(
@@ -1422,9 +1422,9 @@ def send_matches
       # Regular pair (romantic or friend pair of 2)
       # Send to person A
       message_a = if match['type'] == 'romantic'
-        "Your Bridge match is sign in ##{match['person_b_wristband']}!"
+        "Your Bridge match is ##{match['person_b_wristband']}!"
       else
-        "We didn't find a romantic interest for you this round, but you'd make great friends with sign in ##{match['person_b_wristband']}!"
+        "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
       end
 
       begin
@@ -1449,9 +1449,9 @@ def send_matches
 
       # Send to person B
       message_b = if match['type'] == 'romantic'
-        "Your Bridge match is sign in ##{match['person_a_wristband']}!"
+        "Your Bridge match is ##{match['person_a_wristband']}!"
       else
-        "We didn't find a romantic interest for you this round, but you'd make great friends with sign in ##{match['person_a_wristband']}!"
+        "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_a_wristband']}! You'll be prioritized for a romantic match next round."
       end
 
       begin
