@@ -153,16 +153,11 @@ html = <<~HTML
     }
     .match-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       margin-bottom: 15px;
       padding-bottom: 15px;
       border-bottom: 2px solid #f0f0f0;
-    }
-    .match-number {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #667eea;
     }
     .match-type {
       padding: 5px 12px;
@@ -251,7 +246,6 @@ sorted_matches.each_with_index do |match, i|
     html += <<~MATCH
     <div class="match-card">
       <div class="match-header">
-        <span class="match-number">##{i + 1}</span>
         <span class="match-type #{type_class}">#{type_label}</span>
       </div>
       <div class="match-person">
@@ -270,7 +264,6 @@ sorted_matches.each_with_index do |match, i|
     html += <<~MATCH
     <div class="match-card">
       <div class="match-header">
-        <span class="match-number">##{i + 1}</span>
         <span class="match-type #{type_class}">#{type_label}</span>
       </div>
       <div class="match-person">
