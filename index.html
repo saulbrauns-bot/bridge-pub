@@ -116,6 +116,28 @@
       .matches-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <script>
+    // Auto-refresh when new matches are posted
+    let currentBatch = 4;
+
+    async function checkForUpdates() {
+      try {
+        const response = await fetch('version.json?t=' + Date.now());
+        const data = await response.json();
+
+        if (data.batch_number > currentBatch) {
+          console.log('New matches detected! Refreshing...');
+          location.reload();
+        }
+      } catch (error) {
+        console.log('Check failed, will retry');
+      }
+    }
+
+    // Check every 15 seconds
+    setInterval(checkForUpdates, 15000);
+    console.log('Auto-refresh enabled - checking for new matches every 15 seconds');
+  </script>
 </head>
 <body>
   <div class="container">
