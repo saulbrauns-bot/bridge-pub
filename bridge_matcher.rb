@@ -3,7 +3,6 @@ require 'csv'
 require 'json'
 require 'time'
 require 'set'
-require_relative 'generate_matches_page'
 
 # Load environment variables from .env file
 if File.exist?('.env')
@@ -46,7 +45,16 @@ FREE_ENTRY_EMAILS = [
   'me83@rice.edu',           # Hassan
   'At253@rice.edu',          # Adam
   'rc183@rice.edu',          # Ria Chauhan
-  'cs282@rice.edu'           # Carter Sakai
+  'cs282@rice.edu',          # Carter Sakai
+  'muneeb_nazir',            # Muneeb Nazir (name-based key)
+  'morgan_fisher',           # Morgan Fisher
+  'chloe_lee',               # Chloe Lee
+  'leo_marek',               # Leo Marek
+  'alexis_alfasi',           # Alexis Alfasi
+  'cole',                    # Cole
+  'alejandro_hernandez_espinoza', # Alejandro Hernandez Espinoza
+  'rachel_huber',            # Rachel Huber
+  'alejandro_salinas'        # Alejandro Salinas
 ].map(&:downcase)
 
 GRADES = {
