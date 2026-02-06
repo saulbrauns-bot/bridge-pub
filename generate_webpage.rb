@@ -203,6 +203,28 @@ html = <<~HTML
       .matches-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <script>
+    // Auto-refresh when new matches are posted
+    let currentBatch = #{batch['batch_number']};
+
+    async function checkForUpdates() {
+      try {
+        const response = await fetch('version.json?t=' + Date.now());
+        const data = await response.json();
+
+        if (data.batch_number > currentBatch) {
+          console.log('New matches detected! Refreshing...');
+          location.reload();
+        }
+      } catch (error) {
+        console.log('Check failed, will retry');
+      }
+    }
+
+    // Check every 15 seconds
+    setInterval(checkForUpdates, 15000);
+    console.log('Auto-refresh enabled - checking for new matches every 15 seconds');
+  </script>
 </head>
 <body>
   <div class="container">
@@ -290,6 +312,15 @@ HTML
 
 File.write('matches_display.html', html)
 File.write('index.html', html)
+
+# Generate version file for auto-refresh detection
+version_data = {
+  'batch_number' => batch['batch_number'],
+  'timestamp' => batch['generated_at'],
+  'match_count' => batch['matches'].size
+}
+File.write('version.json', JSON.generate(version_data))
+
 puts "✓ Generated matches_display.html and index.html"
 puts "  Batch #{batch['batch_number']} - #{batch['matches'].size} matches (latest)"
 
