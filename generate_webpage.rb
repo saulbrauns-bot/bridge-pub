@@ -4,7 +4,7 @@ require 'json'
 # Load state
 unless File.exist?('bridge_state.json')
   # No state file yet - create empty page
-  File.write('matches_display.html', <<~HTML)
+  empty_html = <<~HTML
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -34,6 +34,8 @@ unless File.exist?('bridge_state.json')
     </body>
     </html>
   HTML
+  File.write('matches_display.html', empty_html)
+  File.write('index.html', empty_html)
   puts "✓ Generated empty matches page (no state file yet)"
   exit
 end
@@ -43,7 +45,7 @@ state = JSON.parse(File.read('bridge_state.json'))
 # Check if any batches exist
 if state['match_batches'].nil? || state['match_batches'].empty?
   # No matches yet - create empty page
-  File.write('matches_display.html', <<~HTML)
+  empty_html = <<~HTML
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -73,6 +75,8 @@ if state['match_batches'].nil? || state['match_batches'].empty?
     </body>
     </html>
   HTML
+  File.write('matches_display.html', empty_html)
+  File.write('index.html', empty_html)
   puts "✓ Generated empty matches page (no batches yet)"
   exit
 end
@@ -285,5 +289,10 @@ html += <<~HTML
 HTML
 
 File.write('matches_display.html', html)
-puts "✓ Generated matches_display.html"
+File.write('index.html', html)
+puts "✓ Generated matches_display.html and index.html"
 puts "  Batch #{batch['batch_number']} - #{batch['matches'].size} matches (latest)"
+
+# Auto-push to GitHub Pages
+puts "\n📤 Pushing to GitHub Pages..."
+system('./update_github_pages.sh')
