@@ -90,6 +90,11 @@ html = <<~HTML
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="batch-number" content="#{batch['batch_number']}">
+  <meta name="batch-timestamp" content="#{batch['generated_at']}">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Bridge Pub Matches - Batch #{batch['batch_number']}</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -205,25 +210,51 @@ html = <<~HTML
   </style>
   <script>
     // Auto-refresh when new matches are posted
-    let currentBatch = #{batch['batch_number']};
+    const currentBatch = #{batch['batch_number']};
+    const currentTimestamp = '#{batch['generated_at']}';
+    let checkCount = 0;
 
     async function checkForUpdates() {
+      checkCount++;
       try {
-        const response = await fetch('version.json?t=' + Date.now());
-        const data = await response.json();
+        // Fetch the live page with aggressive cache busting
+        const response = await fetch(window.location.href + '?nocache=' + Date.now() + Math.random(), {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache'
+          }
+        });
 
-        if (data.batch_number > currentBatch) {
-          console.log('New matches detected! Refreshing...');
-          location.reload();
+        const html = await response.text();
+
+        // Parse the HTML to extract batch number from meta tag
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const batchMeta = doc.querySelector('meta[name="batch-number"]');
+        const timestampMeta = doc.querySelector('meta[name="batch-timestamp"]');
+
+        if (batchMeta && timestampMeta) {
+          const liveBatch = parseInt(batchMeta.content);
+          const liveTimestamp = timestampMeta.content;
+
+          console.log(`Check #${checkCount}: Current batch ${currentBatch}, Live batch ${liveBatch}`);
+
+          // Reload if batch number changed OR timestamp changed (indicates update)
+          if (liveBatch > currentBatch || liveTimestamp !== currentTimestamp) {
+            console.log('🎉 New matches detected! Auto-refreshing...');
+            location.reload(true); // Force reload from server
+          }
         }
       } catch (error) {
-        console.log('Check failed, will retry');
+        console.log('Update check failed, will retry:', error.message);
       }
     }
 
-    // Check every 15 seconds
-    setInterval(checkForUpdates, 15000);
-    console.log('Auto-refresh enabled - checking for new matches every 15 seconds');
+    // Check every 10 seconds
+    setInterval(checkForUpdates, 10000);
+    console.log('✅ Auto-refresh enabled - checking for new matches every 10 seconds');
+    console.log(`📊 Current batch: ${currentBatch}`);
   </script>
 </head>
 <body>
@@ -313,16 +344,9 @@ HTML
 File.write('matches_display.html', html)
 File.write('index.html', html)
 
-# Generate version file for auto-refresh detection
-version_data = {
-  'batch_number' => batch['batch_number'],
-  'timestamp' => batch['generated_at'],
-  'match_count' => batch['matches'].size
-}
-File.write('version.json', JSON.generate(version_data))
-
 puts "✓ Generated matches_display.html and index.html"
 puts "  Batch #{batch['batch_number']} - #{batch['matches'].size} matches (latest)"
+puts "  Auto-refresh enabled (checks every 10 seconds)"
 
 # Auto-push to GitHub Pages
 puts "\n📤 Pushing to GitHub Pages..."
