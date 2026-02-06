@@ -2,6 +2,15 @@
 require 'csv'
 require 'json'
 
+# Normalize phone number to exactly 10 digits (consistent with bridge_matcher.rb)
+# Handles country codes by taking last 10 digits
+def normalize_phone(phone)
+  return '' if phone.nil? || phone.empty?
+  digits = phone.to_s.gsub(/[^0-9]/, '')
+  # Always take last 10 digits to handle country codes like +1 or 1
+  digits.length >= 10 ? digits[-10..-1] : digits
+end
+
 puts "=" * 60
 puts "SPECIAL REQUEST VALIDATION"
 puts "=" * 60
@@ -9,7 +18,7 @@ puts "=" * 60
 # Load participants
 participants = []
 CSV.foreach('current_bridge_pub_complete.csv', headers: true) do |row|
-  phone = row['What is your phone number?']&.strip&.gsub(/[^0-9]/, '')
+  phone = normalize_phone(row['What is your phone number?'])
   name = row['What is your name?']&.strip
 
   next if phone.nil? || phone.empty?
@@ -17,7 +26,7 @@ CSV.foreach('current_bridge_pub_complete.csv', headers: true) do |row|
   participants << {
     'name' => name,
     'phone' => phone,
-    'name_lower' => name&.downcase
+    'name_lower' => name&.downcase&.strip
   }
 end
 
@@ -42,21 +51,21 @@ special_requests.each_with_index do |request, i|
   requested_name = request['requested_name']
 
   # Find requester
-  requester = participants.find { |p| p['phone'] == requester_phone }
+  requester_phone_normalized = normalize_phone(requester_phone)
+  requester = participants.find { |p| p['phone'] == requester_phone_normalized }
 
-  # Find requested person (by phone if available, otherwise by name)
+  # Find requested person (by phone if available, otherwise by EXACT name)
   requested = nil
   if requested_phone
-    requested = participants.find { |p| p['phone'] == requested_phone }
+    requested_phone_normalized = normalize_phone(requested_phone)
+    requested = participants.find { |p| p['phone'] == requested_phone_normalized }
   end
 
-  # Try name matching if phone didn't work
+  # Try EXACT name matching if phone didn't work (matching bridge_matcher.rb logic)
   if requested.nil? && requested_name
-    requested_name_lower = requested_name.downcase
-    requested = participants.find do |p|
-      p['name_lower']&.include?(requested_name_lower) ||
-      requested_name_lower.include?(p['name_lower'] || '')
-    end
+    requested_name_lower = requested_name.downcase.strip
+    # EXACT match only - no fuzzy substring matching
+    requested = participants.find { |p| p['name_lower'] == requested_name_lower }
   end
 
   # Categorize

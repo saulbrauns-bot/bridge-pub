@@ -76,6 +76,19 @@ $state = {
 }
 
 # ============================================================================
+# HELPER FUNCTIONS
+# ============================================================================
+
+# Normalize phone number to exactly 10 digits
+# Handles country codes by taking last 10 digits
+def normalize_phone(phone)
+  return '' if phone.nil? || phone.empty?
+  digits = phone.to_s.gsub(/[^0-9]/, '')
+  # Always take last 10 digits to handle country codes like +1 or 1
+  digits.length >= 10 ? digits[-10..-1] : digits
+end
+
+# ============================================================================
 # DATA LOADING
 # ============================================================================
 
@@ -634,14 +647,13 @@ def undo_last_checkin
     # Undo the check-in
     wristband_freed = participant['wristband_number']
     participant['checked_in'] = false
-    participant['wristband_number'] = nil
+    # IMPORTANT: Keep wristband_number assigned (don't set to nil)
+    # This prevents wristband number reuse and collision
+    # If they re-check-in, they'll get the same wristband back
 
-    # Decrement the appropriate counter
-    if $state['last_checked_in_type'] == 'walkin'
-      $state['next_walkin_wristband_number'] -= 1
-    else
-      $state['next_wristband_number'] -= 1
-    end
+    # DO NOT decrement counters - wristband numbers should be monotonically increasing
+    # This prevents collision where two people could get the same wristband number
+    # The wristband is now "reserved" for this person if they re-check-in
 
     # Clear tracking
     $state['last_checked_in_key'] = nil
@@ -905,8 +917,8 @@ def generate_matches
 
   # Helper to find participant by phone
   def find_by_phone(phone, checked_in)
-    phone_normalized = phone.to_s.gsub(/[^0-9]/, '')
-    checked_in.find { |p| p['phone'].gsub(/[^0-9]/, '') == phone_normalized }
+    phone_normalized = normalize_phone(phone)
+    checked_in.find { |p| normalize_phone(p['phone']) == phone_normalized }
   end
 
   # Helper to find participant by name (EXACT match only to prevent false positives)
@@ -1279,6 +1291,10 @@ def generate_matches
   $state['last_operation'] = 'generate_matches'
   save_state
 
+  # Auto-generate webpage with latest matches
+  puts "\n📱 Updating webpage..."
+  system('ruby generate_webpage.rb')
+
   puts "\n✓ Saved #{batch['matches'].size} matches to Batch ##{batch_number}"
   puts "  Use option 5 to send via Twilio"
 end
@@ -1514,6 +1530,249 @@ def send_matches
 end
 
 # ============================================================================
+# WEBPAGE GENERATION
+# ============================================================================
+
+def generate_matches_webpage(state, batch_number)
+  batch = state['match_batches'].find { |b| b['batch_number'] == batch_number }
+  return unless batch
+
+  html = <<~HTML
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bridge Pub Matches - Batch #{batch_number}</title>
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          min-height: 100vh;
+          padding: 20px;
+        }
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .header {
+          text-align: center;
+          color: white;
+          margin-bottom: 40px;
+        }
+        .header h1 {
+          font-size: 3em;
+          margin-bottom: 10px;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+          font-size: 1.2em;
+          opacity: 0.9;
+        }
+        .stats {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+          margin-bottom: 40px;
+        }
+        .stat-card {
+          background: white;
+          padding: 20px;
+          border-radius: 12px;
+          text-align: center;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 {
+          color: #667eea;
+          font-size: 2em;
+          margin-bottom: 5px;
+        }
+        .stat-card p {
+          color: #666;
+          font-size: 0.9em;
+        }
+        .matches-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 20px;
+        }
+        .match-card {
+          background: white;
+          padding: 25px;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .match-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+        .match-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          border-bottom: 2px solid #f0f0f0;
+        }
+        .match-number {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: #667eea;
+        }
+        .match-type {
+          padding: 5px 12px;
+          border-radius: 20px;
+          font-size: 0.75em;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .type-romantic {
+          background: #ffeef0;
+          color: #e91e63;
+        }
+        .type-friend {
+          background: #e3f2fd;
+          color: #2196f3;
+        }
+        .type-special_request {
+          background: #fff3e0;
+          color: #ff9800;
+        }
+        .match-person {
+          margin: 10px 0;
+          padding: 10px;
+          background: #f8f9fa;
+          border-radius: 8px;
+        }
+        .wristband {
+          display: inline-block;
+          background: #667eea;
+          color: white;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 1.1em;
+          margin-right: 10px;
+        }
+        .person-name {
+          color: #333;
+          font-size: 1.1em;
+        }
+        .score {
+          text-align: center;
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 2px solid #f0f0f0;
+          color: #666;
+          font-size: 0.9em;
+        }
+        .score-value {
+          font-weight: bold;
+          color: #667eea;
+        }
+        @media (max-width: 768px) {
+          .header h1 { font-size: 2em; }
+          .matches-grid { grid-template-columns: 1fr; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>💜 Bridge Pub Matches</h1>
+          <p>Batch #{batch_number} • #{batch['matches'].size} Matches</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <h3>#{batch['matches'].size}</h3>
+            <p>Total Matches</p>
+          </div>
+          <div class="stat-card">
+            <h3>#{batch['matches'].count { |m| m['type'] == 'romantic' || m['type'] == 'special_request' }}</h3>
+            <p>Romantic Matches</p>
+          </div>
+          <div class="stat-card">
+            <h3>#{batch['matches'].count { |m| m['type'] == 'friend' || m['type'] == 'friend_group_of_3' }}</h3>
+            <p>Friend Matches</p>
+          </div>
+          <div class="stat-card">
+            <h3>#{batch['matches'].count { |m| m['type'] == 'special_request' }}</h3>
+            <p>Special Requests</p>
+          </div>
+        </div>
+
+        <div class="matches-grid">
+  HTML
+
+  batch['matches'].each_with_index do |match, i|
+    type_class = "type-#{match['type'] || 'romantic'}"
+    type_label = case match['type']
+                 when 'special_request' then '⭐ Special'
+                 when 'friend' then '🤝 Friend'
+                 when 'friend_group_of_3' then '👥 Group of 3'
+                 else '💕 Romantic'
+                 end
+
+    if match['person_c_email']
+      # Group of 3
+      html += <<~MATCH
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-number">##{i + 1}</span>
+            <span class="match-type #{type_class}">#{type_label}</span>
+          </div>
+          <div class="match-person">
+            <span class="wristband">##{match['person_a_wristband']}</span>
+            <span class="person-name">#{match['person_a_name']}</span>
+          </div>
+          <div class="match-person">
+            <span class="wristband">##{match['person_b_wristband']}</span>
+            <span class="person-name">#{match['person_b_name']}</span>
+          </div>
+          <div class="match-person">
+            <span class="wristband">##{match['person_c_wristband']}</span>
+            <span class="person-name">#{match['person_c_name']}</span>
+          </div>
+        </div>
+      MATCH
+    else
+      # Regular pair
+      html += <<~MATCH
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-number">##{i + 1}</span>
+            <span class="match-type #{type_class}">#{type_label}</span>
+          </div>
+          <div class="match-person">
+            <span class="wristband">##{match['person_a_wristband']}</span>
+            <span class="person-name">#{match['person_a_name']}</span>
+          </div>
+          <div class="match-person">
+            <span class="wristband">##{match['person_b_wristband']}</span>
+            <span class="person-name">#{match['person_b_name']}</span>
+          </div>
+          <div class="score">
+            Compatibility: <span class="score-value">#{match['compatibility_score'] || 0}</span>
+          </div>
+        </div>
+      MATCH
+    end
+  end
+
+  html += <<~HTML
+        </div>
+      </div>
+    </body>
+    </html>
+  HTML
+
+  File.write('matches_display.html', html)
+end
+
+# ============================================================================
 # EXPORT
 # ============================================================================
 
@@ -1584,6 +1843,10 @@ def reset_system
 
   $state['last_operation'] = 'reset'
   save_state
+
+  # Update webpage to show empty state
+  puts "\n📱 Updating webpage to empty state..."
+  system('ruby generate_webpage.rb')
 
   puts "\n✓ System reset complete"
   puts "  - All special requests reset (batches_together: 0, matched: false)"

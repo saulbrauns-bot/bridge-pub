@@ -4,6 +4,15 @@ require 'set'
 
 CURRENT_CSV = 'current_bridge_pub_complete.csv'
 
+# Normalize phone number to exactly 10 digits (consistent with bridge_matcher.rb)
+# Handles country codes by taking last 10 digits
+def normalize_phone(phone)
+  return '' if phone.nil? || phone.empty?
+  digits = phone.to_s.gsub(/[^0-9]/, '')
+  # Always take last 10 digits to handle country codes like +1 or 1
+  digits.length >= 10 ? digits[-10..-1] : digits
+end
+
 puts "=" * 60
 puts "ADD NEW REGISTRATIONS"
 puts "=" * 60
@@ -27,7 +36,7 @@ CSV.foreach(CURRENT_CSV, headers: true) do |row|
   existing_rows << row
 
   email = row['What is your student email?']&.strip&.downcase
-  phone = row['What is your phone number?']&.strip&.gsub(/[^0-9]/, '')
+  phone = normalize_phone(row['What is your phone number?'])
 
   existing_emails.add(email) if email && !email.empty?
   existing_phones.add(phone) if phone && !phone.empty?
@@ -50,16 +59,13 @@ CSV.foreach(new_csv, headers: true) do |row|
 
   # Normalize for duplicate check
   email_normalized = email&.downcase || ''
-  phone_normalized = phone&.gsub(/[^0-9]/, '') || ''
+  phone_final = normalize_phone(phone)
 
   # Skip if no phone (can't send SMS)
-  if phone_normalized.empty?
+  if phone_final.empty?
     puts "  ⚠️  Skipped #{name} (no phone number)"
     next
   end
-
-  # Normalize phone to exactly 10 digits
-  phone_final = phone_normalized.length > 10 ? phone_normalized[-10..-1] : phone_normalized
 
   # Skip if phone is not 10 digits after normalization
   if phone_final.length != 10

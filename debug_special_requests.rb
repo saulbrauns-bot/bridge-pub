@@ -2,6 +2,15 @@
 require 'json'
 require 'csv'
 
+# Normalize phone number to exactly 10 digits (consistent with bridge_matcher.rb)
+# Handles country codes by taking last 10 digits
+def normalize_phone(phone)
+  return '' if phone.nil? || phone.empty?
+  digits = phone.to_s.gsub(/[^0-9]/, '')
+  # Always take last 10 digits to handle country codes like +1 or 1
+  digits.length >= 10 ? digits[-10..-1] : digits
+end
+
 puts "=" * 60
 puts "DEBUG SPECIAL REQUESTS"
 puts "=" * 60
@@ -18,8 +27,8 @@ puts "  Checked in: #{checked_in.size}"
 
 # Helper to find by phone
 def find_by_phone(phone, checked_in)
-  phone_normalized = phone.to_s.gsub(/[^0-9]/, '')
-  checked_in.find { |p| p['phone'].gsub(/[^0-9]/, '') == phone_normalized }
+  phone_normalized = normalize_phone(phone)
+  checked_in.find { |p| normalize_phone(p['phone']) == phone_normalized }
 end
 
 puts "\n" + "=" * 60
