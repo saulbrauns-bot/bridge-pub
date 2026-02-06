@@ -290,6 +290,7 @@ def show_menu
   puts "12. Undo last check-in/out"
   puts "13. 🧪 TEST MODE - Send to 646-623-6536 ONLY"
   puts "14. 🔄 Resend failed batch"
+  puts "15. 🧪 TEST REAL SEND - Simulate Option 5 (to my number only)"
   puts
   print "Choose option: "
 end
@@ -316,8 +317,9 @@ def main_menu
     when '12' then undo_last_checkin
     when '13' then test_send_to_my_number
     when '14' then resend_batch
+    when '15' then test_real_send_process
     else
-      puts "\n✗ Invalid option. Please choose 1-14."
+      puts "\n✗ Invalid option. Please choose 1-15."
     end
 
     puts "\nPress Enter to continue..."
@@ -1900,6 +1902,226 @@ def resend_batch
   end
 
   puts "\n✓ Batch ##{batch['batch_number']} resent"
+end
+
+# ============================================================================
+# TEST REAL SEND PROCESS - Simulates Option 5 but sends to test number only
+# ============================================================================
+
+def test_real_send_process
+  test_phone = '+16466236536'  # SAUL'S NUMBER - ONLY NUMBER THAT WILL RECEIVE MESSAGES
+
+  puts "\n" + "=" * 60
+  puts "🧪 TEST REAL SEND PROCESS (Option 5 Simulation)"
+  puts "=" * 60
+
+  puts "\n⚠️  EXTREME SAFETY MODE:"
+  puts "  ✓ Uses EXACT same code as real send (Option 5)"
+  puts "  ✓ ALL messages redirected to: #{test_phone}"
+  puts "  ✓ NO real participants will be contacted"
+  puts "  ✓ Batch will NOT be marked as sent"
+  puts "  ✓ You can test this safely multiple times"
+
+  # Check for Twilio credentials
+  unless ENV['TWILIO_ACCOUNT_SID'] && ENV['TWILIO_AUTH_TOKEN'] && ENV['TWILIO_PHONE_NUMBER']
+    puts "\n✗ Twilio credentials not configured!"
+    puts "  Please create a .env file with:"
+    puts "    TWILIO_ACCOUNT_SID=your_sid"
+    puts "    TWILIO_AUTH_TOKEN=your_token"
+    puts "    TWILIO_PHONE_NUMBER=+1234567890"
+    return
+  end
+
+  # Find unsent batches (same as real send)
+  unsent_batches = $state['match_batches'].select { |b| !b['sent_at'] }
+
+  if unsent_batches.empty?
+    puts "\n✗ No unsent matches to send"
+    puts "  Generate matches first (option 4)"
+    return
+  end
+
+  batch = unsent_batches.last
+  matches = batch['matches']
+
+  puts "\nBatch ##{batch['batch_number']} - #{matches.size} matches to send"
+  puts "Generated at: #{batch['generated_at']}"
+
+  # Show preview (same as real send)
+  puts "\nMessage preview:"
+  sample_romantic = matches.find { |m| m['type'] == 'romantic' }
+  sample_friend = matches.find { |m| m['type'] == 'friend' }
+
+  if sample_romantic
+    puts "\nRomantic match example:"
+    puts "  To: #{test_phone} (REDIRECTED FROM: #{sample_romantic['person_a_phone']})"
+    puts "  Message: \"[TEST] Your Bridge match is ##{sample_romantic['person_b_wristband']}!\""
+  end
+
+  if sample_friend
+    puts "\nFriend match example:"
+    puts "  To: #{test_phone} (REDIRECTED FROM: #{sample_friend['person_a_phone']})"
+    puts "  Message: \"[TEST] We didn't find a romantic interest for you this round, but you'd make great friends with ##{sample_friend['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
+  end
+
+  total_messages = matches.size * 2
+  puts "\n" + "=" * 60
+  puts "📊 SEND SUMMARY:"
+  puts "  Total messages: #{total_messages}"
+  puts "  ALL will go to: #{test_phone}"
+  puts "  Real participants: Will NOT be contacted"
+  puts "  Batch will NOT be marked as sent (can test again)"
+  puts "=" * 60
+
+  print "\nType 'TEST REAL SEND' to confirm (case sensitive): "
+  confirm = gets.chomp
+
+  unless confirm == 'TEST REAL SEND'
+    puts "\n✗ Cancelled. No messages sent."
+    return
+  end
+
+  # Try to require twilio-ruby
+  begin
+    require 'twilio-ruby'
+  rescue LoadError
+    puts "\n✗ twilio-ruby gem not installed!"
+    puts "  Run: gem install twilio-ruby"
+    return
+  end
+
+  # Initialize Twilio client
+  client = Twilio::REST::Client.new(
+    ENV['TWILIO_ACCOUNT_SID'],
+    ENV['TWILIO_AUTH_TOKEN']
+  )
+
+  puts "\n🚀 Sending messages (simulating real send process)..."
+  puts "Press Ctrl+C to stop\n\n"
+
+  sent = 0
+  failed = 0
+  failed_sends = []
+
+  matches.each do |match|
+    if match['type'] == 'friend_group_of_3'
+      # Handle group of 3 - ALL redirected to test_phone
+      people = [
+        { 'name' => match['person_a_name'], 'phone' => test_phone, 'wristband' => match['person_a_wristband'],
+          'others' => [match['person_b_wristband'], match['person_c_wristband']] },
+        { 'name' => match['person_b_name'], 'phone' => test_phone, 'wristband' => match['person_b_wristband'],
+          'others' => [match['person_a_wristband'], match['person_c_wristband']] },
+        { 'name' => match['person_c_name'], 'phone' => test_phone, 'wristband' => match['person_c_wristband'],
+          'others' => [match['person_a_wristband'], match['person_b_wristband']] }
+      ]
+
+      people.each do |person|
+        message = "We didn't find a romantic interest for you this round, but you'd make great friends with ##{person['others'][0]} and ##{person['others'][1]}! You'll be prioritized for a romantic match next round."
+
+        begin
+          # TRIPLE CHECK: Only send to test_phone
+          if test_phone == '+16466236536'
+            client.messages.create(
+              from: ENV['TWILIO_PHONE_NUMBER'],
+              to: test_phone,
+              body: "[TEST] #{message}"
+            )
+            sent += 1
+            print "."
+          end
+        rescue => e
+          puts "\n✗ Failed to send to #{person['name']}: #{e.message}"
+          failed += 1
+          failed_sends << {
+            'name' => person['name'],
+            'phone' => test_phone,
+            'wristband' => person['wristband'],
+            'match_wristband' => person['others'].join(', '),
+            'error' => e.message
+          }
+        end
+        sleep 0.1
+      end
+    else
+      # Regular pair (romantic or friend pair of 2) - ALL redirected to test_phone
+      # Send to person A (redirected)
+      message_a = if match['type'] == 'romantic'
+        "Your Bridge match is ##{match['person_b_wristband']}!"
+      else
+        "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_b_wristband']}! You'll be prioritized for a romantic match next round."
+      end
+
+      begin
+        # TRIPLE CHECK: Only send to test_phone
+        if test_phone == '+16466236536'
+          client.messages.create(
+            from: ENV['TWILIO_PHONE_NUMBER'],
+            to: test_phone,
+            body: "[TEST] #{message_a}"
+          )
+          sent += 1
+          print "."
+        end
+      rescue => e
+        puts "\n✗ Failed to send to #{match['person_a_name']}: #{e.message}"
+        failed += 1
+        failed_sends << {
+          'name' => match['person_a_name'],
+          'phone' => test_phone,
+          'wristband' => match['person_a_wristband'],
+          'match_wristband' => match['person_b_wristband'],
+          'error' => e.message
+        }
+      end
+
+      sleep 0.1
+
+      # Send to person B (redirected)
+      message_b = if match['type'] == 'romantic'
+        "Your Bridge match is ##{match['person_a_wristband']}!"
+      else
+        "We didn't find a romantic interest for you this round, but you'd make great friends with ##{match['person_a_wristband']}! You'll be prioritized for a romantic match next round."
+      end
+
+      begin
+        # TRIPLE CHECK: Only send to test_phone
+        if test_phone == '+16466236536'
+          client.messages.create(
+            from: ENV['TWILIO_PHONE_NUMBER'],
+            to: test_phone,
+            body: "[TEST] #{message_b}"
+          )
+          sent += 1
+          print "."
+        end
+      rescue => e
+        puts "\n✗ Failed to send to #{match['person_b_name']}: #{e.message}"
+        failed += 1
+        failed_sends << {
+          'name' => match['person_b_name'],
+          'phone' => test_phone,
+          'wristband' => match['person_b_wristband'],
+          'match_wristband' => match['person_a_wristband'],
+          'error' => e.message
+        }
+      end
+
+      sleep 0.1
+    end
+  end
+
+  puts "\n\n" + "=" * 60
+  puts "✅ TEST COMPLETE (Real Send Simulation)"
+  puts "=" * 60
+  puts "  Messages sent: #{sent}/#{total_messages}"
+  puts "  Failed: #{failed}"
+  puts "  All messages sent to: #{test_phone}"
+  puts "  NO real participants were contacted"
+  puts "\n⚠️  IMPORTANT:"
+  puts "  - Batch was NOT marked as sent"
+  puts "  - You can run this test again"
+  puts "  - When ready for real, use Option 5"
+  puts "\n💡 Check your phone (#{test_phone}) for the messages!"
 end
 
 # ============================================================================
