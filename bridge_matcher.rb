@@ -1310,31 +1310,11 @@ end
 # ============================================================================
 
 def send_matches
-  puts "\n=== SEND MATCHES VIA TWILIO ==="
-
-  # 🔒 SAFETY LOCKOUT - DISABLED FOR TESTING 🔒
   puts "\n" + "=" * 60
-  puts "⚠️  TWILIO SENDING IS CURRENTLY DISABLED"
+  puts "⚠️  SEND REAL MATCHES TO PARTICIPANTS"
   puts "=" * 60
-  puts "\nThis is a safety feature to prevent accidental messages."
-  puts "Messages will NOT be sent even if you confirm."
-  puts "\nTo enable sending on Friday:"
-  puts "  1. Open bridge_matcher.rb"
-  puts "  2. Find the send_matches function (line ~655)"
-  puts "  3. Comment out or remove the safety lockout section"
-  puts "\n❌ No messages will be sent."
-
-  # Still generate the webpage as backup
-  puts "\n📱 Generating backup webpage..."
-  unsent_batches = $state['match_batches'].select { |b| !b['sent_at'] }
-  if unsent_batches.any?
-    batch = unsent_batches.last
-    generate_matches_webpage($state, batch['batch_number'])
-    puts "\n✓ Backup webpage ready: matches_display.html"
-    puts "  You can open this in a browser to see all matches"
-  end
-
-  return
+  puts "\n🚨 WARNING: This will send REAL messages to REAL participants!"
+  puts "   Use Option 15 to test safely first."
 
   # Check for Twilio credentials
   unless ENV['TWILIO_ACCOUNT_SID'] && ENV['TWILIO_AUTH_TOKEN'] && ENV['TWILIO_PHONE_NUMBER']
@@ -1355,14 +1335,28 @@ def send_matches
     return
   end
 
+  # Always send ONLY the most recent unsent batch
   batch = unsent_batches.last
   matches = batch['matches']
 
-  puts "\nBatch ##{batch['batch_number']} - #{matches.size} matches to send"
-  puts "Generated at: #{batch['generated_at']}"
+  puts "\n📊 BATCH INFORMATION:"
+  puts "  Batch ##{batch['batch_number']} (MOST RECENT)"
+  puts "  Total matches: #{matches.size}"
+  puts "  Total messages: #{matches.size * 2}"
+  puts "  Generated at: #{batch['generated_at']}"
+
+  # Show breakdown
+  romantic_count = matches.count { |m| m['type'] == 'romantic' }
+  friend_count = matches.count { |m| m['type'] == 'friend' }
+  friend_group_count = matches.count { |m| m['type'] == 'friend_group_of_3' }
+
+  puts "\n  Match types:"
+  puts "    Romantic: #{romantic_count}"
+  puts "    Friend (pairs): #{friend_count}"
+  puts "    Friend (groups of 3): #{friend_group_count}" if friend_group_count > 0
 
   # Show preview
-  puts "\nMessage preview:"
+  puts "\n📱 MESSAGE PREVIEW:"
   sample_romantic = matches.find { |m| m['type'] == 'romantic' }
   sample_friend = matches.find { |m| m['type'] == 'friend' }
 
@@ -1378,10 +1372,37 @@ def send_matches
     puts "  Message: \"We didn't find a romantic interest for you this round, but you'd make great friends with ##{sample_friend['person_b_wristband']}! You'll be prioritized for a romantic match next round.\""
   end
 
-  print "\nSend #{matches.size * 2} messages? (yes/no): "
-  confirm = gets.chomp.downcase
+  # STRONG CONFIRMATION - Multi-step
+  puts "\n" + "=" * 60
+  puts "🔒 CONFIRMATION REQUIRED"
+  puts "=" * 60
+  puts "You are about to send #{matches.size * 2} REAL messages to REAL participants."
+  puts "This action CANNOT be undone."
 
-  return unless confirm == 'yes' || confirm == 'y'
+  print "\nStep 1: Type 'SEND' to continue: "
+  confirm1 = gets.chomp
+
+  unless confirm1 == 'SEND'
+    puts "\n✗ Cancelled. No messages sent."
+    return
+  end
+
+  print "\nStep 2: Type the number of matches (#{matches.size}): "
+  confirm2 = gets.chomp.to_i
+
+  unless confirm2 == matches.size
+    puts "\n✗ Cancelled. Number did not match."
+    return
+  end
+
+  puts "\n⚠️  FINAL CONFIRMATION"
+  print "Type 'SEND BATCH #{batch['batch_number']}' to proceed: "
+  confirm3 = gets.chomp
+
+  unless confirm3 == "SEND BATCH #{batch['batch_number']}"
+    puts "\n✗ Cancelled. No messages sent."
+    return
+  end
 
   # Try to require twilio-ruby
   begin
