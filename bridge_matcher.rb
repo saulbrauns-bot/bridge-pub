@@ -801,8 +801,22 @@ end
 # MATCHING ALGORITHM
 # ============================================================================
 
+def is_walkin?(participant)
+  # Walk-ins have "Unknown" for all preference fields (school, ideal_friday, etc.)
+  participant['school'] == 'Unknown' &&
+  participant['ideal_friday'] == 'Unknown' &&
+  participant['decision_guide'] == 'Unknown'
+end
+
 def calculate_compatibility_score(p1, p2)
   score = 0
+
+  # Baseline score for walk-ins (50 points)
+  # Walk-ins only provide gender, gender preference, and grade
+  # Give them a baseline score so they're competitive with regular participants
+  if is_walkin?(p1) || is_walkin?(p2)
+    score += 50
+  end
 
   # 1. Grade Proximity (0-20 points)
   if p1['grade'] && p2['grade'] && GRADES[p1['grade']] && GRADES[p2['grade']]
@@ -816,22 +830,22 @@ def calculate_compatibility_score(p1, p2)
   end
 
   # 2. School Match (0-10 points)
-  if p1['school'] && p2['school'] && p1['school'] == p2['school']
+  if p1['school'] && p2['school'] && p1['school'] == p2['school'] && p1['school'] != 'Unknown'
     score += 10
   end
 
   # 3. Ideal Friday Night (0-15 points)
-  if p1['ideal_friday'] && p2['ideal_friday'] && p1['ideal_friday'] == p2['ideal_friday']
+  if p1['ideal_friday'] && p2['ideal_friday'] && p1['ideal_friday'] == p2['ideal_friday'] && p1['ideal_friday'] != 'Unknown'
     score += 15
   end
 
   # 4. Decision Guide: Emotion vs Logic (0-15 points)
-  if p1['decision_guide'] && p2['decision_guide'] && p1['decision_guide'] == p2['decision_guide']
+  if p1['decision_guide'] && p2['decision_guide'] && p1['decision_guide'] == p2['decision_guide'] && p1['decision_guide'] != 'Unknown'
     score += 15
   end
 
   # 5. Plan vs Spontaneous (0-15 points)
-  if p1['plan_spontaneous'] && p2['plan_spontaneous'] && p1['plan_spontaneous'] == p2['plan_spontaneous']
+  if p1['plan_spontaneous'] && p2['plan_spontaneous'] && p1['plan_spontaneous'] == p2['plan_spontaneous'] && p1['plan_spontaneous'] != 'Unknown'
     score += 15
   end
 
@@ -847,12 +861,12 @@ def calculate_compatibility_score(p1, p2)
   end
 
   # 7. Important Value (0-20 points)
-  if p1['important_value'] && p2['important_value'] && p1['important_value'] == p2['important_value']
+  if p1['important_value'] && p2['important_value'] && p1['important_value'] == p2['important_value'] && p1['important_value'] != 'Unknown'
     score += 20
   end
 
   # 8. Reading Habit (0-10 points)
-  if p1['reading'] && p2['reading'] && p1['reading'] == p2['reading']
+  if p1['reading'] && p2['reading'] && p1['reading'] == p2['reading'] && p1['reading'] != 'Unknown'
     score += 10
   end
 
